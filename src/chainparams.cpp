@@ -78,7 +78,7 @@ static CBlock CreateDevNetGenesisBlock(const uint256 &prevBlockHash, const std::
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "Jan 2024";
+    const char* pszTimestamp = "This for testing the halving";
     const CScript genesisOutputScript = CScript() << ParseHex("0447cb28e942398425b2e6432160d6eeb2976261592eb8bfc58a6a56c603c048d20e654121c9b1fc4c1fb308c1f975139e41daf485647ce0efcc8763242205d478") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -195,7 +195,7 @@ public:
         consensus.MinBIP9WarningHeight = 1 + 2; // V19 activation height + miner confirmation window
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
         consensus.nPowTargetTimespan = 20 * 60;
-        consensus.nPowTargetSpacing = 10 * 60;
+        consensus.nPowTargetSpacing = 1 * 60;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nPowKGWHeight = 1;
@@ -246,7 +246,7 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlock(1705922783, 128322, 0x1e0ffff0, 1, 400 * COIN);
+        genesis = CreateGenesisBlock(1708019421, 1878402, 0x1e0ffff0, 1, 400 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         // calculate main genesis block
         //consensus.hashGenesisBlock = uint256S("0x00");
@@ -269,15 +269,15 @@ public:
             std::cout << "blockhash: " << genesis.GetHash().ToString().c_str() << "\n";
             std::cout << "merklehash: " << genesis.hashMerkleRoot.ToString().c_str() << "\n";
         }
-        assert(consensus.hashGenesisBlock == uint256S("0x000007cf9a812b00acc3c860d504d065245794f48f2234fad9cbd615d497f314"));
-        assert(genesis.hashMerkleRoot == uint256S("0xed940e107ed78ec4ce470fd35783e001252574349ed9007bea843bcfdd5720c6"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000005f176d83a1445c738ac3bad513d55bc56869f02825a72e596416302bce1"));
+        assert(genesis.hashMerkleRoot == uint256S("0x6cbf4f1be57a92928fecce34f99684f0b823e26b10a4036eeca874878bd36728"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
         // This is fine at runtime as we'll fall back to using them as a oneshot if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
-        vSeeds.emplace_back("node3.walletbuilders.com");
+        vSeeds.emplace_back("194.163.179.204");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,64);
@@ -322,7 +322,7 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("0x000007cf9a812b00acc3c860d504d065245794f48f2234fad9cbd615d497f314")},
+                {0, uint256S("0x000005f176d83a1445c738ac3bad513d55bc56869f02825a72e596416302bce1")},
             }
         };
 
@@ -332,7 +332,7 @@ public:
 
         // getchaintxstats 17280 000007cf9a812b00acc3c860d504d065245794f48f2234fad9cbd615d497f314
         chainTxData = ChainTxData{
-                1705922783, // * UNIX timestamp of last known number of transactions
+                1708019421, // * UNIX timestamp of last known number of transactions
                 0,   // * total number of transactions between genesis and that timestamp
                             //   (the tx=... number in the ChainStateFlushed debug.log lines)
                 0,      // * estimated number of transactions per second after that timestamp
@@ -427,10 +427,10 @@ public:
         m_assumed_blockchain_size = 4;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlock(1705922788UL, 640736UL, 0x1e0ffff0, 1, 400 * COIN);
+        genesis = CreateGenesisBlock(1708020064UL, 1422357UL, 0x1e0ffff0, 1, 400 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         // calculate testnet genesis block
-        //consensus.hashGenesisBlock = uint256S("0x00");
+        // consensus.hashGenesisBlock = uint256S("0x00");
         if (true && (genesis.GetHash() != consensus.hashGenesisBlock)) {
 		std::cout << std::string("Calculating testnet genesis block...\n");
             arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
@@ -450,8 +450,8 @@ public:
             std::cout << "blockhash: " << genesis.GetHash().ToString().c_str() << "\n";
             std::cout << "merklehash: " << genesis.hashMerkleRoot.ToString().c_str() << "\n";
         }
-        assert(consensus.hashGenesisBlock == uint256S("0x00000ebff33266e7e8af2ff573a56535992aa8c590e94d3d8e13e885f0258f8c"));
-        assert(genesis.hashMerkleRoot == uint256S("0xed940e107ed78ec4ce470fd35783e001252574349ed9007bea843bcfdd5720c6"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000a6398c97b8281f8cd2d552fbbedaf2e667fe74a96b7efe0c49cb3506bd4"));
+        assert(genesis.hashMerkleRoot == uint256S("0x6cbf4f1be57a92928fecce34f99684f0b823e26b10a4036eeca874878bd36728"));
 
         vFixedSeeds.clear();
 
@@ -512,7 +512,7 @@ public:
 
         // getchaintxstats 17280 00000ebff33266e7e8af2ff573a56535992aa8c590e94d3d8e13e885f0258f8c
         chainTxData = ChainTxData{
-                1705922788, // * UNIX timestamp of last known number of transactions
+                1708020064, // * UNIX timestamp of last known number of transactions
                 0,    // * total number of transactions between genesis and that timestamp
                             //   (the tx=... number in the ChainStateFlushed debug.log lines)
                 0,       // * estimated number of transactions per second after that timestamp
@@ -610,7 +610,7 @@ public:
         genesis = CreateGenesisBlock(1705922793, 2, 0x207fffff, 1, 400 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         // calculate regression genesis block
-        //consensus.hashGenesisBlock = uint256S("0x00");
+        consensus.hashGenesisBlock = uint256S("0x00");
         if (true && (genesis.GetHash() != consensus.hashGenesisBlock)) {
                 std::cout << std::string("Calculating regression block...\n");
             arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
@@ -879,10 +879,10 @@ public:
         UpdateDIP8ParametersFromArgs(args);
         UpdateBudgetParametersFromArgs(args);
 
-        genesis = CreateGenesisBlock(1705922793, 2, 0x207fffff, 1, 400 * COIN);
+        genesis = CreateGenesisBlock(1708020322, 0, 0x207fffff, 1, 400 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         // calculate regression genesis block
-        //consensus.hashGenesisBlock = uint256S("0x00");
+        // consensus.hashGenesisBlock = uint256S("0x00");
         if (true && (genesis.GetHash() != consensus.hashGenesisBlock)) {
                 std::cout << std::string("Calculating regression block...\n");
             arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
@@ -902,8 +902,8 @@ public:
             std::cout << "blockhash: " << genesis.GetHash().ToString().c_str() << "\n";
             std::cout << "merklehash: "  << genesis.hashMerkleRoot.ToString().c_str() << "\n";
         }
-        assert(consensus.hashGenesisBlock == uint256S("0x1b0ce23436eccd0f1d40a5553a2f421f856e9f5ba5666809f94251a82938bd0d"));
-        assert(genesis.hashMerkleRoot == uint256S("0xed940e107ed78ec4ce470fd35783e001252574349ed9007bea843bcfdd5720c6"));
+        assert(consensus.hashGenesisBlock == uint256S("0x3a8d07b8581b7b97694219f65161657cce6634963ddc5e3acaa83254acd06384"));
+        assert(genesis.hashMerkleRoot == uint256S("0x6cbf4f1be57a92928fecce34f99684f0b823e26b10a4036eeca874878bd36728"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
