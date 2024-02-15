@@ -1,7 +1,7 @@
 [main]
 host = https://www.transifex.com
 
-[smartloopai.smartloopai_ents]
-file_filter = src/qt/locale/smartloopai_<lang>.ts
-source_file = src/qt/locale/smartloopai_en.xlf
+[halfy.halfy_ents]
+file_filter = src/qt/locale/halfy_<lang>.ts
+source_file = src/qt/locale/halfy_en.xlf
 source_lang = en

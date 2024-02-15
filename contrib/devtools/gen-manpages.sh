@@ -10,11 +10,11 @@ BUILDDIR=${BUILDDIR:-$TOPDIR}
 BINDIR=${BINDIR:-$BUILDDIR/src}
 MANDIR=${MANDIR:-$TOPDIR/doc/man}
 
-BITCOIND=${BITCOIND:-$BINDIR/smartloopaid}
-BITCOINCLI=${BITCOINCLI:-$BINDIR/smartloopai-cli}
-BITCOINTX=${BITCOINTX:-$BINDIR/smartloopai-tx}
-WALLET_TOOL=${WALLET_TOOL:-$BINDIR/smartloopai-wallet}
-BITCOINQT=${BITCOINQT:-$BINDIR/qt/smartloopai-qt}
+BITCOIND=${BITCOIND:-$BINDIR/halfyd}
+BITCOINCLI=${BITCOINCLI:-$BINDIR/halfy-cli}
+BITCOINTX=${BITCOINTX:-$BINDIR/halfy-tx}
+WALLET_TOOL=${WALLET_TOOL:-$BINDIR/halfy-wallet}
+BITCOINQT=${BITCOINQT:-$BINDIR/qt/halfy-qt}
 
 [ ! -x $BITCOIND ] && echo "$BITCOIND not found or not executable." && exit 1
 
@@ -38,8 +38,8 @@ fi
 read -r -a BTCVER <<< "$($BITCOINCLI --version | head -n1 | awk -F'[ -]' '{ print $6, $7 }')"
 
 # Create a footer file with copyright content.
-# This gets autodetected fine for smartloopaid if --version-string is not set,
-# but has different outcomes for smartloopai-qt and smartloopai-cli.
+# This gets autodetected fine for halfyd if --version-string is not set,
+# but has different outcomes for halfy-qt and halfy-cli.
 echo "[COPYRIGHT]" > footer.h2m
 $BITCOIND --version | sed -n '1!p' >> footer.h2m
 

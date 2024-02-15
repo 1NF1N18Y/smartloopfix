@@ -52,7 +52,7 @@ using WalletOrderForm = std::vector<std::pair<std::string, std::string>>;
 using WalletValueMap = std::map<std::string, std::string>;
 
 namespace CoinJoin {
-//! Interface for the wallet constrained src/coinjoin part of a smartloopai node (smartloopaid process).
+//! Interface for the wallet constrained src/coinjoin part of a halfy node (halfyd process).
 class Client
 {
 public:

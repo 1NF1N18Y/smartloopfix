@@ -1,12 +1,12 @@
 UNIX BUILD NOTES
 ====================
-Some notes on how to build SmartLoopAI Core in Unix.
+Some notes on how to build Halfy Core in Unix.
 
 (For BSD specific instructions, see `build-*bsd.md` in this directory.)
 
 Note
 ---------------------
-Always use absolute paths to configure and compile SmartLoopAI Core and the dependencies.
+Always use absolute paths to configure and compile Halfy Core and the dependencies.
 For example, when specifying the path of the dependency:
 
 	../dist/configure --enable-cxx --disable-shared --with-pic --prefix=$BDB_PREFIX
@@ -24,7 +24,7 @@ make
 make install # optional
 ```
 
-This will build smartloopai-qt as well, if the dependencies are met.
+This will build halfy-qt as well, if the dependencies are met.
 
 Dependencies
 ---------------------
@@ -55,7 +55,7 @@ Memory Requirements
 --------------------
 
 C++ compilers are memory-hungry. It is recommended to have at least 1.5 GB of
-memory available when compiling SmartLoopAI Core. On systems with less, gcc can be
+memory available when compiling Halfy Core. On systems with less, gcc can be
 tuned to conserve memory with additional CXXFLAGS:
 
 
@@ -89,7 +89,7 @@ SQLite is required for the wallet:
 
     sudo apt install libsqlite3-dev
 
-To build SmartLoopAI Core without wallet, see [*Disable-wallet mode*](#disable-wallet-mode)
+To build Halfy Core without wallet, see [*Disable-wallet mode*](#disable-wallet-mode)
 
 Optional port mapping libraries (see: `--with-miniupnpc`, `--enable-upnp-default`, and `--with-natpmp`, `--enable-natpmp-default`):
 
@@ -105,7 +105,7 @@ GMP dependencies (provides platform-optimized routines):
 
 GUI dependencies:
 
-If you want to build smartloopai-qt, make sure that the required packages for Qt development
+If you want to build halfy-qt, make sure that the required packages for Qt development
 are installed. Qt 5 is necessary to build the GUI.
 To build without GUI pass `--without-gui`.
 
@@ -121,7 +121,7 @@ libqrencode (optional) can be installed with:
 
     sudo apt-get install libqrencode-dev
 
-Once these are installed, they will be found by configure and a smartloopai-qt executable will be
+Once these are installed, they will be found by configure and a halfy-qt executable will be
 built by default.
 
 
@@ -152,7 +152,7 @@ SQLite is required for the wallet:
 
     sudo dnf install sqlite-devel
 
-To build SmartLoopAI Core without wallet, see [*Disable-wallet mode*](#disable-wallet-mode)
+To build Halfy Core without wallet, see [*Disable-wallet mode*](#disable-wallet-mode)
 
 Optional port mapping libraries (see: `--with-miniupnpc`, `--enable-upnp-default`, and `--with-natpmp`, `--enable-natpmp-default`):
 
@@ -168,7 +168,7 @@ GMP dependencies (provides platform-optimized routines):
 
 GUI dependencies:
 
-If you want to build smartloopai-qt, make sure that the required packages for Qt development
+If you want to build halfy-qt, make sure that the required packages for Qt development
 are installed. Qt 5 is necessary to build the GUI.
 To build without GUI pass `--without-gui`.
 
@@ -184,12 +184,12 @@ libqrencode (optional) can be installed with:
 
     sudo dnf install qrencode-devel
 
-Once these are installed, they will be found by configure and a smartloopai-qt executable will be
+Once these are installed, they will be found by configure and a halfy-qt executable will be
 built by default.
 
 Notes
 -----
-The release is built with GCC and then "strip smartloopaid" to strip the debug
+The release is built with GCC and then "strip halfyd" to strip the debug
 symbols, which reduces the executable size by about 90%.
 
 
@@ -227,7 +227,7 @@ like so:
 
 from the root of the repository.
 
-Otherwise, you can build SmartLoopAI Core from self-compiled [depends](/depends/README.md).
+Otherwise, you can build Halfy Core from self-compiled [depends](/depends/README.md).
 
 **Note**: You only need Berkeley DB if the wallet is enabled (see [*Disable-wallet mode*](#disable-wallet-mode)).
 
@@ -242,7 +242,7 @@ If you need to build Boost yourself:
 
 Security
 --------
-To help make your SmartLoopAI Core installation more secure by making certain attacks impossible to
+To help make your Halfy Core installation more secure by making certain attacks impossible to
 exploit even if a vulnerability is found, binaries are hardened by default.
 This can be disabled with:
 
@@ -264,7 +264,7 @@ Hardening enables the following features:
 
     To test that you have built PIE executable, install scanelf, part of paxutils, and use:
 
-    	scanelf -e ./smartloopaid
+    	scanelf -e ./halfyd
 
     The output should contain:
 
@@ -272,13 +272,13 @@ Hardening enables the following features:
     ET_DYN
 
 * _Non-executable Stack_: If the stack is executable then trivial stack-based buffer overflow exploits are possible if
-    vulnerable buffers are found. By default, SmartLoopAI Core should be built with a non-executable stack,
+    vulnerable buffers are found. By default, Halfy Core should be built with a non-executable stack,
     but if one of the libraries it uses asks for an executable stack or someone makes a mistake
     and uses a compiler extension which requires an executable stack, it will silently build an
     executable without the non-executable stack protection.
 
     To verify that the stack is non-executable after compiling use:
-    `scanelf -e ./smartloopaid`
+    `scanelf -e ./halfyd`
 
     The output should contain:
 	STK/REL/PTL
@@ -288,7 +288,7 @@ Hardening enables the following features:
 
 Disable-wallet mode
 --------------------
-When the intention is to run only a P2P node without a wallet, SmartLoopAI Core may be compiled in
+When the intention is to run only a P2P node without a wallet, Halfy Core may be compiled in
 disable-wallet mode with:
 
     ./configure --disable-wallet
@@ -309,8 +309,8 @@ Setup and Build Example: Arch Linux
 This example lists the steps necessary to setup and build a command line only, non-wallet distribution of the latest changes on Arch Linux:
 
     pacman -S git base-devel boost libevent python
-    git clone https://github.com/SmartLoopAIproject.git
-    cd smartloopai/
+    git clone https://github.com/Halfyproject.git
+    cd halfy/
     ./autogen.sh
     ./configure --disable-wallet --without-gui --without-miniupnpc
     make check
@@ -319,7 +319,7 @@ Note:
 Enabling wallet support requires either compiling against a Berkeley DB newer than 4.8 (package `db`) using `--with-incompatible-bdb`,
 or building and depending on a local version of Berkeley DB 4.8. The readily available Arch Linux packages are currently built using
 `--with-incompatible-bdb` according to the [PKGBUILD](https://projects.archlinux.org/svntogit/community.git/tree/bitcoin/trunk/PKGBUILD).
-As mentioned above, when maintaining portability of the wallet between the standard SmartLoopAI Core distributions and independently built
+As mentioned above, when maintaining portability of the wallet between the standard Halfy Core distributions and independently built
 node software is desired, Berkeley DB 4.8 must be used.
 
 

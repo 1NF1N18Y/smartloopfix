@@ -14,10 +14,10 @@ static const int MODEL_UPDATE_DELAY = 250;
 /* AskPassphraseDialog -- Maximum passphrase length */
 static const int MAX_PASSPHRASE_SIZE = 1024;
 
-/* SmartLoopAIGUI -- Size of icons in status bar */
+/* HalfyGUI -- Size of icons in status bar */
 static const int STATUSBAR_ICONSIZE = 18;
 
-/* SmartLoopAIGUI -- Size of button icons e.g. in SendCoinEntry or SignVerifyMessageDialog */
+/* HalfyGUI -- Size of button icons e.g. in SendCoinEntry or SignVerifyMessageDialog */
 static const int BUTTON_ICONSIZE = 23;
 
 static const bool DEFAULT_SPLASHSCREEN = true;
@@ -37,12 +37,12 @@ static const int TOOLTIP_WRAP_THRESHOLD = 80;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 90
 
-#define QAPP_ORG_NAME "SmartLoopAI"
-#define QAPP_ORG_DOMAIN "smartloopai.org"
-#define QAPP_APP_NAME_DEFAULT "SmartLoopAI-Qt"
-#define QAPP_APP_NAME_TESTNET "SmartLoopAI-Qt-testnet"
-#define QAPP_APP_NAME_DEVNET "SmartLoopAI-Qt-%s"
-#define QAPP_APP_NAME_REGTEST "SmartLoopAI-Qt-regtest"
+#define QAPP_ORG_NAME "Halfy"
+#define QAPP_ORG_DOMAIN "halfy.org"
+#define QAPP_APP_NAME_DEFAULT "Halfy-Qt"
+#define QAPP_APP_NAME_TESTNET "Halfy-Qt-testnet"
+#define QAPP_APP_NAME_DEVNET "Halfy-Qt-%s"
+#define QAPP_APP_NAME_REGTEST "Halfy-Qt-regtest"
 
 /* One gigabyte (GB) in bytes */
 static constexpr uint64_t GB_BYTES{1000000000};

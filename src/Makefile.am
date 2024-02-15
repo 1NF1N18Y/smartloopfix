@@ -54,7 +54,7 @@ if ENABLE_ZMQ
 LIBBITCOIN_ZMQ=libbitcoin_zmq.a
 endif
 if BUILD_BITCOIN_LIBS
-LIBBITCOINCONSENSUS=libsmartloopaiconsensus.la
+LIBBITCOINCONSENSUS=libhalfyconsensus.la
 endif
 if ENABLE_WALLET
 LIBBITCOIN_WALLET=libbitcoin_wallet.a
@@ -107,23 +107,23 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += smartloopaid
+  bin_PROGRAMS += halfyd
 endif
 
 if BUILD_BITCOIN_CLI
-  bin_PROGRAMS += smartloopai-cli
+  bin_PROGRAMS += halfy-cli
 endif
 if BUILD_BITCOIN_TX
-  bin_PROGRAMS += smartloopai-tx
+  bin_PROGRAMS += halfy-tx
 endif
 if ENABLE_WALLET
 if BUILD_BITCOIN_WALLET
-  bin_PROGRAMS += smartloopai-wallet
+  bin_PROGRAMS += halfy-wallet
 endif
 endif
 
 .PHONY: FORCE check-symbols check-security
-# smartloopai core #
+# halfy core #
 BITCOIN_CORE_H = \
   addrdb.h \
   addressindex.h \
@@ -382,7 +382,7 @@ obj/build.h: FORCE
 	  "$(abs_top_srcdir)"
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between smartloopaid and smartloopai-qt
+# server: shared between halfyd and halfy-qt
 # Contains code accessing mempool and chain state that is meant to be separated
 # from wallet and gui code (see node/README.md). Shared code should go in
 # libbitcoin_common or libbitcoin_util libraries, instead.
@@ -513,7 +513,7 @@ libbitcoin_zmq_a_SOURCES = \
 endif
 
 
-# wallet: shared between smartloopaid and smartloopai-qt, but only linked
+# wallet: shared between halfyd and halfy-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(SQLITE_CFLAGS)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -683,7 +683,7 @@ libbitcoin_consensus_a_SOURCES = \
   util/string.cpp \
   version.h
 
-# common: shared between smartloopaid, and smartloopai-qt and non-server tools
+# common: shared between halfyd, and halfy-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -770,7 +770,7 @@ if USE_LIBEVENT
 libbitcoin_util_a_SOURCES += util/url.cpp
 endif
 
-# cli: shared between smartloopai-cli and smartloopai-qt
+# cli: shared between halfy-cli and halfy-qt
 libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_cli_a_SOURCES = \
@@ -782,17 +782,17 @@ libbitcoin_cli_a_SOURCES = \
 nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# smartloopaid binary #
-smartloopaid_SOURCES = bitcoind.cpp
-smartloopaid_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-smartloopaid_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-smartloopaid_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+# halfyd binary #
+halfyd_SOURCES = bitcoind.cpp
+halfyd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+halfyd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+halfyd_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-smartloopaid_SOURCES += smartloopaid-res.rc
+halfyd_SOURCES += halfyd-res.rc
 endif
 
-smartloopaid_LDADD = \
+halfyd_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_COMMON) \
@@ -807,37 +807,37 @@ smartloopaid_LDADD = \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-smartloopaid_LDADD += $(BACKTRACE_LIB) $(BOOST_LIBS) $(BDB_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(SQLITE_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(GMP_LIBS)
+halfyd_LDADD += $(BACKTRACE_LIB) $(BOOST_LIBS) $(BDB_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(SQLITE_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(GMP_LIBS)
 
-# smartloopai-cli binary #
-smartloopai_cli_SOURCES = bitcoin-cli.cpp
-smartloopai_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-smartloopai_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-smartloopai_cli_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+# halfy-cli binary #
+halfy_cli_SOURCES = bitcoin-cli.cpp
+halfy_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+halfy_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+halfy_cli_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-smartloopai_cli_SOURCES += smartloopai-cli-res.rc
+halfy_cli_SOURCES += halfy-cli-res.rc
 endif
 
-smartloopai_cli_LDADD = \
+halfy_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO)
-smartloopai_cli_LDADD += $(BACKTRACE_LIB) $(BOOST_LIBS) $(EVENT_LIBS) $(GMP_LIBS)
+halfy_cli_LDADD += $(BACKTRACE_LIB) $(BOOST_LIBS) $(EVENT_LIBS) $(GMP_LIBS)
 #
 
-# smartloopai-tx binary #
-smartloopai_tx_SOURCES = bitcoin-tx.cpp
-smartloopai_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-smartloopai_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-smartloopai_tx_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+# halfy-tx binary #
+halfy_tx_SOURCES = bitcoin-tx.cpp
+halfy_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+halfy_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+halfy_tx_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-smartloopai_tx_SOURCES += smartloopai-tx-res.rc
+halfy_tx_SOURCES += halfy-tx-res.rc
 endif
 
-smartloopai_tx_LDADD = \
+halfy_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -846,22 +846,22 @@ smartloopai_tx_LDADD = \
   $(LIBDASHBLS) \
   $(LIBSECP256K1)
 
-smartloopai_tx_LDADD += $(BACKTRACE_LIB) $(BOOST_LIBS) $(GMP_LIBS)
+halfy_tx_LDADD += $(BACKTRACE_LIB) $(BOOST_LIBS) $(GMP_LIBS)
 #
 
-# smartloopai-wallet binary #
-smartloopai_wallet_SOURCES = bitcoin-wallet.cpp
-smartloopai_wallet_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-smartloopai_wallet_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-smartloopai_wallet_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+# halfy-wallet binary #
+halfy_wallet_SOURCES = bitcoin-wallet.cpp
+halfy_wallet_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+halfy_wallet_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+halfy_wallet_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-smartloopai_wallet_SOURCES += smartloopai-wallet-res.rc
+halfy_wallet_SOURCES += halfy-wallet-res.rc
 endif
 
 # Libraries below may be listed more than once to resolve circular dependencies (see
 # https://eli.thegreenplace.net/2013/07/09/library-order-in-static-linking#circular-dependency)
-smartloopai_wallet_LDADD = \
+halfy_wallet_LDADD = \
   $(LIBBITCOIN_WALLET_TOOL) \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_WALLET) \
@@ -878,20 +878,20 @@ smartloopai_wallet_LDADD = \
   $(LIBSECP256K1) \
   $(LIBUNIVALUE)
 
-smartloopai_wallet_LDADD += $(BACKTRACE_LIB) $(BOOST_LIBS) $(BDB_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(SQLITE_LIBS) $(ZMQ_LIBS) $(GMP_LIBS)
+halfy_wallet_LDADD += $(BACKTRACE_LIB) $(BOOST_LIBS) $(BDB_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(SQLITE_LIBS) $(ZMQ_LIBS) $(GMP_LIBS)
 #
 
-# smartloopaiconsensus library #
+# halfyconsensus library #
 if BUILD_BITCOIN_LIBS
 include_HEADERS = script/bitcoinconsensus.h
-libsmartloopaiconsensus_la_SOURCES = support/cleanse.cpp $(crypto_libbitcoin_crypto_base_a_SOURCES) $(libbitcoin_consensus_a_SOURCES)
+libhalfyconsensus_la_SOURCES = support/cleanse.cpp $(crypto_libbitcoin_crypto_base_a_SOURCES) $(libbitcoin_consensus_a_SOURCES)
 
-libsmartloopaiconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
-libsmartloopaiconsensus_la_LIBADD = $(LIBDASHBLS) $(LIBSECP256K1) $(GMP_LIBS)
-libsmartloopaiconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
-libsmartloopaiconsensus_la_CPPFLAGS += -I$(srcdir)/dashbls/include -I$(srcdir)/dashbls/depends/relic/include -I$(srcdir)/dashbls/depends/minialloc/include
-libsmartloopaiconsensus_la_CPPFLAGS += -I$(srcdir)/immer
-libsmartloopaiconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libhalfyconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
+libhalfyconsensus_la_LIBADD = $(LIBDASHBLS) $(LIBSECP256K1) $(GMP_LIBS)
+libhalfyconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
+libhalfyconsensus_la_CPPFLAGS += -I$(srcdir)/dashbls/include -I$(srcdir)/dashbls/depends/relic/include -I$(srcdir)/dashbls/depends/minialloc/include
+libhalfyconsensus_la_CPPFLAGS += -I$(srcdir)/immer
+libhalfyconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 endif
 #

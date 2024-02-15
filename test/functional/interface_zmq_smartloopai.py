@@ -2,7 +2,7 @@
 # Copyright (c) 2018-2022 The Dash Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Test the smartloopai specific ZMQ notification interfaces."""
+"""Test the halfy specific ZMQ notification interfaces."""
 
 import configparser
 from enum import Enum
@@ -12,7 +12,7 @@ import random
 import struct
 import time
 
-from test_framework.test_framework import SmartLoopAITestFramework
+from test_framework.test_framework import HalfyTestFramework
 from test_framework.mininode import P2PInterface
 from test_framework.util import assert_equal, assert_raises_rpc_error
 from test_framework.messages import (
@@ -98,7 +98,7 @@ class TestP2PConn(P2PInterface):
                 self.send_message(self.txes[inv.hash])
 
 
-class SmartLoopAIZMQTest (SmartLoopAITestFramework):
+class HalfyZMQTest (HalfyTestFramework):
     def set_test_params(self):
         # That's where the zmq publisher will listen for subscriber
         self.address = "tcp://127.0.0.1:28333"
@@ -109,8 +109,8 @@ class SmartLoopAIZMQTest (SmartLoopAITestFramework):
 
         extra_args = [[]] * 5
         extra_args[0] = node0_extra_args
-        self.set_smartloopai_test_params(5, 4, fast_dip3_enforcement=True, extra_args=extra_args)
-        self.set_smartloopai_llmq_test_params(4, 4)
+        self.set_halfy_test_params(5, 4, fast_dip3_enforcement=True, extra_args=extra_args)
+        self.set_halfy_llmq_test_params(4, 4)
 
     def skip_test_if_missing_module(self):
         self.skip_if_no_py3_zmq()
@@ -119,7 +119,7 @@ class SmartLoopAIZMQTest (SmartLoopAITestFramework):
 
     def run_test(self):
         self.subscribers = {}
-        # Check that smartloopaid has been built with ZMQ enabled.
+        # Check that halfyd has been built with ZMQ enabled.
         config = configparser.ConfigParser()
         config.read_file(open(self.options.configfile))
         import zmq
@@ -139,7 +139,7 @@ class SmartLoopAIZMQTest (SmartLoopAITestFramework):
             # Wait a moment to avoid subscribing to recovered sig in the test before the one from the chainlock
             # has been sent which leads to test failure.
             time.sleep(1)
-            # Test all smartloopai related ZMQ publisher
+            # Test all halfy related ZMQ publisher
             self.test_recovered_signature_publishers()
             self.test_chainlock_publishers()
             self.test_governance_publishers()
@@ -368,7 +368,7 @@ class SmartLoopAIZMQTest (SmartLoopAITestFramework):
             "end_epoch": proposal_time + 60,
             "payment_amount": 5,
             "payment_address": self.nodes[0].getnewaddress(),
-            "url": "http://smartloopai.space/"
+            "url": "http://halfy.space/"
         }
         proposal_hex = ''.join(format(x, '02x') for x in json.dumps(proposal_data).encode())
         collateral = self.nodes[0].gobject("prepare", "0", proposal_rev, proposal_time, proposal_hex)
@@ -442,4 +442,4 @@ class SmartLoopAIZMQTest (SmartLoopAITestFramework):
         ])
 
 if __name__ == '__main__':
-    SmartLoopAIZMQTest().main()
+    HalfyZMQTest().main()

@@ -35,38 +35,38 @@ extern "C" {
 
 #define BITCOINCONSENSUS_API_VER 0
 
-typedef enum smartloopaiconsensus_error_t
+typedef enum halfyconsensus_error_t
 {
-    smartloopaiconsensus_ERR_OK = 0,
-    smartloopaiconsensus_ERR_TX_INDEX,
-    smartloopaiconsensus_ERR_TX_SIZE_MISMATCH,
-    smartloopaiconsensus_ERR_TX_DESERIALIZE,
-    smartloopaiconsensus_ERR_INVALID_FLAGS,
-} smartloopaiconsensus_error;
+    halfyconsensus_ERR_OK = 0,
+    halfyconsensus_ERR_TX_INDEX,
+    halfyconsensus_ERR_TX_SIZE_MISMATCH,
+    halfyconsensus_ERR_TX_DESERIALIZE,
+    halfyconsensus_ERR_INVALID_FLAGS,
+} halfyconsensus_error;
 
 /** Script verification flags */
 enum
 {
-    smartloopaiconsensus_SCRIPT_FLAGS_VERIFY_NONE                = 0,
-    smartloopaiconsensus_SCRIPT_FLAGS_VERIFY_P2SH                = (1U << 0), // evaluate P2SH (BIP16) subscripts
-    smartloopaiconsensus_SCRIPT_FLAGS_VERIFY_DERSIG              = (1U << 2), // enforce strict DER (BIP66) compliance
-    smartloopaiconsensus_SCRIPT_FLAGS_VERIFY_NULLDUMMY           = (1U << 4), // enforce NULLDUMMY (BIP147)
-    smartloopaiconsensus_SCRIPT_FLAGS_VERIFY_CHECKLOCKTIMEVERIFY = (1U << 9), // enable CHECKLOCKTIMEVERIFY (BIP65)
-    smartloopaiconsensus_SCRIPT_FLAGS_VERIFY_CHECKSEQUENCEVERIFY = (1U << 10), // enable CHECKSEQUENCEVERIFY (BIP112)
-    smartloopaiconsensus_SCRIPT_FLAGS_VERIFY_ALL                 = smartloopaiconsensus_SCRIPT_FLAGS_VERIFY_P2SH | smartloopaiconsensus_SCRIPT_FLAGS_VERIFY_DERSIG |
-                                                            smartloopaiconsensus_SCRIPT_FLAGS_VERIFY_NULLDUMMY | smartloopaiconsensus_SCRIPT_FLAGS_VERIFY_CHECKLOCKTIMEVERIFY |
-                                                            smartloopaiconsensus_SCRIPT_FLAGS_VERIFY_CHECKSEQUENCEVERIFY
+    halfyconsensus_SCRIPT_FLAGS_VERIFY_NONE                = 0,
+    halfyconsensus_SCRIPT_FLAGS_VERIFY_P2SH                = (1U << 0), // evaluate P2SH (BIP16) subscripts
+    halfyconsensus_SCRIPT_FLAGS_VERIFY_DERSIG              = (1U << 2), // enforce strict DER (BIP66) compliance
+    halfyconsensus_SCRIPT_FLAGS_VERIFY_NULLDUMMY           = (1U << 4), // enforce NULLDUMMY (BIP147)
+    halfyconsensus_SCRIPT_FLAGS_VERIFY_CHECKLOCKTIMEVERIFY = (1U << 9), // enable CHECKLOCKTIMEVERIFY (BIP65)
+    halfyconsensus_SCRIPT_FLAGS_VERIFY_CHECKSEQUENCEVERIFY = (1U << 10), // enable CHECKSEQUENCEVERIFY (BIP112)
+    halfyconsensus_SCRIPT_FLAGS_VERIFY_ALL                 = halfyconsensus_SCRIPT_FLAGS_VERIFY_P2SH | halfyconsensus_SCRIPT_FLAGS_VERIFY_DERSIG |
+                                                            halfyconsensus_SCRIPT_FLAGS_VERIFY_NULLDUMMY | halfyconsensus_SCRIPT_FLAGS_VERIFY_CHECKLOCKTIMEVERIFY |
+                                                            halfyconsensus_SCRIPT_FLAGS_VERIFY_CHECKSEQUENCEVERIFY
 };
 
 /// Returns 1 if the input nIn of the serialized transaction pointed to by
 /// txTo correctly spends the scriptPubKey pointed to by scriptPubKey under
 /// the additional constraints specified by flags.
 /// If not nullptr, err will contain an error/success code for the operation
-EXPORT_SYMBOL int smartloopaiconsensus_verify_script(const unsigned char *scriptPubKey, unsigned int scriptPubKeyLen,
+EXPORT_SYMBOL int halfyconsensus_verify_script(const unsigned char *scriptPubKey, unsigned int scriptPubKeyLen,
                                     const unsigned char *txTo        , unsigned int txToLen,
-                                    unsigned int nIn, unsigned int flags, smartloopaiconsensus_error* err);
+                                    unsigned int nIn, unsigned int flags, halfyconsensus_error* err);
 
-EXPORT_SYMBOL unsigned int smartloopaiconsensus_version();
+EXPORT_SYMBOL unsigned int halfyconsensus_version();
 
 #ifdef __cplusplus
 } // extern "C"

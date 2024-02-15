@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2020 The Bitcoin Core developers
 // Copyright (c) 2014-2023 The Dash Core developers
-// Copyright (c) 2024 The SmartLoopAI Core developers
+// Copyright (c) 2024 The Halfy Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -239,7 +239,7 @@ public:
         pchMessageStart[1] = 0x86;
         pchMessageStart[2] = 0xde;
         pchMessageStart[3] = 0x57;
-        nDefaultPort = 15694;
+        nDefaultPort = 8548;
         nDefaultPlatformP2PPort = 26656;
         nDefaultPlatformHTTPPort = 443;
         nPruneAfterHeight = 100000;
@@ -282,12 +282,12 @@ public:
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,64);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,191);
-        // SmartLoopAI BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+        // Halfy BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
-        // SmartLoopAI BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
+        // Halfy BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
 
-        // SmartLoopAI BIP44 coin type is '5'
+        // Halfy BIP44 coin type is '5'
         nExtCoinType = 5;
 
 
@@ -462,12 +462,12 @@ public:
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,66);
         // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,193);
-        // Testnet SmartLoopAI BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet Halfy BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        // Testnet SmartLoopAI BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet Halfy BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        // Testnet SmartLoopAI BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Halfy BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         // long living quorum params
@@ -643,12 +643,12 @@ public:
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,66);
         // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,193);
-        // Testnet SmartLoopAI BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet Halfy BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        // Testnet SmartLoopAI BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet Halfy BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        // Testnet SmartLoopAI BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Halfy BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         // long living quorum params
@@ -948,18 +948,18 @@ public:
             0
         };
 
-        // Regtest SmartLoopAI addresses start with 'y'
+        // Regtest Halfy addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,65);
-        // Regtest SmartLoopAI script addresses start with '8' or '9'
+        // Regtest Halfy script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,66);
         // Regtest private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,193);
-        // Regtest SmartLoopAI BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Regtest Halfy BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        // Regtest SmartLoopAI BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Regtest Halfy BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        // Regtest SmartLoopAI BIP44 coin type is '1' (All coin's testnet default)
+        // Regtest Halfy BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         // long living quorum params

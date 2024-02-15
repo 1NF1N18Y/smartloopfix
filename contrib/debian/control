@@ -1,8 +1,8 @@
-Source: smartloopai
+Source: halfy
 Section: utils
 Priority: optional
-Maintainer: Holger Schinzel <holger@smartloopai.org>
-Uploaders: Holger Schinzel <holger@smartloopai.org>
+Maintainer: Holger Schinzel <holger@halfy.org>
+Uploaders: Holger Schinzel <holger@halfy.org>
 Build-Depends: debhelper,
  devscripts,
  automake,
@@ -21,45 +21,45 @@ Build-Depends: debhelper,
  python,
  libzmq3-dev
 Standards-Version: 3.9.2
-Homepage: https://www.smartloopai.org/
-Vcs-Git: git://github.com/smartloopaipay/smartloopai.git
-Vcs-Browser: https://github.com/SmartLoopAIproject
+Homepage: https://www.halfy.org/
+Vcs-Git: git://github.com/halfypay/halfy.git
+Vcs-Browser: https://github.com/Halfyproject
 
-Package: smartloopaid
+Package: halfyd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- SmartLoopAI is an experimental new digital currency that enables instant, private
- payments to anyone, anywhere in the world. SmartLoopAI uses peer-to-peer
+ Halfy is an experimental new digital currency that enables instant, private
+ payments to anyone, anywhere in the world. Halfy uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. SmartLoopAI Core
+ and issuing money are carried out collectively by the network. Halfy Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides the daemon, smartloopaid, and the CLI tool
- smartloopai-cli to interact with the daemon.
+ This package provides the daemon, halfyd, and the CLI tool
+ halfy-cli to interact with the daemon.
 
-Package: smartloopai-qt
+Package: halfy-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- SmartLoopAI is an experimental new digital currency that enables instant, private
- payments to anyone, anywhere in the world. SmartLoopAI uses peer-to-peer
+ Halfy is an experimental new digital currency that enables instant, private
+ payments to anyone, anywhere in the world. Halfy uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. SmartLoopAI Core
+ and issuing money are carried out collectively by the network. Halfy Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides SmartLoopAI-Qt, a GUI for SmartLoopAI based on Qt.
+ This package provides Halfy-Qt, a GUI for Halfy based on Qt.
 
-Package: smartloopai-tx
+Package: halfy-tx
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer digital currency - standalone transaction tool
- SmartLoopAI is an experimental new digital currency that enables instant, private
- payments to anyone, anywhere in the world. SmartLoopAI uses peer-to-peer
+ Halfy is an experimental new digital currency that enables instant, private
+ payments to anyone, anywhere in the world. Halfy uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. SmartLoopAI Core
+ and issuing money are carried out collectively by the network. Halfy Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides smartloopai-tx, a command-line transaction creation
- tool which can be used without a smartloopai daemon.  Some means of
+ This package provides halfy-tx, a command-line transaction creation
+ tool which can be used without a halfy daemon.  Some means of
  exchanging minimal transaction data with peers is still required.

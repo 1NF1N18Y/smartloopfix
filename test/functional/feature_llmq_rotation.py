@@ -12,7 +12,7 @@ Checks LLMQs Quorum Rotation
 import struct
 from io import BytesIO
 
-from test_framework.test_framework import SmartLoopAITestFramework
+from test_framework.test_framework import HalfyTestFramework
 from test_framework.messages import CBlock, CBlockHeader, CCbTx, CMerkleBlock, FromHex, hash256, msg_getmnlistd, QuorumId, ser_uint256, sha256
 from test_framework.mininode import P2PInterface
 from test_framework.util import (
@@ -50,10 +50,10 @@ class TestP2PConn(P2PInterface):
         self.wait_for_mnlistdiff()
         return self.last_mnlistdiff
 
-class LLMQQuorumRotationTest(SmartLoopAITestFramework):
+class LLMQQuorumRotationTest(HalfyTestFramework):
     def set_test_params(self):
-        self.set_smartloopai_test_params(9, 8, fast_dip3_enforcement=True)
-        self.set_smartloopai_llmq_test_params(4, 4)
+        self.set_halfy_test_params(9, 8, fast_dip3_enforcement=True)
+        self.set_halfy_llmq_test_params(4, 4)
 
     def run_test(self):
         llmq_type=103

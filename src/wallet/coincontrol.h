@@ -101,7 +101,7 @@ public:
         vOutpoints.assign(setSelected.begin(), setSelected.end());
     }
 
-    // SmartLoopAI-specific helpers
+    // Halfy-specific helpers
 
     void UseCoinJoin(bool fUseCoinJoin)
     {

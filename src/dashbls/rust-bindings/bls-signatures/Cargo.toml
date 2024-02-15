@@ -8,8 +8,8 @@ edition = "2021"
 legacy = []
 bip32 = []
 use_serde = ["serde"]
-smartloopai_helpers = ["rand"]
-default = [ "legacy", "bip32", "smartloopai_helpers", "use_serde"]
+halfy_helpers = ["rand"]
+default = [ "legacy", "bip32", "halfy_helpers", "use_serde"]
 apple = ["bls-dash-sys/apple"]
 
 [dependencies]

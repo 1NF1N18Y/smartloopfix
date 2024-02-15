@@ -7,11 +7,11 @@ assignees: ''
 
 ---
 
-<!-- This issue tracker is only for technical issues related to SmartLoopAI Core.
+<!-- This issue tracker is only for technical issues related to Halfy Core.
 
-General smartloopai questions and/or support requests are best directed to the SmartLoopAI Forum at https://www.smartloopai.org/forum/
+General halfy questions and/or support requests are best directed to the Halfy Forum at https://www.halfy.org/forum/
 
-For reporting security issues, please read instructions at https://www.smartloopai.org/bug-bounty/
+For reporting security issues, please read instructions at https://www.halfy.org/bug-bounty/
 
 If the node is "stuck" during sync or giving "block checksum mismatch" errors, please ensure your hardware is stable by running memtest and observe CPU temperature with a load-test tool such as linpack before creating an issue! -->
 
@@ -31,7 +31,7 @@ If the node is "stuck" during sync or giving "block checksum mismatch" errors, p
 
 **System information**
 
-<!-- What version of SmartLoopAI Core are you using, where did you get it (website, self-compiled, etc)? -->
+<!-- What version of Halfy Core are you using, where did you get it (website, self-compiled, etc)? -->
 
 <!-- What type of machine are you observing the error on (OS/CPU and disk type)? -->
 

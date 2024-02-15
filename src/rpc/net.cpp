@@ -259,8 +259,8 @@ static UniValue addnode(const JSONRPCRequest& request)
         },
         RPCResult{RPCResult::Type::NONE, "", ""},
         RPCExamples{
-            HelpExampleCli("addnode", "\"192.168.0.6:15694\" \"onetry\"")
-    + HelpExampleRpc("addnode", "\"192.168.0.6:15694\", \"onetry\"")
+            HelpExampleCli("addnode", "\"192.168.0.6:8548\" \"onetry\"")
+    + HelpExampleRpc("addnode", "\"192.168.0.6:8548\", \"onetry\"")
         },
     }.Check(request);
 
@@ -303,9 +303,9 @@ static UniValue disconnectnode(const JSONRPCRequest& request)
         },
         RPCResult{RPCResult::Type::NONE, "", ""},
         RPCExamples{
-            HelpExampleCli("disconnectnode", "\"192.168.0.6:15694\"")
+            HelpExampleCli("disconnectnode", "\"192.168.0.6:8548\"")
     + HelpExampleCli("disconnectnode", "\"\" 1")
-    + HelpExampleRpc("disconnectnode", "\"192.168.0.6:15694\"")
+    + HelpExampleRpc("disconnectnode", "\"192.168.0.6:8548\"")
     + HelpExampleRpc("disconnectnode", "\"\", 1")
         },
     }.Check(request);
@@ -355,7 +355,7 @@ static UniValue getaddednodeinfo(const JSONRPCRequest& request)
                             {
                                 {RPCResult::Type::OBJ, "", "",
                                 {
-                                    {RPCResult::Type::STR, "address", "The smartloopai server IP and port we're connected to"},
+                                    {RPCResult::Type::STR, "address", "The halfy server IP and port we're connected to"},
                                     {RPCResult::Type::STR, "connected", "connection, inbound or outbound"},
                                 }},
                             }},
@@ -849,8 +849,8 @@ static UniValue addpeeraddress(const JSONRPCRequest& request)
             },
         },
         RPCExamples{
-            HelpExampleCli("addpeeraddress", "\"1.2.3.4\" 15694")
-    + HelpExampleRpc("addpeeraddress", "\"1.2.3.4\", 15694")
+            HelpExampleCli("addpeeraddress", "\"1.2.3.4\" 8548")
+    + HelpExampleRpc("addpeeraddress", "\"1.2.3.4\", 8548")
         },
     }.Check(request);
 

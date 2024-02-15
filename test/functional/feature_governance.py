@@ -2,19 +2,19 @@
 # Copyright (c) 2018-2020 The Dash Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Tests around smartloopai governance."""
+"""Tests around halfy governance."""
 
 import json
 
 from test_framework.messages import uint256_to_string
-from test_framework.test_framework import SmartLoopAITestFramework
+from test_framework.test_framework import HalfyTestFramework
 from test_framework.util import assert_equal, satoshi_round, set_node_times, wait_until
 
-class SmartLoopAIGovernanceTest (SmartLoopAITestFramework):
+class HalfyGovernanceTest (HalfyTestFramework):
     def set_test_params(self):
         self.v20_start_time = 1417713500
         # using adjusted v20 deployment params to test an edge case where superblock maturity window is equal to deployment window size
-        self.set_smartloopai_test_params(6, 5, [["-budgetparams=10:10:10", f"-vbparams=v20:{self.v20_start_time}:999999999999:10:8:6:5:0"]] * 6, fast_dip3_enforcement=True)
+        self.set_halfy_test_params(6, 5, [["-budgetparams=10:10:10", f"-vbparams=v20:{self.v20_start_time}:999999999999:10:8:6:5:0"]] * 6, fast_dip3_enforcement=True)
 
     def prepare_object(self, object_type, parent_hash, creation_time, revision, name, amount, payment_address):
         proposal_rev = revision
@@ -26,7 +26,7 @@ class SmartLoopAIGovernanceTest (SmartLoopAITestFramework):
             "end_epoch": proposal_time + 24 * 60 * 60,
             "payment_amount": float(amount),
             "payment_address": payment_address,
-            "url": "http://smartloopai.space/"
+            "url": "http://halfy.space/"
         }
         proposal_hex = ''.join(format(x, '02x') for x in json.dumps(proposal_template).encode())
         collateral_hash = self.nodes[0].gobject("prepare", parent_hash, proposal_rev, proposal_time, proposal_hex)
@@ -316,4 +316,4 @@ class SmartLoopAIGovernanceTest (SmartLoopAITestFramework):
 
 
 if __name__ == '__main__':
-    SmartLoopAIGovernanceTest().main()
+    HalfyGovernanceTest().main()

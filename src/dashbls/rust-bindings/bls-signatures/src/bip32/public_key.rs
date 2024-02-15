@@ -1,6 +1,6 @@
 use std::ffi::c_void;
 
-use bls_smartloopai_sys::{
+use bls_halfy_sys::{
     BIP32ExtendedPublicKeyFree, BIP32ExtendedPublicKeyFromBytes,
     BIP32ExtendedPublicKeyGetChainCode, BIP32ExtendedPublicKeyGetPublicKey,
     BIP32ExtendedPublicKeyIsEqual, BIP32ExtendedPublicKeyPublicChild,

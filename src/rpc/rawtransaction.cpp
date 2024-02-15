@@ -168,7 +168,7 @@ static UniValue getrawtransaction(const JSONRPCRequest& request)
                                         {RPCResult::Type::STR, "type", "The type, eg 'pubkeyhash'"},
                                         {RPCResult::Type::ARR, "addresses", "",
                                         {
-                                            {RPCResult::Type::STR, "address", "smartloopai address"},
+                                            {RPCResult::Type::STR, "address", "halfy address"},
                                         }},
                                     }},
                                 }},
@@ -516,7 +516,7 @@ static UniValue createrawtransaction(const JSONRPCRequest& request)
                 {
                     {"", RPCArg::Type::OBJ, RPCArg::Optional::OMITTED, "",
                         {
-                            {"address", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "A key-value pair. The key (string) is the smartloopai address, the value (float or string) is the amount in " + CURRENCY_UNIT},
+                            {"address", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "A key-value pair. The key (string) is the halfy address, the value (float or string) is the amount in " + CURRENCY_UNIT},
                         },
                         },
                     {"", RPCArg::Type::OBJ, RPCArg::Optional::OMITTED, "",
@@ -594,7 +594,7 @@ static UniValue decoderawtransaction(const JSONRPCRequest& request)
                                     {RPCResult::Type::STR, "type", "The type, eg 'pubkeyhash'"},
                                     {RPCResult::Type::ARR, "addresses", "",
                                     {
-                                        {RPCResult::Type::STR, "address", "smartloopai address"},
+                                        {RPCResult::Type::STR, "address", "halfy address"},
                                     }},
                                 }},
                             }},
@@ -647,7 +647,7 @@ static UniValue decodescript(const JSONRPCRequest& request)
                         {RPCResult::Type::NUM, "reqSigs", "The required signatures"},
                         {RPCResult::Type::ARR, "addresses", "",
                         {
-                            {RPCResult::Type::STR, "address", "smartloopai address"},
+                            {RPCResult::Type::STR, "address", "halfy address"},
                         }},
                         {RPCResult::Type::STR, "p2sh", "address of P2SH script wrapping this redeem script (not returned if the script is already a P2SH)"},
                     }
@@ -1020,7 +1020,7 @@ static UniValue testmempoolaccept(const JSONRPCRequest& request)
 UniValue decodepsbt(const JSONRPCRequest& request)
 {
     RPCHelpMan{"decodepsbt",
-        "\nReturn a JSON object representing the serialized, base64-encoded partially signed SmartLoopAI transaction.\n",
+        "\nReturn a JSON object representing the serialized, base64-encoded partially signed Halfy transaction.\n",
         {
             {"psbt", RPCArg::Type::STR, RPCArg::Optional::NO, "The PSBT base64 string"},
         },
@@ -1264,7 +1264,7 @@ UniValue decodepsbt(const JSONRPCRequest& request)
 UniValue combinepsbt(const JSONRPCRequest& request)
 {
     RPCHelpMan{"combinepsbt",
-        "\nCombine multiple partially signed SmartLoopAI transactions into one transaction.\n"
+        "\nCombine multiple partially signed Halfy transactions into one transaction.\n"
         "Implements the Combiner role.\n",
         {
             {"txs", RPCArg::Type::ARR, RPCArg::Optional::NO, "The base64 strings of partially signed transactions",
@@ -1390,7 +1390,7 @@ UniValue createpsbt(const JSONRPCRequest& request)
                 {
                     {"", RPCArg::Type::OBJ, RPCArg::Optional::OMITTED, "",
                         {
-                            {"address", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "A key-value pair. The key (string) is the SmartLoopAI address, the value (float or string) is the amount in " + CURRENCY_UNIT},
+                            {"address", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "A key-value pair. The key (string) is the Halfy address, the value (float or string) is the amount in " + CURRENCY_UNIT},
                         },
                         },
                     {"", RPCArg::Type::OBJ, RPCArg::Optional::OMITTED, "",

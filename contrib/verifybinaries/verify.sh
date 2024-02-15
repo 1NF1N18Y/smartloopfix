@@ -24,8 +24,8 @@ TMPFILE="hashes.tmp"
 
 SIGNATUREFILENAME="SHA256SUMS.asc"
 RCSUBDIR="test"
-HOST1="https://github.com/SmartLoopAIproject/releases/download/v"
-HOST2="https://pasta.keybase.pub/SmartLoopAI-Core-Releases/"
+HOST1="https://github.com/Halfyproject/releases/download/v"
+HOST2="https://pasta.keybase.pub/Halfy-Core-Releases/"
 BASEDIR=""
 VERSIONPREFIX=""
 RCVERSIONSTRING="rc"
@@ -122,7 +122,7 @@ if [ $RET -ne 0 ]; then
       echo "Bad signature."
    elif [ $RET -eq 2 ]; then
       #or if a gpg error has occurred
-      echo "gpg error. Do you have the SmartLoopAI Core binary release signing key installed?"
+      echo "gpg error. Do you have the Halfy Core binary release signing key installed?"
    fi
 
    echo "gpg output:"

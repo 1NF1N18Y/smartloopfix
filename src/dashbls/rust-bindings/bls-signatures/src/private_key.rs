@@ -1,6 +1,6 @@
 use std::{ffi::c_void, ops::Mul};
 
-use bls_smartloopai_sys::{
+use bls_halfy_sys::{
     CoreMPLDeriveChildSk, CoreMPLDeriveChildSkUnhardened, CoreMPLKeyGen, G1ElementMul,
     PrivateKeyFree, PrivateKeyFromBytes, PrivateKeyFromSeedBIP32, PrivateKeyGetG1Element,
     PrivateKeyIsEqual, PrivateKeySerialize, ThresholdPrivateKeyRecover,
@@ -65,8 +65,8 @@ impl PrivateKey {
         })
     }
 
-    #[cfg(feature = "smartloopai_helpers")]
-    pub fn generate_smartloopai(rng: &mut StdRng) -> Result<Self, BlsError> {
+    #[cfg(feature = "halfy_helpers")]
+    pub fn generate_halfy(rng: &mut StdRng) -> Result<Self, BlsError> {
         let seed = rng.gen::<[u8; 32]>();
         let scheme = BasicSchemeMPL::new();
         Ok(PrivateKey {
@@ -81,7 +81,7 @@ impl PrivateKey {
         })
     }
 
-    #[cfg(feature = "smartloopai_helpers")]
+    #[cfg(feature = "halfy_helpers")]
     pub fn sign(&self, message: &[u8]) -> G2Element {
         self.sign_basic(message)
     }
@@ -91,11 +91,11 @@ impl PrivateKey {
         scheme.sign(self, message)
     }
 
-    #[cfg(feature = "smartloopai_helpers")]
-    pub fn generate_smartloopai_many(count: usize, rng: &mut StdRng) -> Result<Vec<Self>, BlsError> {
+    #[cfg(feature = "halfy_helpers")]
+    pub fn generate_halfy_many(count: usize, rng: &mut StdRng) -> Result<Vec<Self>, BlsError> {
         (0..count)
             .into_iter()
-            .map(|_| Self::generate_smartloopai(rng))
+            .map(|_| Self::generate_halfy(rng))
             .collect()
     }
 

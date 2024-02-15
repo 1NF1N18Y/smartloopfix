@@ -15,4 +15,4 @@ services:
     privileged: true
     network_mode: host
     volumes:
-      - "../../..:/src/smartloopai:rw"
+      - "../../..:/src/halfy:rw"

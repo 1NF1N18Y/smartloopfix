@@ -7,7 +7,7 @@
 Tests correspond to code in rpc/net.cpp.
 """
 
-from test_framework.test_framework import SmartLoopAITestFramework
+from test_framework.test_framework import HalfyTestFramework
 from test_framework.util import (
     assert_equal,
     assert_greater_than_or_equal,
@@ -36,9 +36,9 @@ def assert_net_servicesnames(servicesflag, servicenames):
     assert servicesflag_generated == servicesflag
 
 
-class NetTest(SmartLoopAITestFramework):
+class NetTest(HalfyTestFramework):
     def set_test_params(self):
-        self.set_smartloopai_test_params(3, 1, fast_dip3_enforcement=True)
+        self.set_halfy_test_params(3, 1, fast_dip3_enforcement=True)
         self.supports_cli = False
 
     def run_test(self):

@@ -1,11 +1,11 @@
 Sample configuration files for:
 ```
-SystemD: smartloopaid.service
-Upstart: smartloopaid.conf
-OpenRC:  smartloopaid.openrc
-         smartloopaid.openrcconf
-CentOS:  smartloopaid.init
-macOS:   org.smartloopai.smartloopaid.plist
+SystemD: halfyd.service
+Upstart: halfyd.conf
+OpenRC:  halfyd.openrc
+         halfyd.openrcconf
+CentOS:  halfyd.init
+macOS:   org.halfy.halfyd.plist
 ```
 have been made available to assist packagers in creating node packages here.
 

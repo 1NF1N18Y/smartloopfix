@@ -61,7 +61,7 @@ struct ChainTxData {
 
 /**
  * CChainParams defines various tweakable parameters of a given instance of the
- * SmartLoopAI system.
+ * Halfy system.
  */
 class CChainParams
 {

@@ -180,10 +180,10 @@ void RegisterCoinJoinRPCCommands(CRPCTable &t)
 static const CRPCCommand commands[] =
     { //  category              name                      actor (function)         argNames
         //  --------------------- ------------------------  ---------------------------------
-        { "smartloopai",               "getpoolinfo",            &getpoolinfo,            {} },
-        { "smartloopai",               "getcoinjoininfo",        &getcoinjoininfo,        {} },
+        { "halfy",               "getpoolinfo",            &getpoolinfo,            {} },
+        { "halfy",               "getcoinjoininfo",        &getcoinjoininfo,        {} },
 #ifdef ENABLE_WALLET
-        { "smartloopai",               "coinjoin",               &coinjoin,               {} },
+        { "halfy",               "coinjoin",               &coinjoin,               {} },
 #endif // ENABLE_WALLET
 };
 // clang-format on

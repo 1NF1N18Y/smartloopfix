@@ -7,8 +7,8 @@ export LC_ALL=C
 set -e
 
 ROOTDIR=dist
-BUNDLE="${ROOTDIR}/SmartLoopAI-Qt.app"
-BINARY="${BUNDLE}/Contents/MacOS/SmartLoopAI-Qt"
+BUNDLE="${ROOTDIR}/Halfy-Qt.app"
+BINARY="${BUNDLE}/Contents/MacOS/Halfy-Qt"
 SIGNAPPLE=signapple
 TEMPDIR=sign.temp
 ARCH=$(${SIGNAPPLE} info ${BINARY} | head -n 1 | cut -d " " -f 1)

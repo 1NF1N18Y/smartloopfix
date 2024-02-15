@@ -6,17 +6,17 @@ reset-files.bash
 *.tar.gz
 
 *.exe
-src/smartloopai
-src/smartloopaid
-src/smartloopai-cli
-src/smartloopai-tx
-src/smartloopai-wallet
+src/halfy
+src/halfyd
+src/halfy-cli
+src/halfy-tx
+src/halfy-wallet
 src/test/fuzz/*
 !src/test/fuzz/*.*
-src/test/test_smartloopai
-src/qt/test/test_smartloopai-qt
+src/test/test_halfy
+src/qt/test/test_halfy-qt
 src/qt/res/css/colors/*
-src/bench/bench_smartloopai
+src/bench/bench_halfy
 
 # autoreconf
 Makefile.in
@@ -93,15 +93,15 @@ libconftest.dylib*
 *.qm
 Makefile
 !depends/Makefile
-smartloopai-qt
-SmartLoopAI-Qt.app
+halfy-qt
+Halfy-Qt.app
 
 # Qt Creator
 Makefile.am.user
 
 # Unit-tests
 Makefile.test
-smartloopai-qt_test
+halfy-qt_test
 
 # Resources cpp
 qrc_*.cpp
@@ -118,7 +118,7 @@ releases
 *.gcno
 *.gcda
 /*.info
-test_smartloopai.coverage/
+test_halfy.coverage/
 total.coverage/
 coverage_percent.txt
 
@@ -136,15 +136,15 @@ test/cache/*
 .autotools
 /doc/doxygen/
 
-libsmartloopaiconsensus.pc
+libhalfyconsensus.pc
 contrib/devtools/split-debug.sh
-src/qt/smartloopai-qt.bash
+src/qt/halfy-qt.bash
 qa/pull-tester/tests-config.sh
 
 #development symlinks
-smartloopai-cli
-smartloopaid
-smartloopai-qt
+halfy-cli
+halfyd
+halfy-qt
 make
 
 /docker/bin

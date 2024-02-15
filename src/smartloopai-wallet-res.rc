@@ -16,14 +16,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "SmartLoopAI Core"
-            VALUE "FileDescription",    "smartloopai-wallet (CLI tool for " PACKAGE_NAME " wallets)"
+            VALUE "CompanyName",        "Halfy Core"
+            VALUE "FileDescription",    "halfy-wallet (CLI tool for " PACKAGE_NAME " wallets)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "smartloopai-wallet"
+            VALUE "InternalName",       "halfy-wallet"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "smartloopai-wallet.exe"
-            VALUE "ProductName",        "smartloopai-wallet"
+            VALUE "OriginalFilename",   "halfy-wallet.exe"
+            VALUE "ProductName",        "halfy-wallet"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

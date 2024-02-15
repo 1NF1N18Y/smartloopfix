@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef SMLP_CRYPTO_BLS_H
-#define SMLP_CRYPTO_BLS_H
+#ifndef HALFY_CRYPTO_BLS_H
+#define HALFY_CRYPTO_BLS_H
 
 #include <hash.h>
 #include <serialize.h>
@@ -591,4 +591,4 @@ using BLSVerificationVectorPtr = std::shared_ptr<std::vector<CBLSPublicKey>>;
 
 bool BLSInit();
 
-#endif // SMLP_CRYPTO_BLS_H
+#endif // HALFY_CRYPTO_BLS_H

@@ -41,7 +41,7 @@ enum class LLMQType : uint8_t {
 };
 
 // Configures a LLMQ and its DKG
-// See https://github.com/smartloopaipay/dips/blob/master/dip-0006.md for more details
+// See https://github.com/halfypay/dips/blob/master/dip-0006.md for more details
 struct LLMQParams {
     LLMQType type;
 
@@ -167,7 +167,7 @@ static constexpr std::array<LLMQParams, 14> available_llmqs = {
     },
 
     /**
-     * llmq_test (SmartLoopAI Core 0.17) aka llmq_test_v17
+     * llmq_test (Halfy Core 0.17) aka llmq_test_v17
      * This quorum is only used for testing
      *
      */
@@ -424,7 +424,7 @@ static constexpr std::array<LLMQParams, 14> available_llmqs = {
      * This quorum is deployed on mainnet and requires
      * 80 - 100 participants
      *
-     * Used by SmartLoopAI Platform
+     * Used by Halfy Platform
      */
     LLMQParams{
         .type = LLMQType::LLMQ_100_67,
@@ -451,7 +451,7 @@ static constexpr std::array<LLMQParams, 14> available_llmqs = {
      * This quorum is deployed on Testnet and requires
      * 25 participants
      *
-     * Used by SmartLoopAI Platform
+     * Used by Halfy Platform
      */
     LLMQParams{
         .type = LLMQType::LLMQ_25_67,

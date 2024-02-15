@@ -62,13 +62,13 @@ class AbandonConflictTest(BitcoinTestFramework):
         inputs.append({"txid": txB, "vout": nB})
         outputs = {}
 
-        outputs[self.nodes[0].getnewaddress()] = Decimal("14.915693")
+        outputs[self.nodes[0].getnewaddress()] = Decimal("14.98547")
         outputs[self.nodes[1].getnewaddress()] = Decimal("5")
         signed = self.nodes[0].signrawtransactionwithwallet(self.nodes[0].createrawtransaction(inputs, outputs))
         txAB1 = self.nodes[0].sendrawtransaction(signed["hex"])
 
-        # Identify the 14.915693btc output
-        nAB = next(tx_out["vout"] for tx_out in self.nodes[0].gettransaction(txAB1)["details"] if tx_out["amount"] == Decimal("14.915693"))
+        # Identify the 14.98547btc output
+        nAB = next(tx_out["vout"] for tx_out in self.nodes[0].gettransaction(txAB1)["details"] if tx_out["amount"] == Decimal("14.98547"))
 
         #Create a child tx spending AB1 and C
         inputs = []
@@ -140,13 +140,13 @@ class AbandonConflictTest(BitcoinTestFramework):
         # But its child tx remains abandoned
         self.nodes[0].sendrawtransaction(signed["hex"])
         newbalance = self.nodes[0].getbalance()
-        assert_equal(newbalance, balance - Decimal("20") + Decimal("14.915693"))
+        assert_equal(newbalance, balance - Decimal("20") + Decimal("14.98547"))
         balance = newbalance
 
         # Send child tx again so it is unabandoned
         self.nodes[0].sendrawtransaction(signed2["hex"])
         newbalance = self.nodes[0].getbalance()
-        assert_equal(newbalance, balance - Decimal("10") - Decimal("14.915693") + Decimal("24.9996"))
+        assert_equal(newbalance, balance - Decimal("10") - Decimal("14.98547") + Decimal("24.9996"))
         balance = newbalance
 
         # Remove using high relay fee again

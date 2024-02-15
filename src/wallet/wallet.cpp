@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2020 The Bitcoin Core developers
 // Copyright (c) 2014-2023 The Dash Core developers
-// Copyright (c) 2024 The SmartLoopAI Core developers
+// Copyright (c) 2024 The Halfy Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -964,7 +964,7 @@ bool CWallet::AddToWallet(const CWalletTx& wtxIn, bool fFlushOnClose)
 
 void CWallet::LoadToWallet(CWalletTx& wtxIn)
 {
-    // If wallet doesn't have a chain (e.g smartloopai-wallet), don't bother to update txn.
+    // If wallet doesn't have a chain (e.g halfy-wallet), don't bother to update txn.
     if (HaveChain()) {
         bool active;
         int height;

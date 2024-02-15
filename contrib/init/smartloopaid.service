@@ -1,53 +1,53 @@
 # It is not recommended to modify this file in-place, because it will
 # be overwritten during package upgrades. If you want to add further
 # options or overwrite existing ones then use
-# $ systemctl edit smartloopaid.service
+# $ systemctl edit halfyd.service
 # See "man systemd.service" for details.
 
 # Note that almost all daemon options could be specified in
-# /etc/smartloopai/smartloopai.conf, but keep in mind those explicitly
+# /etc/halfy/halfy.conf, but keep in mind those explicitly
 # specified as arguments in ExecStart= will override those in the
 # config file.
 
 [Unit]
-Description=SmartLoopAI daemon
+Description=Halfy daemon
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/smartloopaid -daemon \
-                                                            -pid=/run/smartloopaid/smartloopaid.pid \
-                                                            -conf=/etc/smartloopai/smartloopai.conf  \
-                                                            -datadir=/var/lib/smartloopaid
+ExecStart=/usr/bin/halfyd -daemon \
+                                                            -pid=/run/halfyd/halfyd.pid \
+                                                            -conf=/etc/halfy/halfy.conf  \
+                                                            -datadir=/var/lib/halfyd
 
 # Make sure the config directory is readable by the service user
 PermissionsStartOnly=true
-ExecStartPre=/bin/chgrp smartloopai /etc/smartloopai
+ExecStartPre=/bin/chgrp halfy /etc/halfy
 
 # Process management
 ####################
 
 Type=forking
-PIDFile=/run/smartloopaid/smartloopaid.pid
+PIDFile=/run/halfyd/halfyd.pid
 Restart=on-failure
 TimeoutStopSec=600
 
 # Directory creation and permissions
 ####################################
 
-# Run as smartloopai:smartloopai
-User=smartloopai
-Group=smartloopai
+# Run as halfy:halfy
+User=halfy
+Group=halfy
 
-# /run/smartloopaid
-RuntimeDirectory=smartloopaid
+# /run/halfyd
+RuntimeDirectory=halfyd
 RuntimeDirectoryMode=0710
 
-# /etc/smartloopai
-ConfigurationDirectory=smartloopai
+# /etc/halfy
+ConfigurationDirectory=halfy
 ConfigurationDirectoryMode=0710
 
-# /var/lib/smartloopaid
-StateDirectory=smartloopaid
+# /var/lib/halfyd
+StateDirectory=halfyd
 StateDirectoryMode=0710
 
 # Hardening measures

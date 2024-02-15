@@ -52,11 +52,11 @@ RUN for i in $(seq -w 1 ${builder_count}); do    \
 
 ENTRYPOINT ["/root/.config/guix/current/bin/guix-daemon","--build-users-group=guixbuild"]
 
-RUN git clone https://github.com/SmartLoopAIproject.git /smartloopai
+RUN git clone https://github.com/Halfyproject.git /halfy
 
 RUN mkdir base_cache sources SDKs
 
-WORKDIR /smartloopai
+WORKDIR /halfy
 
 RUN mkdir -p depends/SDKs && \
     curl -L https://bitcoincore.org/depends-sources/sdks/Xcode-12.2-12B45b-extracted-SDK-with-libcxx-headers.tar.gz | tar -xz -C depends/SDKs

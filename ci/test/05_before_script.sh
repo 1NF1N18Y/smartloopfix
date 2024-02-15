@@ -8,9 +8,9 @@ export LC_ALL=C.UTF-8
 
 # Make sure default datadir does not exist and is never read by creating a dummy file
 if [ "$TRAVIS_OS_NAME" == "osx" ]; then
-  echo > $HOME/Library/Application\ Support/SmartLoopAI
+  echo > $HOME/Library/Application\ Support/Halfy
 else
-  DOCKER_EXEC echo \> \$HOME/.smartloopai
+  DOCKER_EXEC echo \> \$HOME/.halfy
 fi
 
 DOCKER_EXEC mkdir -p ${DEPENDS_DIR}/SDKs ${DEPENDS_DIR}/sdk-sources

@@ -12,7 +12,7 @@ import re
 import os
 import os.path
 import sys
-import smartloopai_hash
+import halfy_hash
 import datetime
 import time
 import glob
@@ -48,7 +48,7 @@ def wordreverse(in_buf):
     return b''.join(out_words)
 
 def calc_hdr_hash(blk_hdr):
-    return smartloopai_hash.getPoWHash(blk_hdr)
+    return halfy_hash.getPoWHash(blk_hdr)
 
 def calc_hash_str(blk_hdr):
     hash = calc_hdr_hash(blk_hdr)

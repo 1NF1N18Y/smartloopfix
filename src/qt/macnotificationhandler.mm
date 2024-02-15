@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.smartloopai.SmartLoopAI-Qt";
+        return @"org.halfy.Halfy-Qt";
     } else {
         return [self __bundleIdentifier];
     }

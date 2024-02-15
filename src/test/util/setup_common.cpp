@@ -104,7 +104,7 @@ std::ostream& operator<<(std::ostream& os, const uint256& num)
     return os;
 }
 
-void SmartLoopAITestSetup(NodeContext& node)
+void HalfyTestSetup(NodeContext& node)
 {
     CChainState& chainstate = Assert(node.chainman)->ActiveChainstate();
 
@@ -113,7 +113,7 @@ void SmartLoopAITestSetup(NodeContext& node)
     node.llmq_ctx = std::make_unique<LLMQContext>(chainstate, *node.connman, *node.evodb, *sporkManager, *node.mempool, node.peerman, true, false);
 }
 
-void SmartLoopAITestSetupClose(NodeContext& node)
+void HalfyTestSetupClose(NodeContext& node)
 {
     node.llmq_ctx->Interrupt();
     node.llmq_ctx->Stop();
@@ -274,7 +274,7 @@ TestingSetup::TestingSetup(const std::string& chainName, const std::vector<const
         m_node.connman->Init(options);
     }
 
-    SmartLoopAITestSetup(m_node);
+    HalfyTestSetup(m_node);
 
     BlockValidationState state;
     if (!::ChainstateActive().ActivateBestChain(state)) {
@@ -284,7 +284,7 @@ TestingSetup::TestingSetup(const std::string& chainName, const std::vector<const
 
 TestingSetup::~TestingSetup()
 {
-    SmartLoopAITestSetupClose(m_node);
+    HalfyTestSetupClose(m_node);
     m_node.connman->Stop();
     m_node.peerman.reset();
     m_node.banman.reset();

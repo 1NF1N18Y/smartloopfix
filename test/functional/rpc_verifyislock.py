@@ -4,7 +4,7 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 from test_framework.messages import CTransaction, FromHex, hash256, ser_compact_size, ser_string
-from test_framework.test_framework import SmartLoopAITestFramework
+from test_framework.test_framework import HalfyTestFramework
 from test_framework.util import assert_raises_rpc_error, satoshi_round, wait_until
 
 '''
@@ -14,11 +14,11 @@ Test verifyislock rpc
 
 '''
 
-class RPCVerifyISLockTest(SmartLoopAITestFramework):
+class RPCVerifyISLockTest(HalfyTestFramework):
     def set_test_params(self):
         # -whitelist is needed to avoid the trickling logic on node0
-        self.set_smartloopai_test_params(6, 5, [["-whitelist=127.0.0.1"], [], [], [], [], []], fast_dip3_enforcement=True)
-        self.set_smartloopai_llmq_test_params(5, 3)
+        self.set_halfy_test_params(6, 5, [["-whitelist=127.0.0.1"], [], [], [], [], []], fast_dip3_enforcement=True)
+        self.set_halfy_llmq_test_params(5, 3)
 
     def get_request_id(self, tx_hex):
         tx = FromHex(CTransaction(), tx_hex)

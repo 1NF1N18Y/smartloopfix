@@ -123,8 +123,8 @@
    * @returns {Function} Returns a new `Benchmark` function.
    */
   function runInContext(context) {
-    // Exit early if unable to acquire losmartloopai.
-    var _ = context && context._ || require('losmartloopai') || root._;
+    // Exit early if unable to acquire lohalfy.
+    var _ = context && context._ || require('lohalfy') || root._;
     if (!_) {
       Benchmark.runInContext = runInContext;
       return Benchmark;
@@ -275,12 +275,12 @@
     /**
      * The Benchmark constructor.
      *
-     * Note: The Benchmark constructor exposes a handful of losmartloopai methods to
-     * make working with arrays, collections, and objects easier. The losmartloopai
+     * Note: The Benchmark constructor exposes a handful of lohalfy methods to
+     * make working with arrays, collections, and objects easier. The lohalfy
      * methods are:
-     * [`each/forEach`](https://losmartloopai.com/docs#forEach), [`forOwn`](https://losmartloopai.com/docs#forOwn),
-     * [`has`](https://losmartloopai.com/docs#has), [`indexOf`](https://losmartloopai.com/docs#indexOf),
-     * [`map`](https://losmartloopai.com/docs#map), and [`reduce`](https://losmartloopai.com/docs#reduce)
+     * [`each/forEach`](https://lohalfy.com/docs#forEach), [`forOwn`](https://lohalfy.com/docs#forOwn),
+     * [`has`](https://lohalfy.com/docs#has), [`indexOf`](https://lohalfy.com/docs#indexOf),
+     * [`map`](https://lohalfy.com/docs#map), and [`reduce`](https://lohalfy.com/docs#reduce)
      *
      * @constructor
      * @param {string} name A name to identify the benchmark.
@@ -425,10 +425,10 @@
     /**
      * The Suite constructor.
      *
-     * Note: Each Suite instance has a handful of wrapped losmartloopai methods to
-     * make working with Suites easier. The wrapped losmartloopai methods are:
-     * [`each/forEach`](https://losmartloopai.com/docs#forEach), [`indexOf`](https://losmartloopai.com/docs#indexOf),
-     * [`map`](https://losmartloopai.com/docs#map), and [`reduce`](https://losmartloopai.com/docs#reduce)
+     * Note: Each Suite instance has a handful of wrapped lohalfy methods to
+     * make working with Suites easier. The wrapped lohalfy methods are:
+     * [`each/forEach`](https://lohalfy.com/docs#forEach), [`indexOf`](https://lohalfy.com/docs#indexOf),
+     * [`map`](https://lohalfy.com/docs#map), and [`reduce`](https://lohalfy.com/docs#reduce)
      *
      * @constructor
      * @memberOf Benchmark
@@ -2293,7 +2293,7 @@
       'support': support
     });
 
-    // Add losmartloopai methods to Benchmark.
+    // Add lohalfy methods to Benchmark.
     _.each(['each', 'forEach', 'forOwn', 'has', 'indexOf', 'map', 'reduce'], function(methodName) {
       Benchmark[methodName] = _[methodName];
     });
@@ -2741,7 +2741,7 @@
 
     /*------------------------------------------------------------------------*/
 
-    // Add losmartloopai methods as Suite methods.
+    // Add lohalfy methods as Suite methods.
     _.each(['each', 'forEach', 'indexOf', 'map', 'reduce'], function(methodName) {
       var func = _[methodName];
       Suite.prototype[methodName] = function() {
@@ -2784,7 +2784,7 @@
   // Some AMD build optimizers, like r.js, check for condition patterns like the following:
   if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) {
     // Define as an anonymous module so, through path mapping, it can be aliased.
-    define(['losmartloopai', 'platform'], function(_, platform) {
+    define(['lohalfy', 'platform'], function(_, platform) {
       return runInContext({
         '_': _,
         'platform': platform

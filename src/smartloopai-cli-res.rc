@@ -16,14 +16,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "SmartLoopAI"
-            VALUE "FileDescription",    "smartloopai-cli (JSON-RPC client for " PACKAGE_NAME ")"
+            VALUE "CompanyName",        "Halfy"
+            VALUE "FileDescription",    "halfy-cli (JSON-RPC client for " PACKAGE_NAME ")"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "smartloopai-cli"
+            VALUE "InternalName",       "halfy-cli"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "smartloopai-cli.exe"
-            VALUE "ProductName",        "smartloopai-cli"
+            VALUE "OriginalFilename",   "halfy-cli.exe"
+            VALUE "ProductName",        "halfy-cli"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

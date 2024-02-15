@@ -36,7 +36,7 @@ from test_framework.script import (
     OP_RETURN,
     hash160,
 )
-from test_framework.test_framework import SmartLoopAITestFramework
+from test_framework.test_framework import HalfyTestFramework
 from test_framework.util import (
     assert_equal,
     assert_greater_than,
@@ -49,9 +49,9 @@ llmq_type_test = 100
 tiny_amount = int(Decimal("0.0007") * COIN)
 blocks_in_one_day = 576
 
-class AssetLocksTest(SmartLoopAITestFramework):
+class AssetLocksTest(HalfyTestFramework):
     def set_test_params(self):
-        self.set_smartloopai_test_params(5, 3)
+        self.set_halfy_test_params(5, 3)
 
     def skip_test_if_missing_module(self):
         self.skip_if_no_wallet()

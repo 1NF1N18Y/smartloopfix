@@ -1,10 +1,10 @@
-# `smartloopai.conf` Configuration File
+# `halfy.conf` Configuration File
 
-The configuration file is used by `smartloopaid`, `smartloopai-qt` and `smartloopai-cli`.
+The configuration file is used by `halfyd`, `halfy-qt` and `halfy-cli`.
 
 All command-line options (except for `-?`, `-help`, `-version` and `-conf`) may be specified in a configuration file, and all configuration file options (except for `includeconf`) may also be specified on the command line. Command-line options override values set in the configuration file and configuration file options override values set in the GUI.
 
-Changes to the configuration file while `smartloopaid` or `smartloopai-qt` is running only take effect after restarting.
+Changes to the configuration file while `halfyd` or `halfy-qt` is running only take effect after restarting.
 
 ## Configuration File Format
 
@@ -49,16 +49,16 @@ rpcport=4000
 
 ## Configuration File Path
 
-The configuration file is not automatically created; you can create it using your favorite text editor. By default, the configuration file name is `smartloopai.conf` and it is located in the SmartLoopAI data directory, but both the smartloopai data directory and the configuration file path may be changed using the `-datadir` and `-conf` command-line options.
+The configuration file is not automatically created; you can create it using your favorite text editor. By default, the configuration file name is `halfy.conf` and it is located in the Halfy data directory, but both the halfy data directory and the configuration file path may be changed using the `-datadir` and `-conf` command-line options.
 
-The `includeconf=<file>` option in the `smartloopai.conf` file can be used to include additional configuration files.
+The `includeconf=<file>` option in the `halfy.conf` file can be used to include additional configuration files.
 
 ### Default configuration file locations
 
 Operating System | Data Directory | Example Path
 -- | -- | --
-Windows | `%APPDATA%\SmartLoopAI\` | `C:\Users\username\AppData\Roaming\SmartLoopAI\smartloopai.conf`
-Linux | `$HOME/.smartloopai/` | `/home/username/.smartloopai/smartloopai.conf`
-macOS | `$HOME/Library/Application Support/SmartLoopAI/` | `/Users/username/Library/Application Support/SmartLoopAI/smartloopai.conf`
+Windows | `%APPDATA%\Halfy\` | `C:\Users\username\AppData\Roaming\Halfy\halfy.conf`
+Linux | `$HOME/.halfy/` | `/home/username/.halfy/halfy.conf`
+macOS | `$HOME/Library/Application Support/Halfy/` | `/Users/username/Library/Application Support/Halfy/halfy.conf`
 
-You can find an example smartloopai.conf file in [share/examples/smartloopai.conf](../share/examples/smartloopai.conf).
+You can find an example halfy.conf file in [share/examples/halfy.conf](../share/examples/halfy.conf).

@@ -1,5 +1,5 @@
-Building SmartLoopAI
+Building Halfy
 =============
 
 See doc/build-*.md for instructions on building the various
-elements of the SmartLoopAI Core reference implementation of SmartLoopAI.
+elements of the Halfy Core reference implementation of Halfy.

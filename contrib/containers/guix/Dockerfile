@@ -80,9 +80,9 @@ COPY --from=docker_root ./scripts/guix-check /usr/local/bin/guix-check
 COPY --from=docker_root ./scripts/guix-start /usr/local/bin/guix-start
 
 # Create directory for mounting and grant necessary permissions
-RUN mkdir -p /src/smartloopai && \
+RUN mkdir -p /src/halfy && \
     chown -R ${USER_ID}:${GROUP_ID} /src
-WORKDIR "/src/smartloopai"
+WORKDIR "/src/halfy"
 
 # Switch to unprivileged context
 USER ${USERNAME}

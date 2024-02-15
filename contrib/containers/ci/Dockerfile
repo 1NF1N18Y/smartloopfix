@@ -80,10 +80,10 @@ RUN pip3 install \
     yq \
     multiprocess
 
-# smartloopai_hash
-ARG SMLP_HASH_VERSION=1.4.0
-RUN git clone --depth 1 --no-tags --branch=${SMLP_HASH_VERSION} https://github.com/SmartLoopAIproject_hash
-RUN cd smartloopai_hash && pip3 install -r requirements.txt .
+# halfy_hash
+ARG HALFY_HASH_VERSION=1.4.0
+RUN git clone --depth 1 --no-tags --branch=${HALFY_HASH_VERSION} https://github.com/Halfyproject_hash
+RUN cd halfy_hash && pip3 install -r requirements.txt .
 
 ARG USER_ID=1000
 ARG GROUP_ID=1000
@@ -91,8 +91,8 @@ ARG GROUP_ID=1000
 # add user with specified (or default) user/group ids
 ENV USER_ID ${USER_ID}
 ENV GROUP_ID ${GROUP_ID}
-RUN groupadd -g ${GROUP_ID} smartloopai
-RUN useradd -u ${USER_ID} -g smartloopai -s /bin/bash -m -d /home/smartloopai smartloopai
+RUN groupadd -g ${GROUP_ID} halfy
+RUN useradd -u ${USER_ID} -g halfy -s /bin/bash -m -d /home/halfy halfy
 
 # Packages needed for all target builds
 RUN apt-get update && apt-get install $APT_ARGS \
@@ -150,7 +150,7 @@ RUN cd /tmp && \
     rm -rf /tmp/llvm.sh
 
 RUN \
-  mkdir -p /src/smartloopai && \
+  mkdir -p /src/halfy && \
   mkdir -p /cache/ccache && \
   mkdir /cache/depends && \
   mkdir /cache/sdk-sources && \
@@ -159,6 +159,6 @@ RUN \
   chown ${USER_ID}:${GROUP_ID} /cache && \
   chown ${USER_ID}:${GROUP_ID} -R /cache
 
-WORKDIR /src/smartloopai
+WORKDIR /src/halfy
 
-USER smartloopai
+USER halfy

@@ -39,17 +39,17 @@ from the root of the repository.
 
 **Note**: You only need Berkeley DB if the wallet is enabled (see the section *Disable-Wallet mode* below).
 
-## Build SmartLoopAI Core
+## Build Halfy Core
 
-1. Clone the SmartLoopAI Core source code:
+1. Clone the Halfy Core source code:
     ```shell
-    git clone https://github.com/SmartLoopAIproject
-    cd smartloopai
+    git clone https://github.com/Halfyproject
+    cd halfy
     ```
 
-2.  Build SmartLoopAI Core:
+2.  Build Halfy Core:
 
-    Configure and build the headless SmartLoopAI Core binaries as well as the GUI (if Qt is found).
+    Configure and build the headless Halfy Core binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
     ```shell
@@ -69,7 +69,7 @@ from the root of the repository.
     ```
 
 ## `disable-wallet` mode
-When the intention is to run only a P2P node without a wallet, SmartLoopAI Core may be
+When the intention is to run only a P2P node without a wallet, Halfy Core may be
 compiled in `disable-wallet` mode with:
 ```shell
 ./configure --disable-wallet
@@ -81,30 +81,30 @@ Mining is also possible in disable-wallet mode using the `getblocktemplate` RPC 
 
 ## Running
 
-SmartLoopAI Core is now available at `./src/smartloopaid`
+Halfy Core is now available at `./src/halfyd`
 
 Before running, you may create an empty configuration file:
 ```shell
-mkdir -p "/Users/${USER}/Library/Application Support/SmartLoopAI"
+mkdir -p "/Users/${USER}/Library/Application Support/Halfy"
 
-touch "/Users/${USER}/Library/Application Support/SmartLoopAI/smartloopai.conf"
+touch "/Users/${USER}/Library/Application Support/Halfy/halfy.conf"
 
-chmod 600 "/Users/${USER}/Library/Application Support/SmartLoopAI/smartloopai.conf"
+chmod 600 "/Users/${USER}/Library/Application Support/Halfy/halfy.conf"
 ```
 
-The first time you run smartloopaid, it will start downloading the blockchain. This process could take many hours, or even days on slower than average systems.
+The first time you run halfyd, it will start downloading the blockchain. This process could take many hours, or even days on slower than average systems.
 
 You can monitor the download process by looking at the debug.log file:
 ```shell
-tail -f $HOME/Library/Application\ Support/SmartLoopAI/debug.log
+tail -f $HOME/Library/Application\ Support/Halfy/debug.log
 ```
 
 ## Other commands:
 
 ```shell
-./src/smartloopaid -daemon      # Starts the smartloopai daemon.
-./src/smartloopai-cli --help    # Outputs a list of command-line options.
-./src/smartloopai-cli help      # Outputs a list of RPC commands when the daemon is running.
+./src/halfyd -daemon      # Starts the halfy daemon.
+./src/halfy-cli --help    # Outputs a list of command-line options.
+./src/halfy-cli help      # Outputs a list of RPC commands when the daemon is running.
 ```
 
 ## Notes

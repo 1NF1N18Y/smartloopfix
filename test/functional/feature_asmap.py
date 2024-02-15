@@ -4,19 +4,19 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test asmap config argument for ASN-based IP bucketing.
 
-Verify node behaviour and debug log when launching smartloopaid in these cases:
+Verify node behaviour and debug log when launching halfyd in these cases:
 
-1. `smartloopaid` with no -asmap arg, using /16 prefix for IP bucketing
+1. `halfyd` with no -asmap arg, using /16 prefix for IP bucketing
 
-2. `smartloopaid -asmap=<absolute path>`, using the unit test skeleton asmap
+2. `halfyd -asmap=<absolute path>`, using the unit test skeleton asmap
 
-3. `smartloopaid -asmap=<relative path>`, using the unit test skeleton asmap
+3. `halfyd -asmap=<relative path>`, using the unit test skeleton asmap
 
-4. `smartloopaid -asmap/-asmap=` with no file specified, using the default asmap
+4. `halfyd -asmap/-asmap=` with no file specified, using the default asmap
 
-5. `smartloopaid -asmap` with no file specified and a missing default asmap file
+5. `halfyd -asmap` with no file specified and a missing default asmap file
 
-6. `smartloopaid -asmap` with an empty (unparsable) default asmap file
+6. `halfyd -asmap` with an empty (unparsable) default asmap file
 
 The tests are order-independent.
 
@@ -39,13 +39,13 @@ class AsmapTest(BitcoinTestFramework):
         self.num_nodes = 1
 
     def test_without_asmap_arg(self):
-        self.log.info('Test smartloopaid with no -asmap arg passed')
+        self.log.info('Test halfyd with no -asmap arg passed')
         self.stop_node(0)
         with self.node.assert_debug_log(['Using /16 prefix for IP bucketing']):
             self.start_node(0)
 
     def test_asmap_with_absolute_path(self):
-        self.log.info('Test smartloopaid -asmap=<absolute path>')
+        self.log.info('Test halfyd -asmap=<absolute path>')
         self.stop_node(0)
         filename = os.path.join(self.datadir, 'my-map-file.map')
         shutil.copyfile(self.asmap_raw, filename)
@@ -54,7 +54,7 @@ class AsmapTest(BitcoinTestFramework):
         os.remove(filename)
 
     def test_asmap_with_relative_path(self):
-        self.log.info('Test smartloopaid -asmap=<relative path>')
+        self.log.info('Test halfyd -asmap=<relative path>')
         self.stop_node(0)
         name = 'ASN_map'
         filename = os.path.join(self.datadir, name)
@@ -66,20 +66,20 @@ class AsmapTest(BitcoinTestFramework):
     def test_default_asmap(self):
         shutil.copyfile(self.asmap_raw, self.default_asmap)
         for arg in ['-asmap', '-asmap=']:
-            self.log.info('Test smartloopaid {} (using default map file)'.format(arg))
+            self.log.info('Test halfyd {} (using default map file)'.format(arg))
             self.stop_node(0)
             with self.node.assert_debug_log(expected_messages(self.default_asmap)):
                 self.start_node(0, [arg])
         os.remove(self.default_asmap)
 
     def test_default_asmap_with_missing_file(self):
-        self.log.info('Test smartloopaid -asmap with missing default map file')
+        self.log.info('Test halfyd -asmap with missing default map file')
         self.stop_node(0)
         msg = "Error: Could not find asmap file \"{}\"".format(self.default_asmap)
         self.node.assert_start_raises_init_error(extra_args=['-asmap'], expected_msg=msg)
 
     def test_empty_asmap(self):
-        self.log.info('Test smartloopaid -asmap with empty map file')
+        self.log.info('Test halfyd -asmap with empty map file')
         self.stop_node(0)
         with open(self.default_asmap, "w", encoding="utf-8") as f:
             f.write("")

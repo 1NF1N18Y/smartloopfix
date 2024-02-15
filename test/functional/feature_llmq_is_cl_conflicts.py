@@ -15,7 +15,7 @@ import struct
 from test_framework.blocktools import create_block_with_mnpayments
 from test_framework.messages import CInv, CTransaction, FromHex, hash256, msg_clsig, msg_inv, ser_string, ToHex, uint256_from_str
 from test_framework.mininode import P2PInterface
-from test_framework.test_framework import SmartLoopAITestFramework
+from test_framework.test_framework import HalfyTestFramework
 from test_framework.util import assert_equal, assert_raises_rpc_error, hex_str_to_bytes, wait_until
 
 
@@ -47,10 +47,10 @@ class TestP2PConn(P2PInterface):
                 self.send_message(self.islocks[inv.hash])
 
 
-class LLMQ_IS_CL_Conflicts(SmartLoopAITestFramework):
+class LLMQ_IS_CL_Conflicts(HalfyTestFramework):
     def set_test_params(self):
-        self.set_smartloopai_test_params(5, 4, fast_dip3_enforcement=True)
-        self.set_smartloopai_llmq_test_params(4, 4)
+        self.set_halfy_test_params(5, 4, fast_dip3_enforcement=True)
+        self.set_halfy_llmq_test_params(4, 4)
         self.supports_cli = False
 
     def run_test(self):

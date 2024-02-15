@@ -7,7 +7,7 @@
 import os
 
 from test_framework.address import ADDRESS_BCRT1_UNSPENDABLE
-from test_framework.test_framework import SmartLoopAITestFramework
+from test_framework.test_framework import HalfyTestFramework
 from test_framework.util import (
     assert_equal,
     force_finish_mnsync,
@@ -25,9 +25,9 @@ def notify_outputname(walletname, txid):
     return txid if os.name == 'nt' else '{}_{}'.format(walletname, txid)
 
 
-class NotificationsTest(SmartLoopAITestFramework):
+class NotificationsTest(HalfyTestFramework):
     def set_test_params(self):
-        self.set_smartloopai_test_params(5, 3, fast_dip3_enforcement=True)
+        self.set_halfy_test_params(5, 3, fast_dip3_enforcement=True)
 
     def setup_network(self):
         self.wallet = ''.join(chr(i) for i in range(FILE_CHAR_START, FILE_CHAR_END) if chr(i) not in FILE_CHARS_DISALLOWED)

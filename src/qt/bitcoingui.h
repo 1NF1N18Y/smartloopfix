@@ -329,7 +329,7 @@ public Q_SLOTS:
     void gotoSignMessageTab(QString addr = "");
     /** Show Sign/Verify Message dialog and switch to verify message tab */
     void gotoVerifyMessageTab(QString addr = "");
-    /** Show load Partially Signed SmartLoopAI Transaction dialog */
+    /** Show load Partially Signed Halfy Transaction dialog */
     void gotoLoadPSBT();
 
     /** Show open dialog */
@@ -352,7 +352,7 @@ public Q_SLOTS:
     void showPeers();
     void showRepair();
 
-    /** Open external (default) editor with smartloopai.conf */
+    /** Open external (default) editor with halfy.conf */
     void showConfEditor();
     /** Show folder with wallet backups in default file browser */
     void showBackups();

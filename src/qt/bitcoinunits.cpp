@@ -18,9 +18,9 @@ BitcoinUnits::BitcoinUnits(QObject *parent):
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(SMLP);
-    unitlist.append(mSMLP);
-    unitlist.append(uSMLP);
+    unitlist.append(HALFY);
+    unitlist.append(mHALFY);
+    unitlist.append(uHALFY);
     unitlist.append(smartloop);
     return unitlist;
 }
@@ -29,9 +29,9 @@ bool BitcoinUnits::valid(int unit)
 {
     switch(unit)
     {
-    case SMLP:
-    case mSMLP:
-    case uSMLP:
+    case HALFY:
+    case mHALFY:
+    case uHALFY:
     case smartloop:
         return true;
     default:
@@ -45,9 +45,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case SMLP: return QString("SMLP");
-            case mSMLP: return QString("mSMLP");
-            case uSMLP: return QString::fromUtf8("μSMLP");
+            case HALFY: return QString("HALFY");
+            case mHALFY: return QString("mHALFY");
+            case uHALFY: return QString::fromUtf8("μHALFY");
             case smartloop: return QString("smartloop");
             default: return QString("???");
         }
@@ -56,9 +56,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case SMLP: return QString("tSMLP");
-            case mSMLP: return QString("mtSMLP");
-            case uSMLP: return QString::fromUtf8("μtSMLP");
+            case HALFY: return QString("tHALFY");
+            case mHALFY: return QString("mtHALFY");
+            case uHALFY: return QString::fromUtf8("μtHALFY");
             case smartloop: return QString("tsmartloop");
             default: return QString("???");
         }
@@ -71,10 +71,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case SMLP: return QString("SmartLoopAI");
-            case mSMLP: return QString("Milli-SmartLoopAI (1 / 1" THIN_SP_UTF8 "000)");
-            case uSMLP: return QString("Micro-SmartLoopAI (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case smartloop: return QString("Ten Nano-SmartLoopAI (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case HALFY: return QString("Halfy");
+            case mHALFY: return QString("Milli-Halfy (1 / 1" THIN_SP_UTF8 "000)");
+            case uHALFY: return QString("Micro-Halfy (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case smartloop: return QString("Ten Nano-Halfy (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -82,10 +82,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case SMLP: return QString("TestSmartLoopAIs");
-            case mSMLP: return QString("Milli-TestSmartLoopAI (1 / 1" THIN_SP_UTF8 "000)");
-            case uSMLP: return QString("Micro-TestSmartLoopAI (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case smartloop: return QString("Ten Nano-TestSmartLoopAI (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case HALFY: return QString("TestHalfys");
+            case mHALFY: return QString("Milli-TestHalfy (1 / 1" THIN_SP_UTF8 "000)");
+            case uHALFY: return QString("Micro-TestHalfy (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case smartloop: return QString("Ten Nano-TestHalfy (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -95,9 +95,9 @@ qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case SMLP:  return 100000000;
-    case mSMLP: return 100000;
-    case uSMLP: return 100;
+    case HALFY:  return 100000000;
+    case mHALFY: return 100000;
+    case uHALFY: return 100;
     case smartloop: return 1;
     default:   return 100000000;
     }
@@ -107,9 +107,9 @@ int BitcoinUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case SMLP: return 8;
-    case mSMLP: return 5;
-    case uSMLP: return 2;
+    case HALFY: return 8;
+    case mHALFY: return 5;
+    case uHALFY: return 2;
     case smartloop: return 0;
     default: return 0;
     }

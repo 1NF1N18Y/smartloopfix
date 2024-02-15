@@ -69,9 +69,9 @@ static inline bool InsecureRandBool() { return g_insecure_rand_ctx.randbool(); }
 
 static constexpr CAmount CENT{1000000};
 
-/* Initialize SmartLoopAI-specific components after chainstate initialization */
-void SmartLoopAITestSetup(NodeContext& node);
-void SmartLoopAITestSetupClose(NodeContext& node);
+/* Initialize Halfy-specific components after chainstate initialization */
+void HalfyTestSetup(NodeContext& node);
+void HalfyTestSetupClose(NodeContext& node);
 
 /** Basic testing setup.
  * This just configures logging, data dir and chain parameters.

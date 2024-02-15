@@ -8,7 +8,7 @@ services:
     tty: true         # Equivalent to -t
     stdin_open: true  # Equivalent to -i
     ports:
-      - "15693:15693"           # Mainnet Ports
+      - "8547:8547"           # Mainnet Ports
       - "9999:9999"
       - "25693:25693"         # Testnet Ports
       - "25694:25694"
@@ -26,7 +26,7 @@ services:
       - type: bind
 #        source: /host/$PWD # Workaround needed on non-Linux hosts
         source: ../../..
-        target: /src/smartloopai
+        target: /src/halfy
 
 # Sharing your ccache
 #
@@ -41,7 +41,7 @@ services:
 # NOTE: Only the first line is a continuation of the services.container.volumes
 #       definition
 
-#      - cache:/home/smartloopai/.ccache
+#      - cache:/home/halfy/.ccache
 #
 # volumes:
 #    cache:

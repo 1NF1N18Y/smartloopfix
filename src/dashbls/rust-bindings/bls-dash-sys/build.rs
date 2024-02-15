@@ -44,27 +44,27 @@ fn main() {
         .canonicalize()
         .expect("can't get abs path");
 
-    let bls_smartloopai_build_path = root_path.join("build");
-    let bls_smartloopai_src_path = root_path.join("src");
+    let bls_halfy_build_path = root_path.join("build");
+    let bls_halfy_src_path = root_path.join("src");
     let c_bindings_path = root_path.join("rust-bindings/bls-dash-sys/c-bindings");
 
     println!("root {}", root_path.display());
-    println!("bls_smartloopai_build_path {}", bls_smartloopai_build_path.display());
-    println!("bls_smartloopai_src_path {}", bls_smartloopai_src_path.display());
+    println!("bls_halfy_build_path {}", bls_halfy_build_path.display());
+    println!("bls_halfy_src_path {}", bls_halfy_src_path.display());
     // println!("c_bindings_path {}", c_bindings_path.display());
 
     // Run cmake
 
     println!("Run cmake:");
 
-    if bls_smartloopai_build_path.exists() {
-        fs::remove_dir_all(&bls_smartloopai_build_path).expect("can't clean build directory");
+    if bls_halfy_build_path.exists() {
+        fs::remove_dir_all(&bls_halfy_build_path).expect("can't clean build directory");
     }
 
-    fs::create_dir_all(&bls_smartloopai_build_path).expect("can't create build directory");
+    fs::create_dir_all(&bls_halfy_build_path).expect("can't create build directory");
 
     let cmake_output = create_cross_cmake_command()
-        .current_dir(&bls_smartloopai_build_path)
+        .current_dir(&bls_halfy_build_path)
         .arg("-DBUILD_BLS_PYTHON_BINDINGS=0")
         .arg("-DBUILD_BLS_TESTS=0")
         .arg("-DBUILD_BLS_BENCHMARKS=0")
@@ -81,14 +81,14 @@ fn main() {
 
     let build_output = Command::new("cmake")
         .args(["--build", ".", "--", "-j", "6"])
-        .current_dir(&bls_smartloopai_build_path)
+        .current_dir(&bls_halfy_build_path)
         .output()
         .expect("can't build bls-signatures deps");
 
     handle_command_output(build_output);
 
     // Collect include paths
-    let include_paths_file_path = bls_smartloopai_build_path.join("include_paths.txt");
+    let include_paths_file_path = bls_halfy_build_path.join("include_paths.txt");
 
     let include_paths =
         fs::read_to_string(include_paths_file_path).expect("should read include paths from file");
@@ -100,15 +100,15 @@ fn main() {
         .collect();
 
     include_paths.extend([
-        bls_smartloopai_build_path.join("_deps/relic-src/include"),
-        bls_smartloopai_build_path.join("_deps/relic-build/include"),
-        bls_smartloopai_build_path.join("src"),
+        bls_halfy_build_path.join("_deps/relic-src/include"),
+        bls_halfy_build_path.join("_deps/relic-build/include"),
+        bls_halfy_build_path.join("src"),
         root_path.join("include/dashbls"),
-        bls_smartloopai_build_path.join("depends/relic/include"),
-        bls_smartloopai_build_path.join("depends/mimalloc/include"),
+        bls_halfy_build_path.join("depends/relic/include"),
+        bls_halfy_build_path.join("depends/mimalloc/include"),
         root_path.join("depends/relic/include"),
         root_path.join("depends/mimalloc/include"),
-        bls_smartloopai_src_path.clone(),
+        bls_halfy_src_path.clone(),
     ]);
 
     // Build c binding
@@ -150,7 +150,7 @@ fn main() {
     // // Link dependencies
     // println!(
     //     "cargo:rustc-link-search={}",
-    //     bls_smartloopai_build_path.join("_deps/sodium-build").display()
+    //     bls_halfy_build_path.join("_deps/sodium-build").display()
     // );
 
     // println!("cargo:rustc-link-lib=static=sodium");
@@ -171,13 +171,13 @@ fn main() {
 
     println!(
         "cargo:rustc-link-search={}",
-        bls_smartloopai_build_path.join("src").display()
+        bls_halfy_build_path.join("src").display()
     );
 
     println!("cargo:rustc-link-lib=static=dashbls");
 
     // Link GMP if exists
-    let gmp_libraries_file_path = bls_smartloopai_build_path.join("gmp_libraries.txt");
+    let gmp_libraries_file_path = bls_halfy_build_path.join("gmp_libraries.txt");
 
     if gmp_libraries_file_path.exists() {
         let gmp_libraries_path = PathBuf::from(
@@ -239,7 +239,7 @@ fn main() {
 
     // // Rerun build if files changed
     // println!("cargo:rerun-if-changed={}", c_bindings_path.display());
-    println!("cargo:rerun-if-changed={}", bls_smartloopai_src_path.display());
+    println!("cargo:rerun-if-changed={}", bls_halfy_src_path.display());
 }
 
 // fn main() {
@@ -248,15 +248,15 @@ fn main() {
 //     let root_path = Path::new("../..")
 //         .canonicalize()
 //         .expect("can't get abs path");
-//     let bls_smartloopai_build_path = root_path.join("build");
-//     let bls_smartloopai_src_path = root_path.join("src");
-//     let artefacts_path = bls_smartloopai_build_path.join("artefacts");
+//     let bls_halfy_build_path = root_path.join("build");
+//     let bls_halfy_src_path = root_path.join("src");
+//     let artefacts_path = bls_halfy_build_path.join("artefacts");
 //     let target_path = artefacts_path.join(&target);
 //     let script = root_path.join("apple.rust.single.sh");
-//     if bls_smartloopai_build_path.exists() {
-//         fs::remove_dir_all(&bls_smartloopai_build_path).expect("can't clean build directory");
+//     if bls_halfy_build_path.exists() {
+//         fs::remove_dir_all(&bls_halfy_build_path).expect("can't clean build directory");
 //     }
-//     fs::create_dir_all(&bls_smartloopai_build_path).expect("can't create build directory");
+//     fs::create_dir_all(&bls_halfy_build_path).expect("can't create build directory");
 //     let output = Command::new("sh")
 //         .current_dir(&root_path)
 //         .arg(script)
@@ -272,9 +272,9 @@ fn main() {
 //     println!("cargo:rustc-link-lib=static=gmp");
 //     println!("cargo:rustc-link-lib=static=sodium");
 //     println!("cargo:rustc-link-lib=static=relic_s");
-//     println!("cargo:rustc-link-search={}", bls_smartloopai_build_path.join("src").display());
+//     println!("cargo:rustc-link-search={}", bls_halfy_build_path.join("src").display());
 //     println!("cargo:rustc-link-lib=static=bls");
-//     println!("cargo:rerun-if-changed={}", bls_smartloopai_src_path.display());
+//     println!("cargo:rerun-if-changed={}", bls_halfy_src_path.display());
 // }
 
 #[cfg(feature = "apple")]
@@ -294,17 +294,17 @@ fn main() {
     let root_path = Path::new("../..")
         .canonicalize()
         .expect("can't get abs path");
-    let bls_smartloopai_build_path = root_path.join("build");
-    let bls_smartloopai_src_path = root_path.join("src");
-    let bls_smartloopai_src_include_path = root_path.join("include/dashbls");
+    let bls_halfy_build_path = root_path.join("build");
+    let bls_halfy_src_path = root_path.join("src");
+    let bls_halfy_src_include_path = root_path.join("include/dashbls");
     let c_bindings_path = root_path.join("rust-bindings/bls-dash-sys/c-bindings");
-    let artefacts_path = bls_smartloopai_build_path.join("artefacts");
+    let artefacts_path = bls_halfy_build_path.join("artefacts");
     let target_path = artefacts_path.join(&target);
     let script = root_path.join("apple.rust.deps.sh");
-    if bls_smartloopai_build_path.exists() {
-        fs::remove_dir_all(&bls_smartloopai_build_path).expect("can't clean build directory");
+    if bls_halfy_build_path.exists() {
+        fs::remove_dir_all(&bls_halfy_build_path).expect("can't clean build directory");
     }
-    fs::create_dir_all(&bls_smartloopai_build_path).expect("can't create build directory");
+    fs::create_dir_all(&bls_halfy_build_path).expect("can't create build directory");
     let output = Command::new("sh")
         .current_dir(&root_path)
         .arg(script)
@@ -323,7 +323,7 @@ fn main() {
     env::set_var("IPHONEOS_DEPLOYMENT_TARGET", "13.0");
 
     // Collect include paths
-    let include_paths_file_path = bls_smartloopai_build_path.join("include_paths.txt");
+    let include_paths_file_path = bls_halfy_build_path.join("include_paths.txt");
 
     let include_paths =
         fs::read_to_string(include_paths_file_path).expect("should read include paths from file");
@@ -335,16 +335,16 @@ fn main() {
         .collect();
 
     include_paths.extend([
-        bls_smartloopai_build_path.join(format!("relic-{}-{}/_deps/relic-src/include", platform, arch)),
-        bls_smartloopai_build_path.join(format!("relic-{}-{}/_deps/relic-build/include", platform, arch)),
-        bls_smartloopai_build_path.join("contrib/relic/src"),
+        bls_halfy_build_path.join(format!("relic-{}-{}/_deps/relic-src/include", platform, arch)),
+        bls_halfy_build_path.join(format!("relic-{}-{}/_deps/relic-build/include", platform, arch)),
+        bls_halfy_build_path.join("contrib/relic/src"),
         root_path.join("src"),
         root_path.join("include/dashbls"),
         root_path.join("depends/relic/include"),
         root_path.join("depends/mimalloc/include"),
         root_path.join("depends/catch2/include"),
-        bls_smartloopai_src_path.clone(),
-        bls_smartloopai_src_include_path.clone()
+        bls_halfy_src_path.clone(),
+        bls_halfy_src_include_path.clone()
     ]);
 
     let cpp_files: Vec<_> = glob::glob(c_bindings_path.join("**/*.cpp").to_str().unwrap())
@@ -368,7 +368,7 @@ fn main() {
     // println!("cargo:rustc-link-lib=static=sodium");
     // println!("cargo:rustc-link-lib=static=relic_s");
     println!("cargo:rustc-link-lib=static=bls");
-    println!("cargo:rustc-link-search={}", bls_smartloopai_src_path.display());
+    println!("cargo:rustc-link-search={}", bls_halfy_src_path.display());
     println!("cargo:rustc-link-lib=static=dashbls");
-    println!("cargo:rerun-if-changed={}", bls_smartloopai_src_path.display());
+    println!("cargo:rerun-if-changed={}", bls_halfy_src_path.display());
 }

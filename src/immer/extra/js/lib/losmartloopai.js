@@ -1,8 +1,8 @@
 /**
  * @license
- * losmartloopai <https://losmartloopai.com/>
+ * lohalfy <https://lohalfy.com/>
  * Copyright jQuery Foundation and other contributors <https://jquery.org/>
- * Released under MIT license <https://losmartloopai.com/license>
+ * Released under MIT license <https://lohalfy.com/license>
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
  * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  */
@@ -21,10 +21,10 @@
   var FUNC_ERROR_TEXT = 'Expected a function';
 
   /** Used to stand-in for `undefined` hash values. */
-  var HASH_UNDEFINED = '__losmartloopai_hash_undefined__';
+  var HASH_UNDEFINED = '__lohalfy_hash_undefined__';
 
   /** Used as the internal argument placeholder. */
-  var PLACEHOLDER = '__losmartloopai_placeholder__';
+  var PLACEHOLDER = '__lohalfy_placeholder__';
 
   /** Used to compose bitmasks for function metadata. */
   var BIND_FLAG = 1,
@@ -1242,29 +1242,29 @@
   /*--------------------------------------------------------------------------*/
 
   /**
-   * Create a new pristine `losmartloopai` function using the `context` object.
+   * Create a new pristine `lohalfy` function using the `context` object.
    *
    * @static
    * @memberOf _
    * @since 1.1.0
    * @category Util
    * @param {Object} [context=root] The context object.
-   * @returns {Function} Returns a new `losmartloopai` function.
+   * @returns {Function} Returns a new `lohalfy` function.
    * @example
    *
    * _.mixin({ 'foo': _.constant('foo') });
    *
-   * var losmartloopai = _.runInContext();
-   * losmartloopai.mixin({ 'bar': losmartloopai.constant('bar') });
+   * var lohalfy = _.runInContext();
+   * lohalfy.mixin({ 'bar': lohalfy.constant('bar') });
    *
    * _.isFunction(_.foo);
    * // => true
    * _.isFunction(_.bar);
    * // => false
    *
-   * losmartloopai.isFunction(losmartloopai.foo);
+   * lohalfy.isFunction(lohalfy.foo);
    * // => false
-   * losmartloopai.isFunction(losmartloopai.bar);
+   * lohalfy.isFunction(lohalfy.bar);
    * // => true
    *
    * // Use `context` to stub `Date#getTime` use in `_.now`.
@@ -1322,7 +1322,7 @@
     var objectToString = objectProto.toString;
 
     /** Used to restore the original `_` reference in `_.noConflict`. */
-    var oldSmartLoopAI = root._;
+    var oldHalfy = root._;
 
     /** Used to detect if a method is native. */
     var reIsNative = RegExp('^' +
@@ -1346,7 +1346,7 @@
     var clearTimeout = function(id) { return context.clearTimeout.call(root, id); },
         setTimeout = function(func, wait) { return context.setTimeout.call(root, func, wait); };
 
-    /* Built-in method references for those with the same name as other `losmartloopai` methods. */
+    /* Built-in method references for those with the same name as other `lohalfy` methods. */
     var nativeCeil = Math.ceil,
         nativeFloor = Math.floor,
         nativeGetPrototype = Object.getPrototypeOf,
@@ -1403,7 +1403,7 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * Creates a `losmartloopai` object which wraps `value` to enable implicit method
+     * Creates a `lohalfy` object which wraps `value` to enable implicit method
      * chain sequences. Methods that operate on and return arrays, collections,
      * and functions can be chained together. Methods that retrieve a single value
      * or may return a primitive value will automatically end the chain sequence
@@ -1427,7 +1427,7 @@
      * Chaining is supported in custom builds as long as the `_#value` method is
      * directly or indirectly included in the build.
      *
-     * In addition to losmartloopai methods, wrappers have `Array` and `String` methods.
+     * In addition to lohalfy methods, wrappers have `Array` and `String` methods.
      *
      * The wrapper `Array` methods are:
      * `concat`, `join`, `pop`, `push`, `shift`, `sort`, `splice`, and `unshift`
@@ -1496,8 +1496,8 @@
      * @name _
      * @constructor
      * @category Seq
-     * @param {*} value The value to wrap in a `losmartloopai` instance.
-     * @returns {Object} Returns the new `losmartloopai` wrapper instance.
+     * @param {*} value The value to wrap in a `lohalfy` instance.
+     * @returns {Object} Returns the new `lohalfy` wrapper instance.
      * @example
      *
      * function square(n) {
@@ -1519,16 +1519,16 @@
      * _.isArray(squares.value());
      * // => true
      */
-    function losmartloopai(value) {
+    function lohalfy(value) {
       if (isObjectLike(value) && !isArray(value) && !(value instanceof LazyWrapper)) {
-        if (value instanceof LosmartloopaiWrapper) {
+        if (value instanceof LohalfyWrapper) {
           return value;
         }
         if (hasOwnProperty.call(value, '__wrapped__')) {
           return wrapperClone(value);
         }
       }
-      return new LosmartloopaiWrapper(value);
+      return new LohalfyWrapper(value);
     }
 
     /**
@@ -1536,18 +1536,18 @@
      *
      * @private
      */
-    function baseLosmartloopai() {
+    function baseLohalfy() {
       // No operation performed.
     }
 
     /**
-     * The base constructor for creating `losmartloopai` wrapper objects.
+     * The base constructor for creating `lohalfy` wrapper objects.
      *
      * @private
      * @param {*} value The value to wrap.
      * @param {boolean} [chainAll] Enable explicit method chain sequences.
      */
-    function LosmartloopaiWrapper(value, chainAll) {
+    function LohalfyWrapper(value, chainAll) {
       this.__wrapped__ = value;
       this.__actions__ = [];
       this.__chain__ = !!chainAll;
@@ -1556,7 +1556,7 @@
     }
 
     /**
-     * By default, the template delimiters used by losmartloopai are like those in
+     * By default, the template delimiters used by lohalfy are like those in
      * embedded Ruby (ERB). Change the following template settings to use
      * alternative delimiters.
      *
@@ -1564,7 +1564,7 @@
      * @memberOf _
      * @type {Object}
      */
-    losmartloopai.templateSettings = {
+    lohalfy.templateSettings = {
 
       /**
        * Used to detect `data` property values to be HTML-escaped.
@@ -1607,21 +1607,21 @@
       'imports': {
 
         /**
-         * A reference to the `losmartloopai` function.
+         * A reference to the `lohalfy` function.
          *
          * @memberOf _.templateSettings.imports
          * @type {Function}
          */
-        '_': losmartloopai
+        '_': lohalfy
       }
     };
 
-    // Ensure wrappers are instances of `baseLosmartloopai`.
-    losmartloopai.prototype = baseLosmartloopai.prototype;
-    losmartloopai.prototype.constructor = losmartloopai;
+    // Ensure wrappers are instances of `baseLohalfy`.
+    lohalfy.prototype = baseLohalfy.prototype;
+    lohalfy.prototype.constructor = lohalfy;
 
-    LosmartloopaiWrapper.prototype = baseCreate(baseLosmartloopai.prototype);
-    LosmartloopaiWrapper.prototype.constructor = LosmartloopaiWrapper;
+    LohalfyWrapper.prototype = baseCreate(baseLohalfy.prototype);
+    LohalfyWrapper.prototype.constructor = LohalfyWrapper;
 
     /*------------------------------------------------------------------------*/
 
@@ -1739,8 +1739,8 @@
       return result;
     }
 
-    // Ensure `LazyWrapper` is an instance of `baseLosmartloopai`.
-    LazyWrapper.prototype = baseCreate(baseLosmartloopai.prototype);
+    // Ensure `LazyWrapper` is an instance of `baseLohalfy`.
+    LazyWrapper.prototype = baseCreate(baseLohalfy.prototype);
     LazyWrapper.prototype.constructor = LazyWrapper;
 
     /*------------------------------------------------------------------------*/
@@ -4742,7 +4742,7 @@
 
         var length = funcs.length,
             index = length,
-            prereq = LosmartloopaiWrapper.prototype.thru;
+            prereq = LohalfyWrapper.prototype.thru;
 
         if (fromRight) {
           funcs.reverse();
@@ -4753,7 +4753,7 @@
             throw new TypeError(FUNC_ERROR_TEXT);
           }
           if (prereq && !wrapper && getFuncName(func) == 'wrapper') {
-            var wrapper = new LosmartloopaiWrapper([], true);
+            var wrapper = new LohalfyWrapper([], true);
           }
         }
         index = wrapper ? index : length;
@@ -5515,7 +5515,7 @@
      * @returns {*} Returns the placeholder value.
      */
     function getHolder(func) {
-      var object = hasOwnProperty.call(losmartloopai, 'placeholder') ? losmartloopai : func;
+      var object = hasOwnProperty.call(lohalfy, 'placeholder') ? lohalfy : func;
       return object.placeholder;
     }
 
@@ -5531,7 +5531,7 @@
      * @returns {Function} Returns the chosen function or its result.
      */
     function getIteratee() {
-      var result = losmartloopai.iteratee || iteratee;
+      var result = lohalfy.iteratee || iteratee;
       result = result === iteratee ? baseIteratee : result;
       return arguments.length ? result(arguments[0], arguments[1]) : result;
     }
@@ -5948,7 +5948,7 @@
      */
     function isLaziable(func) {
       var funcName = getFuncName(func),
-          other = losmartloopai[funcName];
+          other = lohalfy[funcName];
 
       if (typeof other != 'function' || !(funcName in LazyWrapper.prototype)) {
         return false;
@@ -6289,7 +6289,7 @@
       if (wrapper instanceof LazyWrapper) {
         return wrapper.clone();
       }
-      var result = new LosmartloopaiWrapper(wrapper.__wrapped__, wrapper.__chain__);
+      var result = new LohalfyWrapper(wrapper.__wrapped__, wrapper.__chain__);
       result.__actions__ = copyArray(wrapper.__actions__);
       result.__index__  = wrapper.__index__;
       result.__values__ = wrapper.__values__;
@@ -8211,7 +8211,7 @@
     /*------------------------------------------------------------------------*/
 
     /**
-     * Creates a `losmartloopai` wrapper instance that wraps `value` with explicit method
+     * Creates a `lohalfy` wrapper instance that wraps `value` with explicit method
      * chain sequences enabled. The result of such sequences must be unwrapped
      * with `_#value`.
      *
@@ -8220,7 +8220,7 @@
      * @since 1.3.0
      * @category Seq
      * @param {*} value The value to wrap.
-     * @returns {Object} Returns the new `losmartloopai` wrapper instance.
+     * @returns {Object} Returns the new `lohalfy` wrapper instance.
      * @example
      *
      * var users = [
@@ -8240,7 +8240,7 @@
      * // => 'pebbles is 1'
      */
     function chain(value) {
-      var result = losmartloopai(value);
+      var result = lohalfy(value);
       result.__chain__ = true;
       return result;
     }
@@ -8308,7 +8308,7 @@
      * @since 1.0.0
      * @category Seq
      * @param {...(string|string[])} [paths] The property paths of elements to pick.
-     * @returns {Object} Returns the new `losmartloopai` wrapper instance.
+     * @returns {Object} Returns the new `lohalfy` wrapper instance.
      * @example
      *
      * var object = { 'a': [{ 'b': { 'c': 3 } }, 4] };
@@ -8333,7 +8333,7 @@
         'args': [interceptor],
         'thisArg': undefined
       });
-      return new LosmartloopaiWrapper(value, this.__chain__).thru(function(array) {
+      return new LohalfyWrapper(value, this.__chain__).thru(function(array) {
         if (length && !array.length) {
           array.push(undefined);
         }
@@ -8342,13 +8342,13 @@
     });
 
     /**
-     * Creates a `losmartloopai` wrapper instance with explicit method chain sequences enabled.
+     * Creates a `lohalfy` wrapper instance with explicit method chain sequences enabled.
      *
      * @name chain
      * @memberOf _
      * @since 0.1.0
      * @category Seq
-     * @returns {Object} Returns the new `losmartloopai` wrapper instance.
+     * @returns {Object} Returns the new `lohalfy` wrapper instance.
      * @example
      *
      * var users = [
@@ -8379,7 +8379,7 @@
      * @memberOf _
      * @since 3.2.0
      * @category Seq
-     * @returns {Object} Returns the new `losmartloopai` wrapper instance.
+     * @returns {Object} Returns the new `lohalfy` wrapper instance.
      * @example
      *
      * var array = [1, 2];
@@ -8399,7 +8399,7 @@
      * // => [1, 2, 3]
      */
     function wrapperCommit() {
-      return new LosmartloopaiWrapper(this.value(), this.__chain__);
+      return new LohalfyWrapper(this.value(), this.__chain__);
     }
 
     /**
@@ -8464,7 +8464,7 @@
      * @since 3.2.0
      * @category Seq
      * @param {*} value The value to plant.
-     * @returns {Object} Returns the new `losmartloopai` wrapper instance.
+     * @returns {Object} Returns the new `lohalfy` wrapper instance.
      * @example
      *
      * function square(n) {
@@ -8484,7 +8484,7 @@
       var result,
           parent = this;
 
-      while (parent instanceof baseLosmartloopai) {
+      while (parent instanceof baseLohalfy) {
         var clone = wrapperClone(parent);
         clone.__index__ = 0;
         clone.__values__ = undefined;
@@ -8509,7 +8509,7 @@
      * @memberOf _
      * @since 0.1.0
      * @category Seq
-     * @returns {Object} Returns the new `losmartloopai` wrapper instance.
+     * @returns {Object} Returns the new `lohalfy` wrapper instance.
      * @example
      *
      * var array = [1, 2, 3];
@@ -8533,7 +8533,7 @@
           'args': [reverse],
           'thisArg': undefined
         });
-        return new LosmartloopaiWrapper(wrapped, this.__chain__);
+        return new LohalfyWrapper(wrapped, this.__chain__);
       }
       return this.thru(reverse);
     }
@@ -9021,7 +9021,7 @@
      * `iteratee`. The iteratee is invoked with three arguments:
      * (value, index|key, collection).
      *
-     * Many losmartloopai methods are guarded to work as iteratees for methods like
+     * Many lohalfy methods are guarded to work as iteratees for methods like
      * `_.every`, `_.filter`, `_.map`, `_.mapValues`, `_.reject`, and `_.some`.
      *
      * The guarded methods are:
@@ -9154,7 +9154,7 @@
      * value. The iteratee is invoked with four arguments:
      * (accumulator, value, index|key, collection).
      *
-     * Many losmartloopai methods are guarded to work as iteratees for methods like
+     * Many lohalfy methods are guarded to work as iteratees for methods like
      * `_.reduce`, `_.reduceRight`, and `_.transform`.
      *
      * The guarded methods are:
@@ -13774,8 +13774,8 @@
      * @returns {string} Returns the escaped string.
      * @example
      *
-     * _.escapeRegExp('[losmartloopai](https://losmartloopai.com/)');
-     * // => '\[losmartloopai\]\(https://losmartloopai\.com/\)'
+     * _.escapeRegExp('[lohalfy](https://lohalfy.com/)');
+     * // => '\[lohalfy\]\(https://lohalfy\.com/\)'
      */
     function escapeRegExp(string) {
       string = toString(string);
@@ -14182,7 +14182,7 @@
      * for easier debugging.
      *
      * For more information on precompiling templates see
-     * [losmartloopai's custom builds documentation](https://losmartloopai.com/custom-builds).
+     * [lohalfy's custom builds documentation](https://lohalfy.com/custom-builds).
      *
      * For more information on Chrome extension sandboxes see
      * [Chrome's extensions documentation](https://developer.chrome.com/extensions/sandboxingEval).
@@ -14201,7 +14201,7 @@
      *  An object to import into the template as free variables.
      * @param {RegExp} [options.interpolate=_.templateSettings.interpolate]
      *  The "interpolate" delimiter.
-     * @param {string} [options.sourceURL='losmartloopai.templateSources[n]']
+     * @param {string} [options.sourceURL='lohalfy.templateSources[n]']
      *  The sourceURL of the compiled template.
      * @param {string} [options.variable='obj']
      *  The data object variable name.
@@ -14277,7 +14277,7 @@
       // Based on John Resig's `tmpl` implementation
       // (http://ejohn.org/blog/javascript-micro-templating/)
       // and Laura Doktorova's doT.js (https://github.com/olado/doT).
-      var settings = losmartloopai.templateSettings;
+      var settings = lohalfy.templateSettings;
 
       if (guard && isIterateeCall(string, options, guard)) {
         options = undefined;
@@ -14307,7 +14307,7 @@
       var sourceURL = '//# sourceURL=' +
         ('sourceURL' in options
           ? options.sourceURL
-          : ('losmartloopai.templateSources[' + (++templateCounter) + ']')
+          : ('lohalfy.templateSources[' + (++templateCounter) + ']')
         ) + '\n';
 
       string.replace(reDelimiters, function(match, escapeValue, interpolateValue, esTemplateValue, evaluateValue, offset) {
@@ -15153,14 +15153,14 @@
      * object to the destination object. If `object` is a function, then methods
      * are added to its prototype as well.
      *
-     * **Note:** Use `_.runInContext` to create a pristine `losmartloopai` function to
+     * **Note:** Use `_.runInContext` to create a pristine `lohalfy` function to
      * avoid conflicts caused by modifying the original.
      *
      * @static
      * @since 0.1.0
      * @memberOf _
      * @category Util
-     * @param {Function|Object} [object=losmartloopai] The destination object.
+     * @param {Function|Object} [object=lohalfy] The destination object.
      * @param {Object} source The object of functions to add.
      * @param {Object} [options={}] The options object.
      * @param {boolean} [options.chain=true] Specify whether mixins are chainable.
@@ -15222,20 +15222,20 @@
 
     /**
      * Reverts the `_` variable to its previous value and returns a reference to
-     * the `losmartloopai` function.
+     * the `lohalfy` function.
      *
      * @static
      * @since 0.1.0
      * @memberOf _
      * @category Util
-     * @returns {Function} Returns the `losmartloopai` function.
+     * @returns {Function} Returns the `lohalfy` function.
      * @example
      *
-     * var losmartloopai = _.noConflict();
+     * var lohalfy = _.noConflict();
      */
     function noConflict() {
       if (root._ === this) {
-        root._ = oldSmartLoopAI;
+        root._ = oldHalfy;
       }
       return this;
     }
@@ -16017,327 +16017,327 @@
     /*------------------------------------------------------------------------*/
 
     // Add methods that return wrapped values in chain sequences.
-    losmartloopai.after = after;
-    losmartloopai.ary = ary;
-    losmartloopai.assign = assign;
-    losmartloopai.assignIn = assignIn;
-    losmartloopai.assignInWith = assignInWith;
-    losmartloopai.assignWith = assignWith;
-    losmartloopai.at = at;
-    losmartloopai.before = before;
-    losmartloopai.bind = bind;
-    losmartloopai.bindAll = bindAll;
-    losmartloopai.bindKey = bindKey;
-    losmartloopai.castArray = castArray;
-    losmartloopai.chain = chain;
-    losmartloopai.chunk = chunk;
-    losmartloopai.compact = compact;
-    losmartloopai.concat = concat;
-    losmartloopai.cond = cond;
-    losmartloopai.conforms = conforms;
-    losmartloopai.constant = constant;
-    losmartloopai.countBy = countBy;
-    losmartloopai.create = create;
-    losmartloopai.curry = curry;
-    losmartloopai.curryRight = curryRight;
-    losmartloopai.debounce = debounce;
-    losmartloopai.defaults = defaults;
-    losmartloopai.defaultsDeep = defaultsDeep;
-    losmartloopai.defer = defer;
-    losmartloopai.delay = delay;
-    losmartloopai.difference = difference;
-    losmartloopai.differenceBy = differenceBy;
-    losmartloopai.differenceWith = differenceWith;
-    losmartloopai.drop = drop;
-    losmartloopai.dropRight = dropRight;
-    losmartloopai.dropRightWhile = dropRightWhile;
-    losmartloopai.dropWhile = dropWhile;
-    losmartloopai.fill = fill;
-    losmartloopai.filter = filter;
-    losmartloopai.flatMap = flatMap;
-    losmartloopai.flatMapDeep = flatMapDeep;
-    losmartloopai.flatMapDepth = flatMapDepth;
-    losmartloopai.flatten = flatten;
-    losmartloopai.flattenDeep = flattenDeep;
-    losmartloopai.flattenDepth = flattenDepth;
-    losmartloopai.flip = flip;
-    losmartloopai.flow = flow;
-    losmartloopai.flowRight = flowRight;
-    losmartloopai.fromPairs = fromPairs;
-    losmartloopai.functions = functions;
-    losmartloopai.functionsIn = functionsIn;
-    losmartloopai.groupBy = groupBy;
-    losmartloopai.initial = initial;
-    losmartloopai.intersection = intersection;
-    losmartloopai.intersectionBy = intersectionBy;
-    losmartloopai.intersectionWith = intersectionWith;
-    losmartloopai.invert = invert;
-    losmartloopai.invertBy = invertBy;
-    losmartloopai.invokeMap = invokeMap;
-    losmartloopai.iteratee = iteratee;
-    losmartloopai.keyBy = keyBy;
-    losmartloopai.keys = keys;
-    losmartloopai.keysIn = keysIn;
-    losmartloopai.map = map;
-    losmartloopai.mapKeys = mapKeys;
-    losmartloopai.mapValues = mapValues;
-    losmartloopai.matches = matches;
-    losmartloopai.matchesProperty = matchesProperty;
-    losmartloopai.memoize = memoize;
-    losmartloopai.merge = merge;
-    losmartloopai.mergeWith = mergeWith;
-    losmartloopai.method = method;
-    losmartloopai.methodOf = methodOf;
-    losmartloopai.mixin = mixin;
-    losmartloopai.negate = negate;
-    losmartloopai.nthArg = nthArg;
-    losmartloopai.omit = omit;
-    losmartloopai.omitBy = omitBy;
-    losmartloopai.once = once;
-    losmartloopai.orderBy = orderBy;
-    losmartloopai.over = over;
-    losmartloopai.overArgs = overArgs;
-    losmartloopai.overEvery = overEvery;
-    losmartloopai.overSome = overSome;
-    losmartloopai.partial = partial;
-    losmartloopai.partialRight = partialRight;
-    losmartloopai.partition = partition;
-    losmartloopai.pick = pick;
-    losmartloopai.pickBy = pickBy;
-    losmartloopai.property = property;
-    losmartloopai.propertyOf = propertyOf;
-    losmartloopai.pull = pull;
-    losmartloopai.pullAll = pullAll;
-    losmartloopai.pullAllBy = pullAllBy;
-    losmartloopai.pullAllWith = pullAllWith;
-    losmartloopai.pullAt = pullAt;
-    losmartloopai.range = range;
-    losmartloopai.rangeRight = rangeRight;
-    losmartloopai.rearg = rearg;
-    losmartloopai.reject = reject;
-    losmartloopai.remove = remove;
-    losmartloopai.rest = rest;
-    losmartloopai.reverse = reverse;
-    losmartloopai.sampleSize = sampleSize;
-    losmartloopai.set = set;
-    losmartloopai.setWith = setWith;
-    losmartloopai.shuffle = shuffle;
-    losmartloopai.slice = slice;
-    losmartloopai.sortBy = sortBy;
-    losmartloopai.sortedUniq = sortedUniq;
-    losmartloopai.sortedUniqBy = sortedUniqBy;
-    losmartloopai.split = split;
-    losmartloopai.spread = spread;
-    losmartloopai.tail = tail;
-    losmartloopai.take = take;
-    losmartloopai.takeRight = takeRight;
-    losmartloopai.takeRightWhile = takeRightWhile;
-    losmartloopai.takeWhile = takeWhile;
-    losmartloopai.tap = tap;
-    losmartloopai.throttle = throttle;
-    losmartloopai.thru = thru;
-    losmartloopai.toArray = toArray;
-    losmartloopai.toPairs = toPairs;
-    losmartloopai.toPairsIn = toPairsIn;
-    losmartloopai.toPath = toPath;
-    losmartloopai.toPlainObject = toPlainObject;
-    losmartloopai.transform = transform;
-    losmartloopai.unary = unary;
-    losmartloopai.union = union;
-    losmartloopai.unionBy = unionBy;
-    losmartloopai.unionWith = unionWith;
-    losmartloopai.uniq = uniq;
-    losmartloopai.uniqBy = uniqBy;
-    losmartloopai.uniqWith = uniqWith;
-    losmartloopai.unset = unset;
-    losmartloopai.unzip = unzip;
-    losmartloopai.unzipWith = unzipWith;
-    losmartloopai.update = update;
-    losmartloopai.updateWith = updateWith;
-    losmartloopai.values = values;
-    losmartloopai.valuesIn = valuesIn;
-    losmartloopai.without = without;
-    losmartloopai.words = words;
-    losmartloopai.wrap = wrap;
-    losmartloopai.xor = xor;
-    losmartloopai.xorBy = xorBy;
-    losmartloopai.xorWith = xorWith;
-    losmartloopai.zip = zip;
-    losmartloopai.zipObject = zipObject;
-    losmartloopai.zipObjectDeep = zipObjectDeep;
-    losmartloopai.zipWith = zipWith;
+    lohalfy.after = after;
+    lohalfy.ary = ary;
+    lohalfy.assign = assign;
+    lohalfy.assignIn = assignIn;
+    lohalfy.assignInWith = assignInWith;
+    lohalfy.assignWith = assignWith;
+    lohalfy.at = at;
+    lohalfy.before = before;
+    lohalfy.bind = bind;
+    lohalfy.bindAll = bindAll;
+    lohalfy.bindKey = bindKey;
+    lohalfy.castArray = castArray;
+    lohalfy.chain = chain;
+    lohalfy.chunk = chunk;
+    lohalfy.compact = compact;
+    lohalfy.concat = concat;
+    lohalfy.cond = cond;
+    lohalfy.conforms = conforms;
+    lohalfy.constant = constant;
+    lohalfy.countBy = countBy;
+    lohalfy.create = create;
+    lohalfy.curry = curry;
+    lohalfy.curryRight = curryRight;
+    lohalfy.debounce = debounce;
+    lohalfy.defaults = defaults;
+    lohalfy.defaultsDeep = defaultsDeep;
+    lohalfy.defer = defer;
+    lohalfy.delay = delay;
+    lohalfy.difference = difference;
+    lohalfy.differenceBy = differenceBy;
+    lohalfy.differenceWith = differenceWith;
+    lohalfy.drop = drop;
+    lohalfy.dropRight = dropRight;
+    lohalfy.dropRightWhile = dropRightWhile;
+    lohalfy.dropWhile = dropWhile;
+    lohalfy.fill = fill;
+    lohalfy.filter = filter;
+    lohalfy.flatMap = flatMap;
+    lohalfy.flatMapDeep = flatMapDeep;
+    lohalfy.flatMapDepth = flatMapDepth;
+    lohalfy.flatten = flatten;
+    lohalfy.flattenDeep = flattenDeep;
+    lohalfy.flattenDepth = flattenDepth;
+    lohalfy.flip = flip;
+    lohalfy.flow = flow;
+    lohalfy.flowRight = flowRight;
+    lohalfy.fromPairs = fromPairs;
+    lohalfy.functions = functions;
+    lohalfy.functionsIn = functionsIn;
+    lohalfy.groupBy = groupBy;
+    lohalfy.initial = initial;
+    lohalfy.intersection = intersection;
+    lohalfy.intersectionBy = intersectionBy;
+    lohalfy.intersectionWith = intersectionWith;
+    lohalfy.invert = invert;
+    lohalfy.invertBy = invertBy;
+    lohalfy.invokeMap = invokeMap;
+    lohalfy.iteratee = iteratee;
+    lohalfy.keyBy = keyBy;
+    lohalfy.keys = keys;
+    lohalfy.keysIn = keysIn;
+    lohalfy.map = map;
+    lohalfy.mapKeys = mapKeys;
+    lohalfy.mapValues = mapValues;
+    lohalfy.matches = matches;
+    lohalfy.matchesProperty = matchesProperty;
+    lohalfy.memoize = memoize;
+    lohalfy.merge = merge;
+    lohalfy.mergeWith = mergeWith;
+    lohalfy.method = method;
+    lohalfy.methodOf = methodOf;
+    lohalfy.mixin = mixin;
+    lohalfy.negate = negate;
+    lohalfy.nthArg = nthArg;
+    lohalfy.omit = omit;
+    lohalfy.omitBy = omitBy;
+    lohalfy.once = once;
+    lohalfy.orderBy = orderBy;
+    lohalfy.over = over;
+    lohalfy.overArgs = overArgs;
+    lohalfy.overEvery = overEvery;
+    lohalfy.overSome = overSome;
+    lohalfy.partial = partial;
+    lohalfy.partialRight = partialRight;
+    lohalfy.partition = partition;
+    lohalfy.pick = pick;
+    lohalfy.pickBy = pickBy;
+    lohalfy.property = property;
+    lohalfy.propertyOf = propertyOf;
+    lohalfy.pull = pull;
+    lohalfy.pullAll = pullAll;
+    lohalfy.pullAllBy = pullAllBy;
+    lohalfy.pullAllWith = pullAllWith;
+    lohalfy.pullAt = pullAt;
+    lohalfy.range = range;
+    lohalfy.rangeRight = rangeRight;
+    lohalfy.rearg = rearg;
+    lohalfy.reject = reject;
+    lohalfy.remove = remove;
+    lohalfy.rest = rest;
+    lohalfy.reverse = reverse;
+    lohalfy.sampleSize = sampleSize;
+    lohalfy.set = set;
+    lohalfy.setWith = setWith;
+    lohalfy.shuffle = shuffle;
+    lohalfy.slice = slice;
+    lohalfy.sortBy = sortBy;
+    lohalfy.sortedUniq = sortedUniq;
+    lohalfy.sortedUniqBy = sortedUniqBy;
+    lohalfy.split = split;
+    lohalfy.spread = spread;
+    lohalfy.tail = tail;
+    lohalfy.take = take;
+    lohalfy.takeRight = takeRight;
+    lohalfy.takeRightWhile = takeRightWhile;
+    lohalfy.takeWhile = takeWhile;
+    lohalfy.tap = tap;
+    lohalfy.throttle = throttle;
+    lohalfy.thru = thru;
+    lohalfy.toArray = toArray;
+    lohalfy.toPairs = toPairs;
+    lohalfy.toPairsIn = toPairsIn;
+    lohalfy.toPath = toPath;
+    lohalfy.toPlainObject = toPlainObject;
+    lohalfy.transform = transform;
+    lohalfy.unary = unary;
+    lohalfy.union = union;
+    lohalfy.unionBy = unionBy;
+    lohalfy.unionWith = unionWith;
+    lohalfy.uniq = uniq;
+    lohalfy.uniqBy = uniqBy;
+    lohalfy.uniqWith = uniqWith;
+    lohalfy.unset = unset;
+    lohalfy.unzip = unzip;
+    lohalfy.unzipWith = unzipWith;
+    lohalfy.update = update;
+    lohalfy.updateWith = updateWith;
+    lohalfy.values = values;
+    lohalfy.valuesIn = valuesIn;
+    lohalfy.without = without;
+    lohalfy.words = words;
+    lohalfy.wrap = wrap;
+    lohalfy.xor = xor;
+    lohalfy.xorBy = xorBy;
+    lohalfy.xorWith = xorWith;
+    lohalfy.zip = zip;
+    lohalfy.zipObject = zipObject;
+    lohalfy.zipObjectDeep = zipObjectDeep;
+    lohalfy.zipWith = zipWith;
 
     // Add aliases.
-    losmartloopai.entries = toPairs;
-    losmartloopai.entriesIn = toPairsIn;
-    losmartloopai.extend = assignIn;
-    losmartloopai.extendWith = assignInWith;
+    lohalfy.entries = toPairs;
+    lohalfy.entriesIn = toPairsIn;
+    lohalfy.extend = assignIn;
+    lohalfy.extendWith = assignInWith;
 
-    // Add methods to `losmartloopai.prototype`.
-    mixin(losmartloopai, losmartloopai);
+    // Add methods to `lohalfy.prototype`.
+    mixin(lohalfy, lohalfy);
 
     /*------------------------------------------------------------------------*/
 
     // Add methods that return unwrapped values in chain sequences.
-    losmartloopai.add = add;
-    losmartloopai.attempt = attempt;
-    losmartloopai.camelCase = camelCase;
-    losmartloopai.capitalize = capitalize;
-    losmartloopai.ceil = ceil;
-    losmartloopai.clamp = clamp;
-    losmartloopai.clone = clone;
-    losmartloopai.cloneDeep = cloneDeep;
-    losmartloopai.cloneDeepWith = cloneDeepWith;
-    losmartloopai.cloneWith = cloneWith;
-    losmartloopai.conformsTo = conformsTo;
-    losmartloopai.deburr = deburr;
-    losmartloopai.defaultTo = defaultTo;
-    losmartloopai.divide = divide;
-    losmartloopai.endsWith = endsWith;
-    losmartloopai.eq = eq;
-    losmartloopai.escape = escape;
-    losmartloopai.escapeRegExp = escapeRegExp;
-    losmartloopai.every = every;
-    losmartloopai.find = find;
-    losmartloopai.findIndex = findIndex;
-    losmartloopai.findKey = findKey;
-    losmartloopai.findLast = findLast;
-    losmartloopai.findLastIndex = findLastIndex;
-    losmartloopai.findLastKey = findLastKey;
-    losmartloopai.floor = floor;
-    losmartloopai.forEach = forEach;
-    losmartloopai.forEachRight = forEachRight;
-    losmartloopai.forIn = forIn;
-    losmartloopai.forInRight = forInRight;
-    losmartloopai.forOwn = forOwn;
-    losmartloopai.forOwnRight = forOwnRight;
-    losmartloopai.get = get;
-    losmartloopai.gt = gt;
-    losmartloopai.gte = gte;
-    losmartloopai.has = has;
-    losmartloopai.hasIn = hasIn;
-    losmartloopai.head = head;
-    losmartloopai.identity = identity;
-    losmartloopai.includes = includes;
-    losmartloopai.indexOf = indexOf;
-    losmartloopai.inRange = inRange;
-    losmartloopai.invoke = invoke;
-    losmartloopai.isArguments = isArguments;
-    losmartloopai.isArray = isArray;
-    losmartloopai.isArrayBuffer = isArrayBuffer;
-    losmartloopai.isArrayLike = isArrayLike;
-    losmartloopai.isArrayLikeObject = isArrayLikeObject;
-    losmartloopai.isBoolean = isBoolean;
-    losmartloopai.isBuffer = isBuffer;
-    losmartloopai.isDate = isDate;
-    losmartloopai.isElement = isElement;
-    losmartloopai.isEmpty = isEmpty;
-    losmartloopai.isEqual = isEqual;
-    losmartloopai.isEqualWith = isEqualWith;
-    losmartloopai.isError = isError;
-    losmartloopai.isFinite = isFinite;
-    losmartloopai.isFunction = isFunction;
-    losmartloopai.isInteger = isInteger;
-    losmartloopai.isLength = isLength;
-    losmartloopai.isMap = isMap;
-    losmartloopai.isMatch = isMatch;
-    losmartloopai.isMatchWith = isMatchWith;
-    losmartloopai.isNaN = isNaN;
-    losmartloopai.isNative = isNative;
-    losmartloopai.isNil = isNil;
-    losmartloopai.isNull = isNull;
-    losmartloopai.isNumber = isNumber;
-    losmartloopai.isObject = isObject;
-    losmartloopai.isObjectLike = isObjectLike;
-    losmartloopai.isPlainObject = isPlainObject;
-    losmartloopai.isRegExp = isRegExp;
-    losmartloopai.isSafeInteger = isSafeInteger;
-    losmartloopai.isSet = isSet;
-    losmartloopai.isString = isString;
-    losmartloopai.isSymbol = isSymbol;
-    losmartloopai.isTypedArray = isTypedArray;
-    losmartloopai.isUndefined = isUndefined;
-    losmartloopai.isWeakMap = isWeakMap;
-    losmartloopai.isWeakSet = isWeakSet;
-    losmartloopai.join = join;
-    losmartloopai.kebabCase = kebabCase;
-    losmartloopai.last = last;
-    losmartloopai.lastIndexOf = lastIndexOf;
-    losmartloopai.lowerCase = lowerCase;
-    losmartloopai.lowerFirst = lowerFirst;
-    losmartloopai.lt = lt;
-    losmartloopai.lte = lte;
-    losmartloopai.max = max;
-    losmartloopai.maxBy = maxBy;
-    losmartloopai.mean = mean;
-    losmartloopai.meanBy = meanBy;
-    losmartloopai.min = min;
-    losmartloopai.minBy = minBy;
-    losmartloopai.stubArray = stubArray;
-    losmartloopai.stubFalse = stubFalse;
-    losmartloopai.stubObject = stubObject;
-    losmartloopai.stubString = stubString;
-    losmartloopai.stubTrue = stubTrue;
-    losmartloopai.multiply = multiply;
-    losmartloopai.nth = nth;
-    losmartloopai.noConflict = noConflict;
-    losmartloopai.noop = noop;
-    losmartloopai.now = now;
-    losmartloopai.pad = pad;
-    losmartloopai.padEnd = padEnd;
-    losmartloopai.padStart = padStart;
-    losmartloopai.parseInt = parseInt;
-    losmartloopai.random = random;
-    losmartloopai.reduce = reduce;
-    losmartloopai.reduceRight = reduceRight;
-    losmartloopai.repeat = repeat;
-    losmartloopai.replace = replace;
-    losmartloopai.result = result;
-    losmartloopai.round = round;
-    losmartloopai.runInContext = runInContext;
-    losmartloopai.sample = sample;
-    losmartloopai.size = size;
-    losmartloopai.snakeCase = snakeCase;
-    losmartloopai.some = some;
-    losmartloopai.sortedIndex = sortedIndex;
-    losmartloopai.sortedIndexBy = sortedIndexBy;
-    losmartloopai.sortedIndexOf = sortedIndexOf;
-    losmartloopai.sortedLastIndex = sortedLastIndex;
-    losmartloopai.sortedLastIndexBy = sortedLastIndexBy;
-    losmartloopai.sortedLastIndexOf = sortedLastIndexOf;
-    losmartloopai.startCase = startCase;
-    losmartloopai.startsWith = startsWith;
-    losmartloopai.subtract = subtract;
-    losmartloopai.sum = sum;
-    losmartloopai.sumBy = sumBy;
-    losmartloopai.template = template;
-    losmartloopai.times = times;
-    losmartloopai.toFinite = toFinite;
-    losmartloopai.toInteger = toInteger;
-    losmartloopai.toLength = toLength;
-    losmartloopai.toLower = toLower;
-    losmartloopai.toNumber = toNumber;
-    losmartloopai.toSafeInteger = toSafeInteger;
-    losmartloopai.toString = toString;
-    losmartloopai.toUpper = toUpper;
-    losmartloopai.trim = trim;
-    losmartloopai.trimEnd = trimEnd;
-    losmartloopai.trimStart = trimStart;
-    losmartloopai.truncate = truncate;
-    losmartloopai.unescape = unescape;
-    losmartloopai.uniqueId = uniqueId;
-    losmartloopai.upperCase = upperCase;
-    losmartloopai.upperFirst = upperFirst;
+    lohalfy.add = add;
+    lohalfy.attempt = attempt;
+    lohalfy.camelCase = camelCase;
+    lohalfy.capitalize = capitalize;
+    lohalfy.ceil = ceil;
+    lohalfy.clamp = clamp;
+    lohalfy.clone = clone;
+    lohalfy.cloneDeep = cloneDeep;
+    lohalfy.cloneDeepWith = cloneDeepWith;
+    lohalfy.cloneWith = cloneWith;
+    lohalfy.conformsTo = conformsTo;
+    lohalfy.deburr = deburr;
+    lohalfy.defaultTo = defaultTo;
+    lohalfy.divide = divide;
+    lohalfy.endsWith = endsWith;
+    lohalfy.eq = eq;
+    lohalfy.escape = escape;
+    lohalfy.escapeRegExp = escapeRegExp;
+    lohalfy.every = every;
+    lohalfy.find = find;
+    lohalfy.findIndex = findIndex;
+    lohalfy.findKey = findKey;
+    lohalfy.findLast = findLast;
+    lohalfy.findLastIndex = findLastIndex;
+    lohalfy.findLastKey = findLastKey;
+    lohalfy.floor = floor;
+    lohalfy.forEach = forEach;
+    lohalfy.forEachRight = forEachRight;
+    lohalfy.forIn = forIn;
+    lohalfy.forInRight = forInRight;
+    lohalfy.forOwn = forOwn;
+    lohalfy.forOwnRight = forOwnRight;
+    lohalfy.get = get;
+    lohalfy.gt = gt;
+    lohalfy.gte = gte;
+    lohalfy.has = has;
+    lohalfy.hasIn = hasIn;
+    lohalfy.head = head;
+    lohalfy.identity = identity;
+    lohalfy.includes = includes;
+    lohalfy.indexOf = indexOf;
+    lohalfy.inRange = inRange;
+    lohalfy.invoke = invoke;
+    lohalfy.isArguments = isArguments;
+    lohalfy.isArray = isArray;
+    lohalfy.isArrayBuffer = isArrayBuffer;
+    lohalfy.isArrayLike = isArrayLike;
+    lohalfy.isArrayLikeObject = isArrayLikeObject;
+    lohalfy.isBoolean = isBoolean;
+    lohalfy.isBuffer = isBuffer;
+    lohalfy.isDate = isDate;
+    lohalfy.isElement = isElement;
+    lohalfy.isEmpty = isEmpty;
+    lohalfy.isEqual = isEqual;
+    lohalfy.isEqualWith = isEqualWith;
+    lohalfy.isError = isError;
+    lohalfy.isFinite = isFinite;
+    lohalfy.isFunction = isFunction;
+    lohalfy.isInteger = isInteger;
+    lohalfy.isLength = isLength;
+    lohalfy.isMap = isMap;
+    lohalfy.isMatch = isMatch;
+    lohalfy.isMatchWith = isMatchWith;
+    lohalfy.isNaN = isNaN;
+    lohalfy.isNative = isNative;
+    lohalfy.isNil = isNil;
+    lohalfy.isNull = isNull;
+    lohalfy.isNumber = isNumber;
+    lohalfy.isObject = isObject;
+    lohalfy.isObjectLike = isObjectLike;
+    lohalfy.isPlainObject = isPlainObject;
+    lohalfy.isRegExp = isRegExp;
+    lohalfy.isSafeInteger = isSafeInteger;
+    lohalfy.isSet = isSet;
+    lohalfy.isString = isString;
+    lohalfy.isSymbol = isSymbol;
+    lohalfy.isTypedArray = isTypedArray;
+    lohalfy.isUndefined = isUndefined;
+    lohalfy.isWeakMap = isWeakMap;
+    lohalfy.isWeakSet = isWeakSet;
+    lohalfy.join = join;
+    lohalfy.kebabCase = kebabCase;
+    lohalfy.last = last;
+    lohalfy.lastIndexOf = lastIndexOf;
+    lohalfy.lowerCase = lowerCase;
+    lohalfy.lowerFirst = lowerFirst;
+    lohalfy.lt = lt;
+    lohalfy.lte = lte;
+    lohalfy.max = max;
+    lohalfy.maxBy = maxBy;
+    lohalfy.mean = mean;
+    lohalfy.meanBy = meanBy;
+    lohalfy.min = min;
+    lohalfy.minBy = minBy;
+    lohalfy.stubArray = stubArray;
+    lohalfy.stubFalse = stubFalse;
+    lohalfy.stubObject = stubObject;
+    lohalfy.stubString = stubString;
+    lohalfy.stubTrue = stubTrue;
+    lohalfy.multiply = multiply;
+    lohalfy.nth = nth;
+    lohalfy.noConflict = noConflict;
+    lohalfy.noop = noop;
+    lohalfy.now = now;
+    lohalfy.pad = pad;
+    lohalfy.padEnd = padEnd;
+    lohalfy.padStart = padStart;
+    lohalfy.parseInt = parseInt;
+    lohalfy.random = random;
+    lohalfy.reduce = reduce;
+    lohalfy.reduceRight = reduceRight;
+    lohalfy.repeat = repeat;
+    lohalfy.replace = replace;
+    lohalfy.result = result;
+    lohalfy.round = round;
+    lohalfy.runInContext = runInContext;
+    lohalfy.sample = sample;
+    lohalfy.size = size;
+    lohalfy.snakeCase = snakeCase;
+    lohalfy.some = some;
+    lohalfy.sortedIndex = sortedIndex;
+    lohalfy.sortedIndexBy = sortedIndexBy;
+    lohalfy.sortedIndexOf = sortedIndexOf;
+    lohalfy.sortedLastIndex = sortedLastIndex;
+    lohalfy.sortedLastIndexBy = sortedLastIndexBy;
+    lohalfy.sortedLastIndexOf = sortedLastIndexOf;
+    lohalfy.startCase = startCase;
+    lohalfy.startsWith = startsWith;
+    lohalfy.subtract = subtract;
+    lohalfy.sum = sum;
+    lohalfy.sumBy = sumBy;
+    lohalfy.template = template;
+    lohalfy.times = times;
+    lohalfy.toFinite = toFinite;
+    lohalfy.toInteger = toInteger;
+    lohalfy.toLength = toLength;
+    lohalfy.toLower = toLower;
+    lohalfy.toNumber = toNumber;
+    lohalfy.toSafeInteger = toSafeInteger;
+    lohalfy.toString = toString;
+    lohalfy.toUpper = toUpper;
+    lohalfy.trim = trim;
+    lohalfy.trimEnd = trimEnd;
+    lohalfy.trimStart = trimStart;
+    lohalfy.truncate = truncate;
+    lohalfy.unescape = unescape;
+    lohalfy.uniqueId = uniqueId;
+    lohalfy.upperCase = upperCase;
+    lohalfy.upperFirst = upperFirst;
 
     // Add aliases.
-    losmartloopai.each = forEach;
-    losmartloopai.eachRight = forEachRight;
-    losmartloopai.first = head;
+    lohalfy.each = forEach;
+    lohalfy.eachRight = forEachRight;
+    lohalfy.first = head;
 
-    mixin(losmartloopai, (function() {
+    mixin(lohalfy, (function() {
       var source = {};
-      baseForOwn(losmartloopai, function(func, methodName) {
-        if (!hasOwnProperty.call(losmartloopai.prototype, methodName)) {
+      baseForOwn(lohalfy, function(func, methodName) {
+        if (!hasOwnProperty.call(lohalfy.prototype, methodName)) {
           source[methodName] = func;
         }
       });
@@ -16353,11 +16353,11 @@
      * @memberOf _
      * @type {string}
      */
-    losmartloopai.VERSION = VERSION;
+    lohalfy.VERSION = VERSION;
 
     // Assign default placeholders.
     arrayEach(['bind', 'bindKey', 'curry', 'curryRight', 'partial', 'partialRight'], function(methodName) {
-      losmartloopai[methodName].placeholder = losmartloopai;
+      lohalfy[methodName].placeholder = lohalfy;
     });
 
     // Add `LazyWrapper` methods for `_.drop` and `_.take` variants.
@@ -16472,17 +16472,17 @@
       return this.take(MAX_ARRAY_LENGTH);
     };
 
-    // Add `LazyWrapper` methods to `losmartloopai.prototype`.
+    // Add `LazyWrapper` methods to `lohalfy.prototype`.
     baseForOwn(LazyWrapper.prototype, function(func, methodName) {
       var checkIteratee = /^(?:filter|find|map|reject)|While$/.test(methodName),
           isTaker = /^(?:head|last)$/.test(methodName),
-          losmartloopaiFunc = losmartloopai[isTaker ? ('take' + (methodName == 'last' ? 'Right' : '')) : methodName],
+          lohalfyFunc = lohalfy[isTaker ? ('take' + (methodName == 'last' ? 'Right' : '')) : methodName],
           retUnwrapped = isTaker || /^find/.test(methodName);
 
-      if (!losmartloopaiFunc) {
+      if (!lohalfyFunc) {
         return;
       }
-      losmartloopai.prototype[methodName] = function() {
+      lohalfy.prototype[methodName] = function() {
         var value = this.__wrapped__,
             args = isTaker ? [1] : arguments,
             isLazy = value instanceof LazyWrapper,
@@ -16490,7 +16490,7 @@
             useLazy = isLazy || isArray(value);
 
         var interceptor = function(value) {
-          var result = losmartloopaiFunc.apply(losmartloopai, arrayPush([value], args));
+          var result = lohalfyFunc.apply(lohalfy, arrayPush([value], args));
           return (isTaker && chainAll) ? result[0] : result;
         };
 
@@ -16507,7 +16507,7 @@
           value = onlyLazy ? value : new LazyWrapper(this);
           var result = func.apply(value, args);
           result.__actions__.push({ 'func': thru, 'args': [interceptor], 'thisArg': undefined });
-          return new LosmartloopaiWrapper(result, chainAll);
+          return new LohalfyWrapper(result, chainAll);
         }
         if (isUnwrapped && onlyLazy) {
           return func.apply(this, args);
@@ -16517,13 +16517,13 @@
       };
     });
 
-    // Add `Array` methods to `losmartloopai.prototype`.
+    // Add `Array` methods to `lohalfy.prototype`.
     arrayEach(['pop', 'push', 'shift', 'sort', 'splice', 'unshift'], function(methodName) {
       var func = arrayProto[methodName],
           chainName = /^(?:push|sort|unshift)$/.test(methodName) ? 'tap' : 'thru',
           retUnwrapped = /^(?:pop|shift)$/.test(methodName);
 
-      losmartloopai.prototype[methodName] = function() {
+      lohalfy.prototype[methodName] = function() {
         var args = arguments;
         if (retUnwrapped && !this.__chain__) {
           var value = this.value();
@@ -16537,12 +16537,12 @@
 
     // Map minified method names to their real names.
     baseForOwn(LazyWrapper.prototype, function(func, methodName) {
-      var losmartloopaiFunc = losmartloopai[methodName];
-      if (losmartloopaiFunc) {
-        var key = (losmartloopaiFunc.name + ''),
+      var lohalfyFunc = lohalfy[methodName];
+      if (lohalfyFunc) {
+        var key = (lohalfyFunc.name + ''),
             names = realNames[key] || (realNames[key] = []);
 
-        names.push({ 'name': methodName, 'func': losmartloopaiFunc });
+        names.push({ 'name': methodName, 'func': lohalfyFunc });
       }
     });
 
@@ -16556,35 +16556,35 @@
     LazyWrapper.prototype.reverse = lazyReverse;
     LazyWrapper.prototype.value = lazyValue;
 
-    // Add chain sequence methods to the `losmartloopai` wrapper.
-    losmartloopai.prototype.at = wrapperAt;
-    losmartloopai.prototype.chain = wrapperChain;
-    losmartloopai.prototype.commit = wrapperCommit;
-    losmartloopai.prototype.next = wrapperNext;
-    losmartloopai.prototype.plant = wrapperPlant;
-    losmartloopai.prototype.reverse = wrapperReverse;
-    losmartloopai.prototype.toJSON = losmartloopai.prototype.valueOf = losmartloopai.prototype.value = wrapperValue;
+    // Add chain sequence methods to the `lohalfy` wrapper.
+    lohalfy.prototype.at = wrapperAt;
+    lohalfy.prototype.chain = wrapperChain;
+    lohalfy.prototype.commit = wrapperCommit;
+    lohalfy.prototype.next = wrapperNext;
+    lohalfy.prototype.plant = wrapperPlant;
+    lohalfy.prototype.reverse = wrapperReverse;
+    lohalfy.prototype.toJSON = lohalfy.prototype.valueOf = lohalfy.prototype.value = wrapperValue;
 
     // Add lazy aliases.
-    losmartloopai.prototype.first = losmartloopai.prototype.head;
+    lohalfy.prototype.first = lohalfy.prototype.head;
 
     if (iteratorSymbol) {
-      losmartloopai.prototype[iteratorSymbol] = wrapperToIterator;
+      lohalfy.prototype[iteratorSymbol] = wrapperToIterator;
     }
-    return losmartloopai;
+    return lohalfy;
   }
 
   /*--------------------------------------------------------------------------*/
 
-  // Export losmartloopai.
+  // Export lohalfy.
   var _ = runInContext();
 
   // Some AMD build optimizers, like r.js, check for condition patterns like:
   if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) {
-    // Expose Losmartloopai on the global object to prevent errors when Losmartloopai is
+    // Expose Lohalfy on the global object to prevent errors when Lohalfy is
     // loaded by a script tag in the presence of an AMD loader.
     // See http://requirejs.org/docs/errors.html#mismatch for more details.
-    // Use `_.noConflict` to remove Losmartloopai from the global object.
+    // Use `_.noConflict` to remove Lohalfy from the global object.
     root._ = _;
 
     // Define as an anonymous module so, through path mapping, it can be

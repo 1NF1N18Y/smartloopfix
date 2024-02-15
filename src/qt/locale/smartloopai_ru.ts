@@ -74,12 +74,12 @@
         <translation>Адреса получения</translation>
     </message>
     <message>
-        <source>These are your SmartLoopAI addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Это ваши адреса SmartLoopAI для отправки платежей. Всегда проверяйте количество и адрес получателя перед отправкой перевода.</translation>
+        <source>These are your Halfy addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Это ваши адреса Halfy для отправки платежей. Всегда проверяйте количество и адрес получателя перед отправкой перевода.</translation>
     </message>
     <message>
-        <source>These are your SmartLoopAI addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
-        <translation>Это ваши адреса SmartLoopAI для получения платежей. Используйте кнопку 'Создать новый адрес для получения' на закладке получения для создания новых адресов.</translation>
+        <source>These are your Halfy addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <translation>Это ваши адреса Halfy для получения платежей. Используйте кнопку 'Создать новый адрес для получения' на закладке получения для создания новых адресов.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -229,8 +229,8 @@
         <translation>Подтвердите шифрование кошелька</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SMLP&lt;/b&gt;!</source>
-        <translation>Внимание: если Вы зашифруете кошелёк и потеряете пароль, вы &lt;b&gt;ПОТЕРЯЕТЕ ВСЕ ВАШИ SMLP&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR HALFY&lt;/b&gt;!</source>
+        <translation>Внимание: если Вы зашифруете кошелёк и потеряете пароль, вы &lt;b&gt;ПОТЕРЯЕТЕ ВСЕ ВАШИ HALFY&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -338,16 +338,16 @@
         <translation>&amp;Отправить</translation>
     </message>
     <message>
-        <source>Send coins to a SmartLoopAI address</source>
-        <translation>Отправить монеты на указанный адрес SmartLoopAI</translation>
+        <source>Send coins to a Halfy address</source>
+        <translation>Отправить монеты на указанный адрес Halfy</translation>
     </message>
     <message>
         <source>&amp;Receive</source>
         <translation>&amp;Получить</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and smartloopai: URIs)</source>
-        <translation>Запросить платежи (создать QR-коды и smartloopai: URI)</translation>
+        <source>Request payments (generates QR codes and halfy: URIs)</source>
+        <translation>Запросить платежи (создать QR-коды и halfy: URI)</translation>
     </message>
     <message>
         <source>&amp;Sending addresses</source>
@@ -434,8 +434,8 @@
         <translation>&amp;О %1</translation>
     </message>
     <message>
-        <source>Send %1 funds to a SmartLoopAI address</source>
-        <translation>Отправить %1 средства на SmartLoopAI адрес</translation>
+        <source>Send %1 funds to a Halfy address</source>
+        <translation>Отправить %1 средства на Halfy адрес</translation>
     </message>
     <message>
         <source>Modify configuration options for %1</source>
@@ -490,16 +490,16 @@
         <translation>П&amp;одписать сообщение...</translation>
     </message>
     <message>
-        <source>Sign messages with your SmartLoopAI addresses to prove you own them</source>
-        <translation>Подписать сообщения вашими адресами SmartLoopAI, чтобы доказать, что вы ими владеете</translation>
+        <source>Sign messages with your Halfy addresses to prove you own them</source>
+        <translation>Подписать сообщения вашими адресами Halfy, чтобы доказать, что вы ими владеете</translation>
     </message>
     <message>
         <source>&amp;Verify message...</source>
         <translation>&amp;Проверить сообщение...</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified SmartLoopAI addresses</source>
-        <translation>Проверить сообщения, чтобы удостовериться, что они были подписаны определёнными адресами SmartLoopAI</translation>
+        <source>Verify messages to ensure they were signed with specified Halfy addresses</source>
+        <translation>Проверить сообщения, чтобы удостовериться, что они были подписаны определёнными адресами Halfy</translation>
     </message>
     <message>
         <source>&amp;Information</source>
@@ -570,7 +570,7 @@
         <translation>&amp;Параметры командной строки</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible SmartLoopAI command-line options</source>
+        <source>Show the %1 help message to get a list with possible Halfy command-line options</source>
         <translation>Показать справку по %1 со списком возможных параметров командной строки</translation>
     </message>
     <message>
@@ -604,16 +604,16 @@
         <translation>Загрузить PSBT...</translation>
     </message>
     <message>
-        <source>Load Partially Signed SmartLoopAI Transaction</source>
-        <translation>Загрузить частично подписанную транзакцию SmartLoopAI</translation>
+        <source>Load Partially Signed Halfy Transaction</source>
+        <translation>Загрузить частично подписанную транзакцию Halfy</translation>
     </message>
     <message>
         <source>Open debugging and diagnostic console</source>
         <translation>Открыть консоль отладки и диагностики</translation>
     </message>
     <message>
-        <source>Open a smartloopai: URI</source>
-        <translation>Открыть smartloopai: URI</translation>
+        <source>Open a halfy: URI</source>
+        <translation>Открыть halfy: URI</translation>
     </message>
     <message>
         <source>Create Wallet...</source>
@@ -652,8 +652,8 @@
         <translation>Посмотреть предложения по Управлению</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to SmartLoopAI network</source>
-        <translation><numerusform>%n активное соединение с сетью SmartLoopAI</numerusform><numerusform>%n активных соединения с сетью SmartLoopAI</numerusform><numerusform>%n активных соединений с сетью SmartLoopAI</numerusform><numerusform>%n активных соединений с сетью SmartLoopAI</numerusform></translation>
+        <source>%n active connection(s) to Halfy network</source>
+        <translation><numerusform>%n активное соединение с сетью Halfy</numerusform><numerusform>%n активных соединения с сетью Halfy</numerusform><numerusform>%n активных соединений с сетью Halfy</numerusform><numerusform>%n активных соединений с сетью Halfy</numerusform></translation>
     </message>
     <message>
         <source>Network activity disabled</source>
@@ -1114,8 +1114,8 @@
         <translation>Изменение адреса для отправки</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid SmartLoopAI address.</source>
-        <translation>Введённый адрес "%1" не является правильным адресом SmartLoopAI.</translation>
+        <source>The entered address "%1" is not a valid Halfy address.</source>
+        <translation>Введённый адрес "%1" не является правильным адресом Halfy.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -1203,8 +1203,8 @@
         <translation>Информация о %1</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;%1 Basics&lt;/h3&gt; %1 gives you true financial privacy by obscuring the origins of your funds. All the SmartLoopAI in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; %1 uses an innovative process to mix your inputs with the inputs of two or more other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The %1 process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;%1 begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 SMLP, 0.01 SMLP, 0.1 SMLP, 1 SMLP and 10 SMLP -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two or more other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of %1 makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be mixed. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have %1 disabled. &lt;hr&gt;For more information, see the &lt;a style="%2" href="%3"&gt;%1 documentation&lt;/a&gt;.</source>
-        <translation>&lt;h3&gt;Основы %1&lt;/h3&gt;%1 позволяет Вам получить настоящую финансовую конфиденциальность за счет скрытия источников Ваших средств. Все SmartLoopAI в  Вашем кошельке состоят из различных "входов", Вы можете думать о них как об отдельных монетах.&lt;br&gt;%1 использует инновационный процесс для перемешивания Ваших входов со входами еще двоих или более человек, но при этом Ваши монеты никогда не покидают Ваш кошелек. Вы сохраняете контроль над Вашими деньгами на протяжении всего времени.&lt;hr&gt; &lt;b&gt;%1 работает так:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;%1 начинается с разбиения Ваших входов транзакций на стандартные номиналы. Такими номиналами являются 0.001 SMLP, 0.01 SMLP, 0.1 SMLP, 1 SMLP и 10 SMLP -- что-то вроде купюр, которыми вы пользуетесь каждый день.&lt;/li&gt; &lt;li&gt;Ваш кошелек затем отправляет запросы к особым образом настроенным сетевым узлам, называемым "мастернодами". Эти мастерноды знают только то, что Вы хотите перемешать определенные номиналы. Никакой идентифицирующей информации мастернодам не отправляется, так что они не знают "кто" Вы конкретно.&lt;/li&gt; &lt;li&gt;Сессия перемешивания начинается тогда, когда еще двое или более человек отправляют схожее сообщение, подтверждающее, что они хотят перемешать точно такой же номинал. Мастернода перемешивает входы и просит кошельки всех пользователей осуществить платежи по ним. Ваш кошелек осуществляет выплату самому себе, но на другой адрес (тоже из вашего кошелька).&lt;/li&gt; &lt;li&gt;Для скрытия Ваших средств кошелек должен повторить этот процесс несколько раз с каждым номиналом. Каждый раз, когда такой процесс завершается, называется "раундом". С каждым раундом %1 становится экспоненциально сложнее определить откуда поступили средства.&lt;/li&gt; &lt;li&gt;Процесс перемешивания выполняется в фоне, без участия пользователя. Когда Вы захотите провести транзакцию, средства уже будут перемешаны. Дополнительно ждать не требуется.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;ВАЖНО:&lt;/b&gt; Ваш кошелек содержит 1000 адресов. Каждое перемешивание использует до 9 из этих адресов. Это означает, что 1000 адресов хватит примерно на 100 перемешиваний. Когда 900 адресов будут уже использованы, Ваш кошелек должен создать новые адреса. Однако, он может сделать это, только если у Вас включены автоматические резервные копии.&lt;br&gt;Соответственно, пользователям с отключенным резервным копированием %1 не доступен. &lt;hr&gt;Дополнительная информация доступна в &lt;a style="%2" href="%3"&gt; документации %1&lt;/a&gt;.</translation>
+        <source>&lt;h3&gt;%1 Basics&lt;/h3&gt; %1 gives you true financial privacy by obscuring the origins of your funds. All the Halfy in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; %1 uses an innovative process to mix your inputs with the inputs of two or more other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The %1 process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;%1 begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 HALFY, 0.01 HALFY, 0.1 HALFY, 1 HALFY and 10 HALFY -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two or more other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of %1 makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be mixed. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have %1 disabled. &lt;hr&gt;For more information, see the &lt;a style="%2" href="%3"&gt;%1 documentation&lt;/a&gt;.</source>
+        <translation>&lt;h3&gt;Основы %1&lt;/h3&gt;%1 позволяет Вам получить настоящую финансовую конфиденциальность за счет скрытия источников Ваших средств. Все Halfy в  Вашем кошельке состоят из различных "входов", Вы можете думать о них как об отдельных монетах.&lt;br&gt;%1 использует инновационный процесс для перемешивания Ваших входов со входами еще двоих или более человек, но при этом Ваши монеты никогда не покидают Ваш кошелек. Вы сохраняете контроль над Вашими деньгами на протяжении всего времени.&lt;hr&gt; &lt;b&gt;%1 работает так:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;%1 начинается с разбиения Ваших входов транзакций на стандартные номиналы. Такими номиналами являются 0.001 HALFY, 0.01 HALFY, 0.1 HALFY, 1 HALFY и 10 HALFY -- что-то вроде купюр, которыми вы пользуетесь каждый день.&lt;/li&gt; &lt;li&gt;Ваш кошелек затем отправляет запросы к особым образом настроенным сетевым узлам, называемым "мастернодами". Эти мастерноды знают только то, что Вы хотите перемешать определенные номиналы. Никакой идентифицирующей информации мастернодам не отправляется, так что они не знают "кто" Вы конкретно.&lt;/li&gt; &lt;li&gt;Сессия перемешивания начинается тогда, когда еще двое или более человек отправляют схожее сообщение, подтверждающее, что они хотят перемешать точно такой же номинал. Мастернода перемешивает входы и просит кошельки всех пользователей осуществить платежи по ним. Ваш кошелек осуществляет выплату самому себе, но на другой адрес (тоже из вашего кошелька).&lt;/li&gt; &lt;li&gt;Для скрытия Ваших средств кошелек должен повторить этот процесс несколько раз с каждым номиналом. Каждый раз, когда такой процесс завершается, называется "раундом". С каждым раундом %1 становится экспоненциально сложнее определить откуда поступили средства.&lt;/li&gt; &lt;li&gt;Процесс перемешивания выполняется в фоне, без участия пользователя. Когда Вы захотите провести транзакцию, средства уже будут перемешаны. Дополнительно ждать не требуется.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;ВАЖНО:&lt;/b&gt; Ваш кошелек содержит 1000 адресов. Каждое перемешивание использует до 9 из этих адресов. Это означает, что 1000 адресов хватит примерно на 100 перемешиваний. Когда 900 адресов будут уже использованы, Ваш кошелек должен создать новые адреса. Однако, он может сделать это, только если у Вас включены автоматические резервные копии.&lt;br&gt;Соответственно, пользователям с отключенным резервным копированием %1 не доступен. &lt;hr&gt;Дополнительная информация доступна в &lt;a style="%2" href="%3"&gt; документации %1&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
@@ -1266,8 +1266,8 @@
         <translation>Приблизительно %1 ГБ данных будет сохранено в этой папке.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the SmartLoopAI block chain.</source>
-        <translation>%1 скачает и сохранит копию цепочки блоков SmartLoopAI.</translation>
+        <source>%1 will download and store a copy of the Halfy block chain.</source>
+        <translation>%1 скачает и сохранит копию цепочки блоков Halfy.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1420,11 +1420,11 @@
         <translation>Форма</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the SmartLoopAI network, as detailed below.</source>
-        <translation>Последние транзакции пока что могут быть не видны и поэтому ваш баланс может отображаться некорректно. Информация будет корректироваться по мере синхронизации с сетью SmartLoopAI, подробности о ходе синхронизации представлены ниже.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the Halfy network, as detailed below.</source>
+        <translation>Последние транзакции пока что могут быть не видны и поэтому ваш баланс может отображаться некорректно. Информация будет корректироваться по мере синхронизации с сетью Halfy, подробности о ходе синхронизации представлены ниже.</translation>
     </message>
     <message>
-        <source>Attempting to spend SmartLoopAI that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend Halfy that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation>Попытка потратить средства из ещё не отображённых транзакций будет отвергнута сетью.</translation>
     </message>
     <message>
@@ -1641,8 +1641,8 @@
         <translation>Максимум</translation>
     </message>
     <message>
-        <source>Automatically open the SmartLoopAI Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Автоматически открыть порт для SmartLoopAI Core на роутере. Работает только в том случае, если Ваш роутер поддерживает UPnP и данная функция включена.</translation>
+        <source>Automatically open the Halfy Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Автоматически открыть порт для Halfy Core на роутере. Работает только в том случае, если Ваш роутер поддерживает UPnP и данная функция включена.</translation>
     </message>
     <message>
         <source>Map port using NA&amp;T-PMP</source>
@@ -1657,8 +1657,8 @@
         <translation>Принимать &amp;входящие подключения</translation>
     </message>
     <message>
-        <source>Connect to the SmartLoopAI network through a SOCKS5 proxy.</source>
-        <translation>Подключаться к сети SmartLoopAI через прокси SOCKS5.</translation>
+        <source>Connect to the Halfy network through a SOCKS5 proxy.</source>
+        <translation>Подключаться к сети Halfy через прокси SOCKS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1729,8 +1729,8 @@
         <translation>Пробросить порт через &amp;UPnP</translation>
     </message>
     <message>
-        <source>Automatically open the SmartLoopAI Core client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
-        <translation>Автоматически открыть порт для SmartLoopAI Core на роутере. Работает только в том случае, если Ваш роутер поддерживает NAT-PMP и данная функция включена. Внешний порт может быть любым.</translation>
+        <source>Automatically open the Halfy Core client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
+        <translation>Автоматически открыть порт для Halfy Core на роутере. Работает только в том случае, если Ваш роутер поддерживает NAT-PMP и данная функция включена. Внешний порт может быть любым.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1781,8 +1781,8 @@
         <translation>О&amp;тображение</translation>
     </message>
     <message>
-        <source>Connect to the SmartLoopAI network through a separate SOCKS5 proxy for Tor onion services.</source>
-        <translation>Подключаться к сети SmartLoopAI через отдельный прокси SOCKS5 для сервисов Tor.</translation>
+        <source>Connect to the Halfy network through a separate SOCKS5 proxy for Tor onion services.</source>
+        <translation>Подключаться к сети Halfy через отдельный прокси SOCKS5 для сервисов Tor.</translation>
     </message>
     <message>
         <source>Use separate SOCKS&amp;5 proxy to reach peers via Tor onion services:</source>
@@ -1798,9 +1798,9 @@
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/projects/p/smartloopai/</source>
+https://www.transifex.com/projects/p/halfy/</source>
         <translation>Нет Вашего языка или перевод неполон? Помогите нам сделать перевод лучше:
-https://www.transifex.com/projects/p/smartloopai/</translation>
+https://www.transifex.com/projects/p/halfy/</translation>
     </message>
     <message>
         <source>&amp;Unit to show amounts in:</source>
@@ -1866,8 +1866,8 @@ https://www.transifex.com/projects/p/smartloopai/</translation>
         <translation>Форма</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the SmartLoopAI network after a connection is established, but this process has not completed yet.</source>
-        <translation>Отображаемая информация может быть устаревшей. Ваш кошелёк автоматически синхронизируется с сетью SmartLoopAI после подключения, но этот процесс пока не завершён.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Halfy network after a connection is established, but this process has not completed yet.</source>
+        <translation>Отображаемая информация может быть устаревшей. Ваш кошелёк автоматически синхронизируется с сетью Halfy после подключения, но этот процесс пока не завершён.</translation>
     </message>
     <message>
         <source>Available:</source>
@@ -1946,8 +1946,8 @@ https://www.transifex.com/projects/p/smartloopai/</translation>
         <translation>Сумма и раунды:</translation>
     </message>
     <message>
-        <source>0 SMLP / 0 Rounds</source>
-        <translation>0 SMLP / 0 раундов</translation>
+        <source>0 HALFY / 0 Rounds</source>
+        <translation>0 HALFY / 0 раундов</translation>
     </message>
     <message>
         <source>Submitted Denom:</source>
@@ -2089,16 +2089,16 @@ https://www.transifex.com/projects/p/smartloopai/</translation>
         <translation>Ошибка запроса платежа</translation>
     </message>
     <message>
-        <source>Cannot start smartloopai: click-to-pay handler</source>
-        <translation>Не удаётся запустить обработчик smartloopai: click-to-pay</translation>
+        <source>Cannot start halfy: click-to-pay handler</source>
+        <translation>Не удаётся запустить обработчик halfy: click-to-pay</translation>
     </message>
     <message>
         <source>URI handling</source>
         <translation>Обработка URI</translation>
     </message>
     <message>
-        <source>'smartloopai://' is not a valid URI. Use 'smartloopai:' instead.</source>
-        <translation>'smartloopai://' не является валидным URI. Используйте 'smartloopai:'.</translation>
+        <source>'halfy://' is not a valid URI. Use 'halfy:' instead.</source>
+        <translation>'halfy://' не является валидным URI. Используйте 'halfy:'.</translation>
     </message>
     <message>
         <source>Cannot process payment request as BIP70 is no longer supported.</source>
@@ -2113,8 +2113,8 @@ https://www.transifex.com/projects/p/smartloopai/</translation>
         <translation>Неверный адрес платежа %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid SmartLoopAI address or malformed URI parameters.</source>
-        <translation>Не удалось разобрать URI! Возможно указан некорректный адрес SmartLoopAI либо параметры URI сформированы неверно.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Halfy address or malformed URI parameters.</source>
+        <translation>Не удалось разобрать URI! Возможно указан некорректный адрес Halfy либо параметры URI сформированы неверно.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -2289,8 +2289,8 @@ https://www.transifex.com/projects/p/smartloopai/</translation>
         <translation>Сумма</translation>
     </message>
     <message>
-        <source>Enter a SmartLoopAI address (e.g. %1)</source>
-        <translation>Введите адрес SmartLoopAI (например, %1)</translation>
+        <source>Enter a Halfy address (e.g. %1)</source>
+        <translation>Введите адрес Halfy (например, %1)</translation>
     </message>
     <message>
         <source>Appearance Setup</source>
@@ -2829,8 +2829,8 @@ https://www.transifex.com/projects/p/smartloopai/</translation>
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the SmartLoopAI network.</source>
-        <translation>Необязательное сообщение для запроса платежа, которое будет показано при открытии запроса. Обратите внимание: сообщение не будет отправлено вместе с платежом через сеть SmartLoopAI.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Halfy network.</source>
+        <translation>Необязательное сообщение для запроса платежа, которое будет показано при открытии запроса. Обратите внимание: сообщение не будет отправлено вместе с платежом через сеть Halfy.</translation>
     </message>
     <message>
         <source>&amp;Message:</source>
@@ -2841,8 +2841,8 @@ https://www.transifex.com/projects/p/smartloopai/</translation>
         <translation>Необязательная метка для нового адреса получения.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the SmartLoopAI network.</source>
-        <translation>Необязательное сообщение для запроса платежа, которое будет показано при открытии запроса.&lt;br&gt;Обратите внимание: сообщение не будет отправлено вместе с платежом через сеть SmartLoopAI.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Halfy network.</source>
+        <translation>Необязательное сообщение для запроса платежа, которое будет показано при открытии запроса.&lt;br&gt;Обратите внимание: сообщение не будет отправлено вместе с платежом через сеть Halfy.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address (used by you to identify an invoice).  It is also attached to the payment request.</source>
@@ -3074,8 +3074,8 @@ https://www.transifex.com/projects/p/smartloopai/</translation>
         <translation>Выбрать...</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for smartloopai transactions than the network can process.</source>
-        <translation>Когда объем транзакций меньше, чем место в блоках, майнеры, а также узлы ретрансляции могут установить минимальную комиссию. Платить минимальную комиссию вполне нормально, но следует учитывать, что это может привести к тому, что транзакция никогда не будет подтверждена. В случае, если спрос на SmartLoopAI-транзакции будет превышать спрос, который может обработать сеть.</translation>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for halfy transactions than the network can process.</source>
+        <translation>Когда объем транзакций меньше, чем место в блоках, майнеры, а также узлы ретрансляции могут установить минимальную комиссию. Платить минимальную комиссию вполне нормально, но следует учитывать, что это может привести к тому, что транзакция никогда не будет подтверждена. В случае, если спрос на Halfy-транзакции будет превышать спрос, который может обработать сеть.</translation>
     </message>
     <message>
         <source>A too low fee might result in a never confirming transaction (read the tooltip)</source>
@@ -3342,8 +3342,8 @@ https://www.transifex.com/projects/p/smartloopai/</translation>
         <translation><numerusform>Будет подтверждено приблизительно в течение %n блока.</numerusform><numerusform>Будет подтверждено приблизительно в течение %n блоков.</numerusform><numerusform>Будет подтверждено приблизительно в течение %n блоков.</numerusform><numerusform>Будет подтверждено приблизительно в течение %n блоков.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid SmartLoopAI address</source>
-        <translation>Внимание: неверный адрес SmartLoopAI</translation>
+        <source>Warning: Invalid Halfy address</source>
+        <translation>Внимание: неверный адрес Halfy</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -3369,8 +3369,8 @@ https://www.transifex.com/projects/p/smartloopai/</translation>
         <translation>Полу&amp;чатель:</translation>
     </message>
     <message>
-        <source>The SmartLoopAI address to send the payment to</source>
-        <translation>Адрес SmartLoopAI для отправки на него монет</translation>
+        <source>The Halfy address to send the payment to</source>
+        <translation>Адрес Halfy для отправки на него монет</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3409,8 +3409,8 @@ https://www.transifex.com/projects/p/smartloopai/</translation>
         <translation>Сумма к отправке в выбранных единицах</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of SmartLoopAI than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>Комиссия будет вычтена из отправляемой суммы. Получателю придет меньше SmartLoopAI, сем указано в поле "Сумма". Если указано несколько получателей, то комиссия будет разделена между ними поровну.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of Halfy than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>Комиссия будет вычтена из отправляемой суммы. Получателю придет меньше Halfy, сем указано в поле "Сумма". Если указано несколько получателей, то комиссия будет разделена между ними поровну.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -3425,8 +3425,8 @@ https://www.transifex.com/projects/p/smartloopai/</translation>
         <translation>Сообщение:</translation>
     </message>
     <message>
-        <source>A message that was attached to the smartloopai: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the SmartLoopAI network.</source>
-        <translation>К smartloopai: URI было прикреплено сообщение, которое будет сохранено вместе с транзакцией для вашего сведения. Обратите внимание: сообщение не будет отправлено через сеть SmartLoopAI.</translation>
+        <source>A message that was attached to the halfy: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Halfy network.</source>
+        <translation>К halfy: URI было прикреплено сообщение, которое будет сохранено вместе с транзакцией для вашего сведения. Обратите внимание: сообщение не будет отправлено через сеть Halfy.</translation>
     </message>
     <message>
         <source>This is an unauthenticated payment request.</source>
@@ -3467,12 +3467,12 @@ https://www.transifex.com/projects/p/smartloopai/</translation>
         <translation>&amp;Подписать сообщение</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive SmartLoopAI sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>Вы можете подписывать сообщения своими адресами, чтобы доказать, что Вы можете получать SmartLoopAI на них. Будьте осторожны, не подписывайте что-то неопределённое, так как фишинговые атаки могут обманным путём заставить вас подписать нежелательные сообщения. Подписывайте только те сообщения, с которыми вы согласны вплоть до мелочей.</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive Halfy sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation>Вы можете подписывать сообщения своими адресами, чтобы доказать, что Вы можете получать Halfy на них. Будьте осторожны, не подписывайте что-то неопределённое, так как фишинговые атаки могут обманным путём заставить вас подписать нежелательные сообщения. Подписывайте только те сообщения, с которыми вы согласны вплоть до мелочей.</translation>
     </message>
     <message>
-        <source>The SmartLoopAI address to sign the message with</source>
-        <translation>Адрес SmartLoopAI, которым Вы хотите подписать сообщение</translation>
+        <source>The Halfy address to sign the message with</source>
+        <translation>Адрес Halfy, которым Вы хотите подписать сообщение</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3503,8 +3503,8 @@ https://www.transifex.com/projects/p/smartloopai/</translation>
         <translation>Скопировать текущую подпись в системный буфер обмена</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this SmartLoopAI address</source>
-        <translation>Подписать сообщение, чтобы доказать владение этим адресом SmartLoopAI</translation>
+        <source>Sign the message to prove you own this Halfy address</source>
+        <translation>Подписать сообщение, чтобы доказать владение этим адресом Halfy</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -3527,8 +3527,8 @@ https://www.transifex.com/projects/p/smartloopai/</translation>
         <translation>Введите ниже адрес для подписи, сообщение (убедитесь, что переводы строк, пробелы, табы и т.п. в точности скопированы) и подпись, чтобы проверить сообщение. Убедитесь, что не скопировали лишнего в подпись, кроме самого подписываемого сообщения, чтобы не стать жертвой атаки "man-in-the-middle". Обратите внимание, что это лишь подтверждает, что подписывающий может получить средства на этот адрес, это не подтверждает, что он является отправителем какой-либо транзакции!</translation>
     </message>
     <message>
-        <source>The SmartLoopAI address the message was signed with</source>
-        <translation>Адрес SmartLoopAI, которым было подписано сообщение</translation>
+        <source>The Halfy address the message was signed with</source>
+        <translation>Адрес Halfy, которым было подписано сообщение</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -3539,8 +3539,8 @@ https://www.transifex.com/projects/p/smartloopai/</translation>
         <translation>Подпись, полученная при подписании сообщения</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified SmartLoopAI address</source>
-        <translation>Проверить сообщение, чтобы убедиться, что оно было подписано указанным адресом SmartLoopAI</translation>
+        <source>Verify the message to ensure it was signed with the specified Halfy address</source>
+        <translation>Проверить сообщение, чтобы убедиться, что оно было подписано указанным адресом Halfy</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -4270,7 +4270,7 @@ Go to File &gt; Open Wallet to load a wallet.
     </message>
 </context>
 <context>
-    <name>smartloopai-core</name>
+    <name>halfy-core</name>
     <message>
         <source>Error: Listening for incoming connections failed (listen returned error %s)</source>
         <translation>Ошибка: не удалось начать прослушивание входящих подключений (прослушивание вернуло ошибку %s)</translation>
@@ -5060,8 +5060,8 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation>Последняя очередь была создана слишком недавно.</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool smartloopai-wallet to salvage or restoring a backup.</source>
-        <translation>%s поврежден. Попробуете воспользоваться утилитой smartloopai-wallet для восстановления.</translation>
+        <source>%s corrupt. Try using the wallet tool halfy-wallet to salvage or restoring a backup.</source>
+        <translation>%s поврежден. Попробуете воспользоваться утилитой halfy-wallet для восстановления.</translation>
     </message>
     <message>
         <source>Can't generate a change-address key. No keys in the internal keypool and can't generate any keys.</source>

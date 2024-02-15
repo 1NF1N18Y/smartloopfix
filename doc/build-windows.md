@@ -1,12 +1,12 @@
 WINDOWS BUILD NOTES
 ====================
 
-Below are some notes on how to build SmartLoopAI Core for Windows.
+Below are some notes on how to build Halfy Core for Windows.
 
-The options known to work for building SmartLoopAI Core on Windows are:
+The options known to work for building Halfy Core on Windows are:
 
 * On Linux, using the [Mingw-w64](https://mingw-w64.org/doku.php) cross compiler tool chain. Ubuntu Focal 20.04 is required
-and is the platform used to build the SmartLoopAI Core Windows release binaries.
+and is the platform used to build the Halfy Core Windows release binaries.
 * On Windows, using [Windows
 Subsystem for Linux (WSL)](https://docs.microsoft.com/windows/wsl/about) and the Mingw-w64 cross compiler tool chain.
 * On Windows, using a native compiler tool chain such as [Visual Studio](https://www.visualstudio.com).
@@ -110,9 +110,9 @@ Installation
 After building using the Windows subsystem it can be useful to copy the compiled
 executables to a directory on the Windows drive in the same directory structure
 as they appear in the release `.zip` archive. This can be done in the following
-way. This will install to `c:\workspace\smartloopai`, for example:
+way. This will install to `c:\workspace\halfy`, for example:
 
-    make install DESTDIR=/mnt/c/workspace/smartloopai
+    make install DESTDIR=/mnt/c/workspace/halfy
 
 You can also create an installer using:
 

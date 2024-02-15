@@ -2,7 +2,7 @@
 
 This directory contains configuration files for containerization utilities.
 
-Currently two Docker containers exist, `ci` defines how SmartLoopAI's GitLab CI container is built and the `dev` builds on top of the `ci` to provide a containerized development environment that is as close as possible to CI for contributors! See also [SmartLoopAI on Docker Hub](https://hub.docker.com/u/smartloopaipay) i.e. for the [smartloopaid container](https://hub.docker.com/r/smartloopaipay/smartloopaid).
+Currently two Docker containers exist, `ci` defines how Halfy's GitLab CI container is built and the `dev` builds on top of the `ci` to provide a containerized development environment that is as close as possible to CI for contributors! See also [Halfy on Docker Hub](https://hub.docker.com/u/halfypay) i.e. for the [halfyd container](https://hub.docker.com/r/halfypay/halfyd).
 
 ### Usage Guide
 
@@ -21,7 +21,7 @@ export COMPOSE_DOCKER_CLI_BUILD=1
 
 After that, it's simply a matter of building and running your own development container. You can use extensions
 for your IDE like Visual Studio Code's [Remote Containers](https://code.visualstudio.com/docs/remote/containers)
-to run terminal commands from inside the terminal and build SmartLoopAI Core.
+to run terminal commands from inside the terminal and build Halfy Core.
 
 ```bash
 cd contrib/containers/develop

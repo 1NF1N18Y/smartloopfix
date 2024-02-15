@@ -9,10 +9,10 @@
 
 /**
  * Name of client reported in the 'version' message. Report the same name
- * for both smartloopaid and smartloopai-qt, to make it harder for attackers to
+ * for both halfyd and halfy-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("SmartLoopAI Core");
+const std::string CLIENT_NAME("Halfy Core");
 
 
 #ifdef HAVE_BUILD_INFO

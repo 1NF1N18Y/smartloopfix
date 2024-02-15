@@ -1,6 +1,6 @@
 ### TestGen ###
 
-Utilities to generate test vectors for the data-driven SmartLoopAI tests.
+Utilities to generate test vectors for the data-driven Halfy tests.
 
 Usage:
 

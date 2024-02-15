@@ -25,15 +25,15 @@ import xml.etree.ElementTree as ET
 # Name of transifex tool
 TX = 'tx'
 # Name of source language file
-SOURCE_LANG = 'smartloopai_en.ts'
+SOURCE_LANG = 'halfy_en.ts'
 # Directory with locale files
 LOCALE_DIR = 'src/qt/locale'
 # Minimum number of messages for translation to be considered at all
 MIN_NUM_MESSAGES = 10
 # Regexp to check for Bitcoin addresses
 ADDRESS_REGEXP = re.compile('([13]|bc1)[a-zA-Z0-9]{30,}')
-# Regexp to check for SmartLoopAI addresses
-ADDRESS_REGEXP_SMLP = re.compile('[X7][a-zA-Z0-9]{30,}')
+# Regexp to check for Halfy addresses
+ADDRESS_REGEXP_HALFY = re.compile('[X7][a-zA-Z0-9]{30,}')
 
 def check_at_repository_root():
     if not os.path.exists('.git'):
@@ -135,9 +135,9 @@ def contains_bitcoin_addr(text, errors):
         return True
     return False
 
-def contains_smartloopai_addr(text, errors):
-    if text is not None and ADDRESS_REGEXP_SMLP.search(text) is not None:
-        errors.append('Translation "%s" contains a SmartLoopAI address. This will be removed.' % (text))
+def contains_halfy_addr(text, errors):
+    if text is not None and ADDRESS_REGEXP_HALFY.search(text) is not None:
+        errors.append('Translation "%s" contains a Halfy address. This will be removed.' % (text))
         return True
     return False
 
@@ -180,7 +180,7 @@ def postprocess_translations(reduce_diff_hacks=False):
                         continue
                     errors = []
                     valid = check_format_specifiers(source, translation, errors, numerus) and not contains_bitcoin_addr(translation, errors)
-                    valid = valid and not contains_smartloopai_addr(translation, errors)
+                    valid = valid and not contains_halfy_addr(translation, errors)
 
                     for error in errors:
                         print('%s: %s' % (filename, error))

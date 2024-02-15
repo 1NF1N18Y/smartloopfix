@@ -10,7 +10,7 @@
 
 ## Reporting a Vulnerability
 
-To report security issues send an email to security@smartloopai.org (not for support).
+To report security issues send an email to security@halfy.org (not for support).
 
 The following keys may be used to communicate sensitive information to developers:
 

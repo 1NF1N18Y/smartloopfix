@@ -12,7 +12,7 @@ pub mod bip32;
 use std::{error::Error, fmt::Display};
 
 pub use elements::{G1Element, G2Element, G1_ELEMENT_SIZE, G2_ELEMENT_SIZE};
-#[cfg(feature = "smartloopai_helpers")]
+#[cfg(feature = "halfy_helpers")]
 pub use elements::{PublicKey, Signature};
 pub use private_key::{PrivateKey, PRIVATE_KEY_SIZE};
 pub use schemes::{AugSchemeMPL, BasicSchemeMPL, LegacySchemeMPL, Scheme};
@@ -61,7 +61,7 @@ mod tests {
             .g1_element()
             .expect("unable to get public key");
 
-        let message = b"Evgeny owns 1337 smartloopai no cap";
+        let message = b"Evgeny owns 1337 halfy no cap";
 
         let signature = scheme.sign(&private_key, message);
         let verify = scheme.verify(&public_key, message, &signature);

@@ -1,37 +1,37 @@
-SmartLoopAI Core
+Halfy Core
 ==========
 
-This is the official reference wallet for SmartLoopAI digital currency and comprises the backbone of the SmartLoopAI peer-to-peer network. You can [download SmartLoopAI Core](https://www.smartloopai.org/downloads/) or [build it yourself](#building) using the guides below.
+This is the official reference wallet for Halfy digital currency and comprises the backbone of the Halfy peer-to-peer network. You can [download Halfy Core](https://www.halfy.org/downloads/) or [build it yourself](#building) using the guides below.
 
 Running
 ---------------------
-The following are some helpful notes on how to run SmartLoopAI Core on your native platform.
+The following are some helpful notes on how to run Halfy Core on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- `bin/smartloopai-qt` (GUI) or
-- `bin/smartloopaid` (headless)
+- `bin/halfy-qt` (GUI) or
+- `bin/halfyd` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run smartloopai-qt.exe.
+Unpack the files into a directory, and then run halfy-qt.exe.
 
 ### macOS
 
-Drag SmartLoopAI Core to your applications folder, and then run SmartLoopAI Core.
+Drag Halfy Core to your applications folder, and then run Halfy Core.
 
 ### Need Help?
 
-* See the [SmartLoopAI documentation](https://docs.smartloopai.org)
+* See the [Halfy documentation](https://docs.halfy.org)
 for help and more information.
-* Ask for help on [SmartLoopAI Discord](http://staysmartloopaiy.com)
-* Ask for help on the [SmartLoopAI Forum](http://smartloopai.space//forum)
+* Ask for help on [Halfy Discord](http://stayhalfyy.com)
+* Ask for help on the [Halfy Forum](http://halfy.space//forum)
 
 Building
 ---------------------
-The following are developer notes on how to build SmartLoopAI Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Halfy Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [Dependencies](dependencies.md)
 - [macOS Build Notes](build-osx.md)
@@ -43,7 +43,7 @@ The following are developer notes on how to build SmartLoopAI Core on your nativ
 
 Development
 ---------------------
-The SmartLoopAI Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The Halfy Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Productivity Notes](productivity.md)
@@ -60,15 +60,15 @@ The SmartLoopAI Core repo's [root README](/README.md) contains relevant informat
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* See the [SmartLoopAI Developer Documentation](https://smartloopai.readme.io/)
+* See the [Halfy Developer Documentation](https://halfy.readme.io/)
   for technical specifications and implementation details.
-* Discuss on the [SmartLoopAI Forum](http://smartloopai.space//forum), in the Development & Technical Discussion board.
-* Discuss on [SmartLoopAI Discord](http://staysmartloopaiy.com)
-* Discuss on [SmartLoopAI Developers Discord](http://chat.smartloopaidevs.org/)
+* Discuss on the [Halfy Forum](http://halfy.space//forum), in the Development & Technical Discussion board.
+* Discuss on [Halfy Discord](http://stayhalfyy.com)
+* Discuss on [Halfy Developers Discord](http://chat.halfydevs.org/)
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)
-- [smartloopai.conf Configuration File](smartloopai-conf.md)
+- [halfy.conf Configuration File](halfy-conf.md)
 - [Files](files.md)
 - [Fuzz-testing](fuzzing.md)
 - [I2P Support](i2p.md)

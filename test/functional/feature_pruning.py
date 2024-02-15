@@ -486,7 +486,7 @@ class PruneTest(BitcoinTestFramework):
         self.log.info("Test invalid pruning command line options")
         self.test_invalid_command_line_options()
 
-        # NOTE: this is a SmartLoopAI-specific part, it should be the very last one before "Done"
+        # NOTE: this is a Halfy-specific part, it should be the very last one before "Done"
         self.log.info("Stopping pruned nodes manually")
         for i in range(2, 6):
             self.log.info("Stopping pruned node%d" % i)

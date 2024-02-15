@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2023 The Dash Core developers
-// Copyright (c) 2024 The SmartLoopAI Core developers
+// Copyright (c) 2024 The Halfy Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -47,13 +47,13 @@ static void masternode_list_help(const JSONRPCRequest& request)
         "  json           - Print info in JSON format (can be additionally filtered, partial match)\n"
         "  lastpaidblock  - Print the last block height a node was paid on the network\n"
         "  lastpaidtime   - Print the last time a node was paid on the network\n"
-        "  owneraddress   - Print the masternode owner SmartLoopAI address\n"
-        "  payee          - Print the masternode payout SmartLoopAI address (can be additionally filtered,\n"
+        "  owneraddress   - Print the masternode owner Halfy address\n"
+        "  payee          - Print the masternode payout Halfy address (can be additionally filtered,\n"
         "                   partial match)\n"
         "  pubKeyOperator - Print the masternode operator public key\n"
         "  status         - Print masternode status: ENABLED / POSE_BANNED\n"
         "                   (can be additionally filtered, partial match)\n"
-        "  votingaddress  - Print the masternode voting SmartLoopAI address\n",
+        "  votingaddress  - Print the masternode voting Halfy address\n",
         {
             {"mode", RPCArg::Type::STR, /* default */ "json", "The mode to run list in"},
             {"filter", RPCArg::Type::STR, /* default */ "", "Filter results. Partial match by outpoint by default in all modes, additional matches in some modes are also available"},
@@ -743,8 +743,8 @@ void RegisterMasternodeRPCCommands(CRPCTable &t)
 static const CRPCCommand commands[] =
 { //  category              name                      actor (function)         argNames
   //  --------------------- ------------------------  -----------------------  ----------
-    { "smartloopai",               "masternode",             &masternode,             {} },
-    { "smartloopai",               "masternodelist",         &masternode,             {} },
+    { "halfy",               "masternode",             &masternode,             {} },
+    { "halfy",               "masternodelist",         &masternode,             {} },
 };
 // clang-format on
     for (const auto& command : commands) {

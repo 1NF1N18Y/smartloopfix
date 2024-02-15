@@ -15,15 +15,15 @@ and by having a higher relay fee on nodes 4 and 5.
 
 import time
 
-from test_framework.test_framework import SmartLoopAITestFramework
+from test_framework.test_framework import HalfyTestFramework
 from test_framework.util import set_node_times
 
 
-class LLMQ_IS_RetroactiveSigning(SmartLoopAITestFramework):
+class LLMQ_IS_RetroactiveSigning(HalfyTestFramework):
     def set_test_params(self):
         # -whitelist is needed to avoid the trickling logic on node0
-        self.set_smartloopai_test_params(6, 5, [["-whitelist=127.0.0.1"], [], [], [], ["-minrelaytxfee=0.001"], ["-minrelaytxfee=0.001"]], fast_dip3_enforcement=True)
-        self.set_smartloopai_llmq_test_params(5, 3)
+        self.set_halfy_test_params(6, 5, [["-whitelist=127.0.0.1"], [], [], [], ["-minrelaytxfee=0.001"], ["-minrelaytxfee=0.001"]], fast_dip3_enforcement=True)
+        self.set_halfy_llmq_test_params(5, 3)
 
     def run_test(self):
         self.activate_dip8()

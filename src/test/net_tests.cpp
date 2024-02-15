@@ -107,10 +107,10 @@ BOOST_AUTO_TEST_CASE(caddrdb_read)
 
     CService addr1, addr2, addr3;
     BOOST_CHECK(Lookup("250.7.1.1", addr1, 8333, false));
-    BOOST_CHECK(Lookup("250.7.2.2", addr2, 15694, false));
-    BOOST_CHECK(Lookup("250.7.3.3", addr3, 15694, false));
-    BOOST_CHECK(Lookup("250.7.3.3"s, addr3, 15694, false));
-    BOOST_CHECK(!Lookup("250.7.3.3\0example.com"s, addr3, 15694, false));
+    BOOST_CHECK(Lookup("250.7.2.2", addr2, 8548, false));
+    BOOST_CHECK(Lookup("250.7.3.3", addr3, 8548, false));
+    BOOST_CHECK(Lookup("250.7.3.3"s, addr3, 8548, false));
+    BOOST_CHECK(!Lookup("250.7.3.3\0example.com"s, addr3, 8548, false));
 
     // Add three addresses to new table.
     CService source;

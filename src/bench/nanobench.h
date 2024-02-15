@@ -2179,7 +2179,7 @@ struct IterationLogic::Impl {
                 os << "| ";
                 auto showUnstable = rErrorMedian >= 0.05;
                 if (showUnstable) {
-                    os << ":wavy_smartloopai: ";
+                    os << ":wavy_halfy: ";
                 }
                 os << fmt::MarkDownCode(mBench.name());
                 if (showUnstable) {

@@ -128,7 +128,7 @@ public Q_SLOTS:
     void requestedSyncWarningInfo();
 
 
-    /** Update selected SMLP amount from transactionview */
+    /** Update selected HALFY amount from transactionview */
     void trxAmount(QString amount);
 Q_SIGNALS:
     void transactionClicked();

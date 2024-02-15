@@ -1,15 +1,15 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: SmartLoopAI Core
-Upstream-Contact: SmartLoopAI Core Group, Inc https://www.smartloopai.org/team/
-Source: https://github.com/SmartLoopAIproject
+Upstream-Name: Halfy Core
+Upstream-Contact: Halfy Core Group, Inc https://www.halfy.org/team/
+Source: https://github.com/Halfyproject
 
 Files: *
 Copyright: 2009-2020, Bitcoin Core Developers,
-           2019-2020, SmartLoopAI Core Developers
+           2019-2020, Halfy Core Developers
 License: Expat
 Comment: The Bitcoin Core Developers encompasses the current developers listed on bitcoin.org,
-         as well as the numerous contributors to the project. The SmartLoopAI Core Developers
-         encompasses the current developers listed on https://www.smartloopai.org/team/, as well as
+         as well as the numerous contributors to the project. The Halfy Core Developers
+         encompasses the current developers listed on https://www.halfy.org/team/, as well as
          the numerous contributors to the project.
 
 Files: debian/*

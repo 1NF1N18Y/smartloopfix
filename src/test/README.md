@@ -1,12 +1,12 @@
 # Unit tests
 
 The sources in this directory are unit test cases. Boost includes a
-unit testing framework, and since SmartLoopAI Core already uses Boost, it makes
+unit testing framework, and since Halfy Core already uses Boost, it makes
 sense to simply use this framework rather than require developers to
 configure some other framework (we want as few impediments to creating
 unit tests as possible).
 
-The build system is set up to compile an executable called `test_smartloopai`
+The build system is set up to compile an executable called `test_halfy`
 that runs all of the unit tests. The main source file for the test library is found in
 `util/setup_common.cpp`.
 
@@ -17,7 +17,7 @@ and tests weren't explicitly disabled.
 
 After configuring, they can be run with `make check`.
 
-To run the unit tests manually, launch `src/test/test_smartloopai`. To recompile
+To run the unit tests manually, launch `src/test/test_halfy`. To recompile
 after a test file was modified, run `make` and then run the test again. If you
 modify a non-test file, use `make -C src/test` to recompile only what's needed
 to run the unit tests.
@@ -26,28 +26,28 @@ To add more unit tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
 .cpp files in the `test/` directory or add new .cpp files that
 implement new `BOOST_AUTO_TEST_SUITE` sections.
 
-To run the GUI unit tests manually, launch `src/qt/test/test_smartloopai-qt`
+To run the GUI unit tests manually, launch `src/qt/test/test_halfy-qt`
 
 To add more GUI unit tests, add them to the `src/qt/test/` directory and
 the `src/qt/test/test_main.cpp` file.
 
 ### Running individual tests
 
-`test_smartloopai` has some built-in command-line arguments; for
+`test_halfy` has some built-in command-line arguments; for
 example, to run just the `getarg_tests` verbosely:
 
-    test_smartloopai --log_level=all --run_test=getarg_tests -- DEBUG_LOG_OUT
+    test_halfy --log_level=all --run_test=getarg_tests -- DEBUG_LOG_OUT
 
 `log_level` controls the verbosity of the test framework, which logs when a
-test case is entered, for example. The `DEBUG_LOG_OUT` after the two smartloopaies
+test case is entered, for example. The `DEBUG_LOG_OUT` after the two halfyes
 redirects the debug log, which would normally go to a file in the test datadir
 (`BasicTestingSetup::m_path_root`), to the standard terminal output.
 
-... or to run just the doublesmartloopai test:
+... or to run just the doublehalfy test:
 
-    test_smartloopai --run_test=getarg_tests/doublesmartloopai
+    test_halfy --run_test=getarg_tests/doublehalfy
 
-Run `test_smartloopai --help` for the full list.
+Run `test_halfy --help` for the full list.
 
 ### Adding test cases
 
@@ -68,9 +68,9 @@ on failure. For running individual tests verbosely, refer to the section
 To write to logs from unit tests you need to use specific message methods
 provided by Boost. The simplest is `BOOST_TEST_MESSAGE`.
 
-For debugging you can launch the `test_smartloopai` executable with `gdb`or `lldb` and
+For debugging you can launch the `test_halfy` executable with `gdb`or `lldb` and
 start debugging, just like you would with any other program:
 
 ```bash
-gdb src/test/test_smartloopai
+gdb src/test/test_halfy
 ```

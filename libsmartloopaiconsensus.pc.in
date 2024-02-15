@@ -4,7 +4,7 @@ libdir=@libdir@
 includedir=@includedir@
 
 Name: @PACKAGE_NAME@ consensus library
-Description: Library for the SmartLoopAI consensus protocol.
+Description: Library for the Halfy consensus protocol.
 Version: @PACKAGE_VERSION@
-Libs: -L${libdir} -lsmartloopaiconsensus
+Libs: -L${libdir} -lhalfyconsensus
 Cflags: -I${includedir}

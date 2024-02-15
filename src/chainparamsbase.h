@@ -11,8 +11,8 @@
 class ArgsManager;
 
 /**
- * CBaseChainParams defines the base parameters (shared between smartloopai-cli and smartloopaid)
- * of a given instance of the SmartLoopAI system.
+ * CBaseChainParams defines the base parameters (shared between halfy-cli and halfyd)
+ * of a given instance of the Halfy system.
  */
 class CBaseChainParams
 {

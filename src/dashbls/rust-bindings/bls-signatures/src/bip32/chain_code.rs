@@ -1,6 +1,6 @@
 use std::ffi::c_void;
 
-use bls_smartloopai_sys::{BIP32ChainCodeFree, BIP32ChainCodeIsEqual, BIP32ChainCodeSerialize};
+use bls_halfy_sys::{BIP32ChainCodeFree, BIP32ChainCodeIsEqual, BIP32ChainCodeSerialize};
 
 pub const BIP32_CHAIN_CODE_SIZE: usize = 32;
 

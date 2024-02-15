@@ -1,9 +1,9 @@
 #!/usr/bin/make -f
 # -*- mode: makefile; coding: utf-8 -*-
 
-#DEB_MAKE_CHECK_TARGET = test_smartloopai
-#build/smartloopaid::
-#	$(if $(filter nocheck,$(DEB_BUILD_OPTIONS)),,src/test_smartloopai)
+#DEB_MAKE_CHECK_TARGET = test_halfy
+#build/halfyd::
+#	$(if $(filter nocheck,$(DEB_BUILD_OPTIONS)),,src/test_halfy)
 
 %:
 	dh --with bash-completion $@

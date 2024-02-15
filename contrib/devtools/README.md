@@ -100,7 +100,7 @@ For example:
   ./github-merge.py 3077
 
 (in any git repository) will help you merge pull request #3077 for the
-smartloopaipay/smartloopai repository.
+halfypay/halfy repository.
 
 What it does:
 * Fetch master and the pull request.
@@ -118,9 +118,9 @@ couldn't mess with the sources.
 
 Setup
 ---------
-Configuring the github-merge tool for the SmartLoopAI Core repository is done in the following way:
+Configuring the github-merge tool for the Halfy Core repository is done in the following way:
 
-    git config githubmerge.repository smartloopaipay/smartloopai
+    git config githubmerge.repository halfypay/halfy
     git config githubmerge.testcmd "make -j4 check" (adapt to whatever you want to use for testing)
     git config --global user.signingkey mykeyid
 
@@ -153,7 +153,7 @@ for further details.
 optimize-pngs.py
 ================
 
-A script to optimize png files in the smartloopai
+A script to optimize png files in the halfy
 repository (requires pngcrush).
 
 security-check.py and test-security-check.py
@@ -180,10 +180,10 @@ If no errors occur the return value will be 0 and the output will be empty.
 
 If there are any errors the return value will be 1 and output like this will be printed:
 
-    .../64/test_smartloopai: symbol memcpy from unsupported version GLIBC_2.14
-    .../64/test_smartloopai: symbol __fdelt_chk from unsupported version GLIBC_2.15
-    .../64/test_smartloopai: symbol std::out_of_range::~out_of_range() from unsupported version GLIBCXX_3.4.15
-    .../64/test_smartloopai: symbol _ZNSt8__detail15_List_nod from unsupported version GLIBCXX_3.4.15
+    .../64/test_halfy: symbol memcpy from unsupported version GLIBC_2.14
+    .../64/test_halfy: symbol __fdelt_chk from unsupported version GLIBC_2.15
+    .../64/test_halfy: symbol std::out_of_range::~out_of_range() from unsupported version GLIBCXX_3.4.15
+    .../64/test_halfy: symbol _ZNSt8__detail15_List_nod from unsupported version GLIBCXX_3.4.15
 
 update-translations.py
 ======================

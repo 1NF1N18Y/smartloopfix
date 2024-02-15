@@ -1,4 +1,4 @@
-module github.com/smartloopaipay/bls-signatures/go-bindings
+module github.com/halfypay/bls-signatures/go-bindings
 
 go 1.15
 

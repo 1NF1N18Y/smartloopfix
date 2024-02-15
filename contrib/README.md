@@ -12,7 +12,7 @@ Tool to verify that every merge commit was signed by a developer using the above
 Construct a linear, no-fork, best version of the blockchain.
 
 ### [Qos](/contrib/qos) ###
-A Linux bash script that will set up traffic control (tc) to limit the outgoing bandwidth for connections to the SmartLoopAI network. This means one can have an always-on smartloopaid instance running, and another local smartloopaid/smartloopai-qt instance which connects to this node and receives blocks from it.
+A Linux bash script that will set up traffic control (tc) to limit the outgoing bandwidth for connections to the Halfy network. This means one can have an always-on halfyd instance running, and another local halfyd/halfy-qt instance which connects to this node and receives blocks from it.
 
 ### [Seeds](/contrib/seeds) ###
 Utility to generate the pnSeed[] array that is compiled into the client.
@@ -21,14 +21,14 @@ Build Tools and Keys
 ---------------------
 
 ### [Debian](/contrib/debian) ###
-Contains files used to package smartloopaid/smartloopai-qt
-for Debian-based Linux systems. If you compile smartloopaid/smartloopai-qt yourself, there are some useful files here.
+Contains files used to package halfyd/halfy-qt
+for Debian-based Linux systems. If you compile halfyd/halfy-qt yourself, there are some useful files here.
 
 ### [Gitian-descriptors](/contrib/gitian-descriptors) ###
 Notes on getting Gitian builds up and running using KVM.
 
 ### [Builder keys](/contrib/builder-keys)
-PGP keys used for signing SmartLoopAI Core [release](/doc/release-process.md) results.
+PGP keys used for signing Halfy Core [release](/doc/release-process.md) results.
 
 ### [MacDeploy](/contrib/macdeploy) ###
 Scripts and notes for Mac builds.
@@ -40,7 +40,7 @@ Test and Verify Tools
 ---------------------
 
 ### [TestGen](/contrib/testgen) ###
-Utilities to generate test vectors for the data-driven SmartLoopAI tests.
+Utilities to generate test vectors for the data-driven Halfy tests.
 
 ### [Verify Binaries](/contrib/verifybinaries) ###
 This script attempts to download and verify the signature file SHA256SUMS.asc from bitcoin.org.

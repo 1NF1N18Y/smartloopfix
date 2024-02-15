@@ -8,7 +8,7 @@ export LC_ALL=C
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$DIR"/../.. || exit
 
-DOCKER_IMAGE=${DOCKER_IMAGE:-smartloopaipay/smartloopaid-develop}
+DOCKER_IMAGE=${DOCKER_IMAGE:-halfypay/halfyd-develop}
 DOCKER_TAG=${DOCKER_TAG:-latest}
 DOCKER_RELATIVE_PATH=contrib/containers/deploy
 
@@ -17,11 +17,11 @@ if [ -d $DOCKER_RELATIVE_PATH/bin ]; then
 fi
 
 mkdir $DOCKER_RELATIVE_PATH/bin
-cp "$BASE_ROOT_DIR"/src/smartloopaid    $DOCKER_RELATIVE_PATH/bin/
-cp "$BASE_ROOT_DIR"/src/smartloopai-cli $DOCKER_RELATIVE_PATH/bin/
-cp "$BASE_ROOT_DIR"/src/smartloopai-tx  $DOCKER_RELATIVE_PATH/bin/
-strip $DOCKER_RELATIVE_PATH/bin/smartloopaid
-strip $DOCKER_RELATIVE_PATH/bin/smartloopai-cli
-strip $DOCKER_RELATIVE_PATH/bin/smartloopai-tx
+cp "$BASE_ROOT_DIR"/src/halfyd    $DOCKER_RELATIVE_PATH/bin/
+cp "$BASE_ROOT_DIR"/src/halfy-cli $DOCKER_RELATIVE_PATH/bin/
+cp "$BASE_ROOT_DIR"/src/halfy-tx  $DOCKER_RELATIVE_PATH/bin/
+strip $DOCKER_RELATIVE_PATH/bin/halfyd
+strip $DOCKER_RELATIVE_PATH/bin/halfy-cli
+strip $DOCKER_RELATIVE_PATH/bin/halfy-tx
 
 docker build --pull -t "$DOCKER_IMAGE":"$DOCKER_TAG" -f $DOCKER_RELATIVE_PATH/Dockerfile docker

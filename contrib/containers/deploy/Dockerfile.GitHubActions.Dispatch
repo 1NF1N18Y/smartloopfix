@@ -16,7 +16,7 @@ RUN apt-get update && \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /home/smartloopai
+WORKDIR /home/halfy
 
 COPY . .
 
@@ -38,27 +38,27 @@ RUN make -j`nproc | awk '{x=$1/2; print x}'` && make install
 
 RUN mkdir built-target && \
   case "$TARGETPLATFORM" in \
-  "linux/arm64") cp depends/arm-linux-gnueabihf/bin/smartloopai* /home/smartloopai/built-target ;; \
-  "linux/amd64") cp depends/x86_64-pc-linux-gnu/bin/smartloopai* /home/smartloopai/built-target ;; \
+  "linux/arm64") cp depends/arm-linux-gnueabihf/bin/halfy* /home/halfy/built-target ;; \
+  "linux/amd64") cp depends/x86_64-pc-linux-gnu/bin/halfy* /home/halfy/built-target ;; \
 esac
 
 FROM ubuntu:focal
-LABEL maintainer="SmartLoopAI Developers <dev@smartloopai.org>"
-LABEL description="Dockerised SmartLoopAI"
+LABEL maintainer="Halfy Developers <dev@halfy.org>"
+LABEL description="Dockerised Halfy"
 
 ARG USER_ID
 ARG GROUP_ID
 ARG TAG
 
-ENV HOME /home/smartloopai
+ENV HOME /home/halfy
 
 # add user with specified (or default) user/group ids
 ENV USER_ID ${USER_ID:-1000}
 ENV GROUP_ID ${GROUP_ID:-1000}
-RUN groupadd -g ${GROUP_ID} smartloopai && \
-    useradd -u ${USER_ID} -g smartloopai -s /bin/bash -m -d /home/smartloopai smartloopai  && \
-    mkdir /home/smartloopai/.smartloopai && \
-    chown ${USER_ID}:${GROUP_ID} -R /home/smartloopai
+RUN groupadd -g ${GROUP_ID} halfy && \
+    useradd -u ${USER_ID} -g halfy -s /bin/bash -m -d /home/halfy halfy  && \
+    mkdir /home/halfy/.halfy && \
+    chown ${USER_ID}:${GROUP_ID} -R /home/halfy
 
 RUN apt-get update && \
     apt-get -y install --no-install-recommends \
@@ -66,15 +66,15 @@ RUN apt-get update && \
     ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
-COPY --from=builder /home/smartloopai/built-target/smartloopai* /usr/local/bin
+COPY --from=builder /home/halfy/built-target/halfy* /usr/local/bin
 
-USER smartloopai
+USER halfy
 
-VOLUME ["/home/smartloopai"]
+VOLUME ["/home/halfy"]
 
 COPY docker/docker-entrypoint.sh /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-EXPOSE 15693 9999 25693 25694
+EXPOSE 8547 9999 25693 25694
 
-WORKDIR /home/smartloopai
+WORKDIR /home/halfy

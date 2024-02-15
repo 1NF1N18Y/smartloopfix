@@ -278,10 +278,10 @@ class BackwardsCompatibilityTest(BitcoinTestFramework):
 
         # Instead, we stop node and try to launch it with the wallet:
         self.stop_node(4)
-        # it expected to fail with error 'DBErrors::TOO_NEW' but SmartLoopAI Core can open v18 by version 17
+        # it expected to fail with error 'DBErrors::TOO_NEW' but Halfy Core can open v18 by version 17
         # can be implemented in future if there's any incompatible versions
-        #node_v17.assert_start_raises_init_error(["-wallet=w3_v18"], "Error: Error loading w3_v18: Wallet requires newer version of SmartLoopAI Core")
-        #node_v17.assert_start_raises_init_error(["-wallet=w3"], "Error: Error loading w3: Wallet requires newer version of SmartLoopAI Core")
+        #node_v17.assert_start_raises_init_error(["-wallet=w3_v18"], "Error: Error loading w3_v18: Wallet requires newer version of Halfy Core")
+        #node_v17.assert_start_raises_init_error(["-wallet=w3"], "Error: Error loading w3: Wallet requires newer version of Halfy Core")
         self.start_node(4)
 
         # Open most recent wallet in v0.16 (no loadwallet RPC)

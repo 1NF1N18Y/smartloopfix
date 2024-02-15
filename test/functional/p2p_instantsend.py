@@ -3,7 +3,7 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-from test_framework.test_framework import SmartLoopAITestFramework
+from test_framework.test_framework import HalfyTestFramework
 from test_framework.util import assert_equal, assert_raises_rpc_error
 
 '''
@@ -12,9 +12,9 @@ p2p_instantsend.py
 Tests InstantSend functionality (prevent doublespend for unconfirmed transactions)
 '''
 
-class InstantSendTest(SmartLoopAITestFramework):
+class InstantSendTest(HalfyTestFramework):
     def set_test_params(self):
-        self.set_smartloopai_test_params(7, 3, fast_dip3_enforcement=True)
+        self.set_halfy_test_params(7, 3, fast_dip3_enforcement=True)
         # set sender,  receiver,  isolated nodes
         self.isolated_idx = 1
         self.receiver_idx = 2

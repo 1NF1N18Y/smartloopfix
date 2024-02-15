@@ -41,7 +41,7 @@ class Handler;
 class WalletLoader;
 struct BlockTip;
 
-//! Interface for the src/evo part of a smartloopai node (smartloopaid process).
+//! Interface for the src/evo part of a halfy node (halfyd process).
 class EVO
 {
 public:
@@ -49,7 +49,7 @@ public:
     virtual std::pair<CDeterministicMNList, const CBlockIndex*> getListAtChainTip() = 0;
 };
 
-//! Interface for the src/governance part of a smartloopai node (smartloopaid process).
+//! Interface for the src/governance part of a halfy node (halfyd process).
 class GOV
 {
 public:
@@ -57,7 +57,7 @@ public:
     virtual void getAllNewerThan(std::vector<CGovernanceObject> &objs, int64_t nMoreThanTime) = 0;
 };
 
-//! Interface for the src/llmq part of a smartloopai node (smartloopaid process).
+//! Interface for the src/llmq part of a halfy node (halfyd process).
 class LLMQ
 {
 public:
@@ -65,7 +65,7 @@ public:
     virtual size_t getInstantSentLockCount() = 0;
 };
 
-//! Interface for the src/masternode part of a smartloopai node (smartloopaid process).
+//! Interface for the src/masternode part of a halfy node (halfyd process).
 namespace Masternode
 {
 class Sync
@@ -120,7 +120,7 @@ struct BlockAndHeaderTipInfo
     double verification_progress;
 };
 
-//! Top-level interface for a smartloopai node (smartloopaid process).
+//! Top-level interface for a halfy node (halfyd process).
 class Node
 {
 public:

@@ -1,36 +1,36 @@
 #!/usr/bin/env bash
 #
-#  smartloopaid The SmartLoopAI Core server.
+#  halfyd The Halfy Core server.
 #
 #
 # chkconfig: 345 80 20
-# description: smartloopaid
-# processname: smartloopaid
+# description: halfyd
+# processname: halfyd
 #
 
 # Source function library.
 . /etc/init.d/functions
 
-# you can override defaults in /etc/sysconfig/smartloopaid, see below
-if [ -f /etc/sysconfig/smartloopaid ]; then
-        . /etc/sysconfig/smartloopaid
+# you can override defaults in /etc/sysconfig/halfyd, see below
+if [ -f /etc/sysconfig/halfyd ]; then
+        . /etc/sysconfig/halfyd
 fi
 
 RETVAL=0
 
-prog=smartloopaid
-# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/smartloopaid
-lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/smartloopaid}
+prog=halfyd
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/halfyd
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/halfyd}
 
-# smartloopaid defaults to /usr/bin/smartloopaid, override with BITCOIND_BIN
-smartloopaid=${BITCOIND_BIN-/usr/bin/smartloopaid}
+# halfyd defaults to /usr/bin/halfyd, override with BITCOIND_BIN
+halfyd=${BITCOIND_BIN-/usr/bin/halfyd}
 
-# smartloopaid opts default to -disablewallet, override with BITCOIND_OPTS
-smartloopaid_opts=${BITCOIND_OPTS--disablewallet}
+# halfyd opts default to -disablewallet, override with BITCOIND_OPTS
+halfyd_opts=${BITCOIND_OPTS--disablewallet}
 
 start() {
     echo -n $"Starting $prog: "
-    daemon $DAEMONOPTS $smartloopaid $smartloopaid_opts
+    daemon $DAEMONOPTS $halfyd $halfyd_opts
     RETVAL=$?
     echo
     [ $RETVAL -eq 0 ] && touch $lockfile

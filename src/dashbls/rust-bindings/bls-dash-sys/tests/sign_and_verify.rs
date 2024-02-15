@@ -1,4 +1,4 @@
-use bls_smartloopai_sys as sys;
+use bls_halfy_sys as sys;
 
 #[test]
 fn sign_and_verify() {
@@ -31,7 +31,7 @@ fn sign_and_verify() {
         let pk2 = sys::PrivateKeyGetG1Element(sk2, &mut did_err as *mut _);
         assert!(!did_err);
 
-        let message = b"Evgeny owns 1337 smartloopai no cap";
+        let message = b"Evgeny owns 1337 halfy no cap";
         let sig = sys::CoreMPLSign(scheme, sk, message.as_ptr() as *const _, message.len());
 
         let verify =

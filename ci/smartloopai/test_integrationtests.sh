@@ -11,7 +11,7 @@ set -e
 
 PASS_ARGS="$*"
 
-source ./ci/smartloopai/matrix.sh
+source ./ci/halfy/matrix.sh
 
 if [ "$RUN_INTEGRATION_TESTS" != "true" ]; then
   echo "Skipping integration tests"
@@ -25,7 +25,7 @@ if [ -n "$PREVIOUS_RELEASES_TO_DOWNLOAD" ]; then
   ./test/get_previous_releases.py -b -t "$PREVIOUS_RELEASES_DIR" ${PREVIOUS_RELEASES_TO_DOWNLOAD}
 fi
 
-cd build-ci/smartloopai-$BUILD_TARGET
+cd build-ci/halfy-$BUILD_TARGET
 
 if [ "$SOCKETEVENTS" = "" ]; then
   # Let's switch socketevents mode to some random mode
@@ -39,7 +39,7 @@ if [ "$SOCKETEVENTS" = "" ]; then
   fi
 fi
 echo "Using socketevents mode: $SOCKETEVENTS"
-EXTRA_ARGS="--smartloopaid-arg=-socketevents=$SOCKETEVENTS"
+EXTRA_ARGS="--halfyd-arg=-socketevents=$SOCKETEVENTS"
 
 set +e
 ./test/functional/test_runner.py --ci --attempts=3 --ansi --combinedlogslen=4000 ${TEST_RUNNER_EXTRA} --failfast --nocleanup --tmpdir=$(pwd)/testdatadirs $PASS_ARGS $EXTRA_ARGS

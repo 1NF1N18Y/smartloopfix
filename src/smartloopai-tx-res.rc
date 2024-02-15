@@ -16,14 +16,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "SmartLoopAI"
-            VALUE "FileDescription",    "smartloopai-tx (CLI SmartLoopAI transaction editor utility)"
+            VALUE "CompanyName",        "Halfy"
+            VALUE "FileDescription",    "halfy-tx (CLI Halfy transaction editor utility)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "smartloopai-tx"
+            VALUE "InternalName",       "halfy-tx"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "smartloopai-tx.exe"
-            VALUE "ProductName",        "smartloopai-tx"
+            VALUE "OriginalFilename",   "halfy-tx.exe"
+            VALUE "ProductName",        "halfy-tx"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

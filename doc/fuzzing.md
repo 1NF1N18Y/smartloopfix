@@ -1,16 +1,16 @@
-# Fuzzing SmartLoopAI Core using libFuzzer
+# Fuzzing Halfy Core using libFuzzer
 
 ## Quickstart guide
 
-To quickly get started fuzzing SmartLoopAI Core using [libFuzzer](https://llvm.org/docs/LibFuzzer.html):
+To quickly get started fuzzing Halfy Core using [libFuzzer](https://llvm.org/docs/LibFuzzer.html):
 
 ```sh
-$ git clone https://github.com/SmartLoopAIproject
-$ cd smartloopai/
+$ git clone https://github.com/Halfyproject
+$ cd halfy/
 $ ./autogen.sh
 $ CC=clang CXX=clang++ ./configure --enable-fuzz --with-sanitizers=address,fuzzer,undefined --enable-c++17
 # macOS users: If you have problem with this step then make sure to read "macOS hints for
-# libFuzzer" on https://github.com/SmartLoopAIproject/blob/develop/doc/fuzzing.md#macos-hints-for-libfuzzer
+# libFuzzer" on https://github.com/Halfyproject/blob/develop/doc/fuzzing.md#macos-hints-for-libfuzzer
 $ make
 $ FUZZ=process_message src/test/fuzz/fuzz
 # abort fuzzing using ctrl-c
@@ -18,7 +18,7 @@ $ FUZZ=process_message src/test/fuzz/fuzz
 
 ## Fuzzing harnesses and output
 
-[`process_message`](https://github.com/SmartLoopAIproject/blob/develop/src/test/fuzz/process_message.cpp) is a fuzzing harness for the [`ProcessMessage(...)` function (`net_processing`)](https://github.com/SmartLoopAIproject/blob/develop/src/net_processing.cpp). The available fuzzing harnesses are found in [`src/test/fuzz/`](https://github.com/SmartLoopAIproject/tree/develop/src/test/fuzz).
+[`process_message`](https://github.com/Halfyproject/blob/develop/src/test/fuzz/process_message.cpp) is a fuzzing harness for the [`ProcessMessage(...)` function (`net_processing`)](https://github.com/Halfyproject/blob/develop/src/net_processing.cpp). The available fuzzing harnesses are found in [`src/test/fuzz/`](https://github.com/Halfyproject/tree/develop/src/test/fuzz).
 
 The fuzzer will output `NEW` every time it has created a test input that covers new areas of the code under test. For more information on how to interpret the fuzzer output, see the [libFuzzer documentation](https://llvm.org/docs/LibFuzzer.html).
 
@@ -103,7 +103,7 @@ Fuzzing on a harness compiled with `--with-sanitizers=address,fuzzer,undefined` 
 
 If you find coverage increasing inputs when fuzzing you are highly encouraged to submit them for inclusion in the [`bitcoin-core/qa-assets`](https://github.com/bitcoin-core/qa-assets) repo.
 
-Every single pull request submitted against the SmartLoopAI Core repo is automatically tested against all inputs in the [`bitcoin-core/qa-assets`](https://github.com/bitcoin-core/qa-assets) repo. Contributing new coverage increasing inputs is an easy way to help make SmartLoopAI Core more robust.
+Every single pull request submitted against the Halfy Core repo is automatically tested against all inputs in the [`bitcoin-core/qa-assets`](https://github.com/bitcoin-core/qa-assets) repo. Contributing new coverage increasing inputs is an easy way to help make Halfy Core more robust.
 
 ## macOS hints for libFuzzer
 
@@ -113,7 +113,7 @@ example using `brew install llvm`.
 
 Should you run into problems with the address sanitizer, it is possible you
 may need to run `./configure` with `--disable-asm` to avoid errors
-with certain assembly code from SmartLoopAI Core's code. See [developer notes on sanitizers](https://github.com/SmartLoopAIproject/blob/develop/doc/developer-notes.md#sanitizers)
+with certain assembly code from Halfy Core's code. See [developer notes on sanitizers](https://github.com/Halfyproject/blob/develop/doc/developer-notes.md#sanitizers)
 for more information.
 
 You may also need to take care of giving the correct path for `clang` and
@@ -128,15 +128,15 @@ Full configure that was tested on macOS Catalina with `brew` installed `llvm`:
 
 Read the [libFuzzer documentation](https://llvm.org/docs/LibFuzzer.html) for more information. This [libFuzzer tutorial](https://github.com/google/fuzzing/blob/master/tutorial/libFuzzerTutorial.md) might also be of interest.
 
-# Fuzzing SmartLoopAI Core using afl++
+# Fuzzing Halfy Core using afl++
 
 ## Quickstart guide
 
-To quickly get started fuzzing SmartLoopAI Core using [afl++](https://github.com/AFLplusplus/AFLplusplus):
+To quickly get started fuzzing Halfy Core using [afl++](https://github.com/AFLplusplus/AFLplusplus):
 
 ```sh
-$ git clone https://github.com/SmartLoopAIproject
-$ cd smartloopai/
+$ git clone https://github.com/Halfyproject
+$ cd halfy/
 $ git clone https://github.com/AFLplusplus/AFLplusplus
 $ make -C AFLplusplus/ source-only
 $ ./autogen.sh
@@ -155,15 +155,15 @@ $ FUZZ=bech32 AFLplusplus/afl-fuzz -i inputs/ -o outputs/ -- src/test/fuzz/fuzz
 
 Read the [afl++ documentation](https://github.com/AFLplusplus/AFLplusplus) for more information.
 
-# Fuzzing SmartLoopAI Core using Honggfuzz
+# Fuzzing Halfy Core using Honggfuzz
 
 ## Quickstart guide
 
-To quickly get started fuzzing SmartLoopAI Core using [Honggfuzz](https://github.com/google/honggfuzz):
+To quickly get started fuzzing Halfy Core using [Honggfuzz](https://github.com/google/honggfuzz):
 
 ```sh
-$ git clone https://github.com/SmartLoopAIproject
-$ cd smartloopai/
+$ git clone https://github.com/Halfyproject
+$ cd halfy/
 $ ./autogen.sh
 $ git clone https://github.com/google/honggfuzz
 $ cd honggfuzz/

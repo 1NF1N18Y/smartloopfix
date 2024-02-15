@@ -39,14 +39,14 @@
 
 // Uncomment the following line to enable debugging messages
 // or enable on a per file basis prior to inclusion of util.h
-//#define ENABLE_SMLP_DEBUG
-#ifdef ENABLE_SMLP_DEBUG
+//#define ENABLE_HALFY_DEBUG
+#ifdef ENABLE_HALFY_DEBUG
 #define DBG( x ) x
 #else
 #define DBG( x )
 #endif
 
-//SmartLoopAI only features
+//Halfy only features
 
 extern bool fMasternodeMode;
 extern bool fDisableGovernance;

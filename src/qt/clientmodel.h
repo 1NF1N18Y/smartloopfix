@@ -44,7 +44,7 @@ class CDeterministicMNList;
 class CGovernanceObject;
 typedef std::shared_ptr<CDeterministicMNList> CDeterministicMNListPtr;
 
-/** Model for SmartLoopAI network client. */
+/** Model for Halfy network client. */
 class ClientModel : public QObject
 {
     Q_OBJECT

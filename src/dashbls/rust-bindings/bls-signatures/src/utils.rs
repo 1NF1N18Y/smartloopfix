@@ -4,7 +4,7 @@ use std::{
     ops::Deref,
 };
 
-use bls_smartloopai_sys::{GetLastErrorMsg, SecAllocBytes, SecFree};
+use bls_halfy_sys::{GetLastErrorMsg, SecAllocBytes, SecFree};
 
 use crate::BlsError;
 

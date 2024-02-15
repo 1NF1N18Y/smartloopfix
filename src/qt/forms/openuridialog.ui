@@ -26,7 +26,7 @@
      <item>
       <widget class="QValidatedLineEdit" name="uriEdit">
        <property name="placeholderText">
-        <string notr="true">smartloopai:</string>
+        <string notr="true">halfy:</string>
        </property>
       </widget>
      </item>

@@ -8,11 +8,11 @@ noinst_PROGRAMS += test/fuzz/fuzz
 endif
 
 if !ENABLE_FUZZ
-bin_PROGRAMS += test/test_smartloopai
+bin_PROGRAMS += test/test_halfy
 endif
 
 TEST_SRCDIR = test
-TEST_BINARY=test/test_smartloopai$(EXEEXT)
+TEST_BINARY=test/test_halfy$(EXEEXT)
 FUZZ_BINARY=test/fuzz/fuzz$(EXEEXT)
 
 JSON_TEST_FILES = \
@@ -71,7 +71,7 @@ if USE_NATPMP
 FUZZ_SUITE_LD_COMMON += $(NATPMP_LIBS)
 endif
 
-# test_smartloopai binary #
+# test_halfy binary #
 BITCOIN_TESTS =\
   test/arith_uint256_tests.cpp \
   test/scriptnum10.h \
@@ -205,21 +205,21 @@ BITCOIN_TEST_SUITE += \
   wallet/test/init_test_fixture.h
 endif
 
-test_test_smartloopai_SOURCES = $(BITCOIN_TEST_SUITE) $(BITCOIN_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
-test_test_smartloopai_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(TESTDEFS) $(EVENT_CFLAGS)
-test_test_smartloopai_LDADD = $(LIBTEST_UTIL)
+test_test_halfy_SOURCES = $(BITCOIN_TEST_SUITE) $(BITCOIN_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
+test_test_halfy_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(TESTDEFS) $(EVENT_CFLAGS)
+test_test_halfy_LDADD = $(LIBTEST_UTIL)
 if ENABLE_WALLET
-test_test_smartloopai_LDADD += $(LIBBITCOIN_WALLET)
+test_test_halfy_LDADD += $(LIBBITCOIN_WALLET)
 endif
-test_test_smartloopai_LDADD += $(LIBBITCOIN_SERVER) $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) \
+test_test_halfy_LDADD += $(LIBBITCOIN_SERVER) $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) \
   $(LIBDASHBLS) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) $(BACKTRACE_LIB) $(BOOST_LIBS) $(BOOST_UNIT_TEST_FRAMEWORK_LIB) $(LIBSECP256K1) $(EVENT_LIBS) $(EVENT_PTHREADS_LIBS)
-test_test_smartloopai_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+test_test_halfy_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
-test_test_smartloopai_LDADD += $(BDB_LIBS) $(MINIUPNPC_LIBS) $(SQLITE_LIBS) $(NATPMP_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(GMP_LIBS)
-test_test_smartloopai_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS) -static
+test_test_halfy_LDADD += $(BDB_LIBS) $(MINIUPNPC_LIBS) $(SQLITE_LIBS) $(NATPMP_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(GMP_LIBS)
+test_test_halfy_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS) -static
 
 if ENABLE_ZMQ
-test_test_smartloopai_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+test_test_halfy_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 FUZZ_SUITE_LD_COMMON += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
 
@@ -328,7 +328,7 @@ test_fuzz_fuzz_SOURCES = \
   test/fuzz/versionbits.cpp
 endif # ENABLE_FUZZ_BINARY
 
-nodist_test_test_smartloopai_SOURCES = $(GENERATED_TEST_FILES)
+nodist_test_test_halfy_SOURCES = $(GENERATED_TEST_FILES)
 
 $(BITCOIN_TESTS): $(GENERATED_TEST_FILES)
 
@@ -337,20 +337,20 @@ CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno test/fuzz/*.gcda test/fuzz/*.gcno t
 CLEANFILES += $(CLEAN_BITCOIN_TEST)
 
 if TARGET_WINDOWS
-smartloopai_test: $(TEST_BINARY)
+halfy_test: $(TEST_BINARY)
 else
 if ENABLE_BENCH
-smartloopai_test: $(TEST_BINARY) $(BENCH_BINARY)
+halfy_test: $(TEST_BINARY) $(BENCH_BINARY)
 else
-smartloopai_test: $(TEST_BINARY)
+halfy_test: $(TEST_BINARY)
 endif
 endif
 
-smartloopai_test_check: $(TEST_BINARY) FORCE
+halfy_test_check: $(TEST_BINARY) FORCE
 	$(MAKE) check-TESTS TESTS=$^
 
-smartloopai_test_clean : FORCE
-	rm -f $(CLEAN_BITCOIN_TEST) $(test_test_smartloopai_OBJECTS) $(TEST_BINARY)
+halfy_test_clean : FORCE
+	rm -f $(CLEAN_BITCOIN_TEST) $(test_test_halfy_OBJECTS) $(TEST_BINARY)
 
 check-local: $(BITCOIN_TESTS:.cpp=.cpp.test)
 if BUILD_BITCOIN_TX
@@ -362,8 +362,8 @@ endif
 if TARGET_WINDOWS
 else
 if ENABLE_BENCH
-# Disabled because benchmarks are too heavy in SmartLoopAI
-#	@echo "Running bench/bench_smartloopai"
+# Disabled because benchmarks are too heavy in Halfy
+#	@echo "Running bench/bench_halfy"
 #	$(BENCH_BINARY)
 endif
 endif

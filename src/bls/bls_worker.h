@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef SMLP_CRYPTO_BLS_WORKER_H
-#define SMLP_CRYPTO_BLS_WORKER_H
+#ifndef HALFY_CRYPTO_BLS_WORKER_H
+#define HALFY_CRYPTO_BLS_WORKER_H
 
 #include <bls/bls.h>
 
@@ -184,4 +184,4 @@ private:
     }
 };
 
-#endif //SMLP_CRYPTO_BLS_WORKER_H
+#endif //HALFY_CRYPTO_BLS_WORKER_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef SMLP_CRYPTO_BLS_IES_H
-#define SMLP_CRYPTO_BLS_IES_H
+#ifndef HALFY_CRYPTO_BLS_IES_H
+#define HALFY_CRYPTO_BLS_IES_H
 
 #include <bls/bls.h>
 #include <streams.h>
@@ -148,4 +148,4 @@ public:
     }
 };
 
-#endif // SMLP_CRYPTO_BLS_IES_H
+#endif // HALFY_CRYPTO_BLS_IES_H

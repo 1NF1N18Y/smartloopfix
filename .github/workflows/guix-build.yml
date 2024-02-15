@@ -45,8 +45,8 @@ jobs:
           docker run --privileged -d --rm -t \
             --name guix-daemon \
             -e ADDITIONAL_GUIX_COMMON_FLAGS="--max-jobs=$(nproc --all)" \
-            -v ${{ github.workspace }}:/src/smartloopai \
-            -w /src/smartloopai \
+            -v ${{ github.workspace }}:/src/halfy \
+            -w /src/halfy \
             guix_ubuntu:latest && \
           docker exec guix-daemon bash -c '/usr/local/bin/guix-start'
 

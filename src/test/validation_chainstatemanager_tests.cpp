@@ -48,7 +48,7 @@ BOOST_AUTO_TEST_CASE(chainstatemanager)
         /* cache_size_bytes */ 1 << 23, /* in_memory */ true, /* should_wipe */ false);
     WITH_LOCK(::cs_main, c1.InitCoinsCache(1 << 23));
 
-    SmartLoopAITestSetup(m_node);
+    HalfyTestSetup(m_node);
 
     BOOST_CHECK(!manager.IsSnapshotActive());
     BOOST_CHECK(!manager.IsSnapshotValidated());
@@ -70,7 +70,7 @@ BOOST_AUTO_TEST_CASE(chainstatemanager)
 
     BOOST_CHECK(!manager.SnapshotBlockhash().has_value());
 
-    SmartLoopAITestSetupClose(m_node);
+    HalfyTestSetupClose(m_node);
 
     // Create a snapshot-based chainstate.
     //
@@ -81,7 +81,7 @@ BOOST_AUTO_TEST_CASE(chainstatemanager)
     );
     chainstates.push_back(&c2);
 
-    SmartLoopAITestSetup(m_node);
+    HalfyTestSetup(m_node);
 
     BOOST_CHECK_EQUAL(manager.SnapshotBlockhash().value(), snapshot_blockhash);
 
@@ -126,7 +126,7 @@ BOOST_AUTO_TEST_CASE(chainstatemanager)
     // Let scheduler events finish running to avoid accessing memory that is going to be unloaded
     SyncWithValidationInterfaceQueue();
 
-    SmartLoopAITestSetupClose(m_node);
+    HalfyTestSetupClose(m_node);
 
     WITH_LOCK(::cs_main, manager.Unload());
 }

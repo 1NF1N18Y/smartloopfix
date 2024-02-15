@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2020 The Bitcoin Core developers
 // Copyright (c) 2014-2023 The Dash Core developers
-// Copyright (c) 2024 The SmartLoopAI Core developers
+// Copyright (c) 2024 The Halfy Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -195,7 +195,7 @@ UniValue importaddress(const JSONRPCRequest& request)
     "\nNote: If you import a non-standard raw script in hex form, outputs sending to it will be treated\n"
     "as change, and not show up in many RPCs.\n",
         {
-            {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The SmartLoopAI address (or hex-encoded script)"},
+            {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The Halfy address (or hex-encoded script)"},
             {"label", RPCArg::Type::STR, /* default */ "\"\"", "An optional label"},
             {"rescan", RPCArg::Type::BOOL, /* default */ "true", "Rescan the wallet for transactions"},
             {"p2sh", RPCArg::Type::BOOL, /* default */ "false", "Add the P2SH version of the script as well"},
@@ -267,7 +267,7 @@ UniValue importaddress(const JSONRPCRequest& request)
 
             pwallet->ImportScriptPubKeys(strLabel, scripts, false /* have_solving_data */, true /* apply_label */, 1 /* timestamp */);
         } else {
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid SmartLoopAI address or script");
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Halfy address or script");
         }
     }
     if (fRescan)
@@ -800,7 +800,7 @@ UniValue dumpprivkey(const JSONRPCRequest& request)
         "\nReveals the private key corresponding to 'address'.\n"
         "Then the importprivkey can be used with this output\n",
         {
-            {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The smartloopai address for the private key"},
+            {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The halfy address for the private key"},
         },
         RPCResult{
             RPCResult::Type::STR, "key", "The private key"
@@ -825,7 +825,7 @@ UniValue dumpprivkey(const JSONRPCRequest& request)
     std::string strAddress = request.params[0].get_str();
     CTxDestination dest = DecodeDestination(strAddress);
     if (!IsValidDestination(dest)) {
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid SmartLoopAI address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Halfy address");
     }
     const PKHash *pkhash= std::get_if<PKHash>(&dest);
     if (!pkhash) {
@@ -951,7 +951,7 @@ UniValue dumpwallet(const JSONRPCRequest& request)
     std::sort(vKeyBirth.begin(), vKeyBirth.end());
 
     // produce output
-    file << strprintf("# Wallet dump created by SmartLoopAI Core %s\n", CLIENT_BUILD);
+    file << strprintf("# Wallet dump created by Halfy Core %s\n", CLIENT_BUILD);
     file << strprintf("# * Created on %s\n", FormatISO8601DateTime(GetTime()));
     file << strprintf("# * Best block at time of backup was %i (%s),\n", pwallet->GetLastBlockHeight(), pwallet->GetLastBlockHash().ToString());
     int64_t block_time = 0;
@@ -960,7 +960,7 @@ UniValue dumpwallet(const JSONRPCRequest& request)
     file << "\n";
 
     UniValue obj(UniValue::VOBJ);
-    obj.pushKV("smartloopaiversion", CLIENT_BUILD);
+    obj.pushKV("halfyversion", CLIENT_BUILD);
     obj.pushKV("lastblockheight", pwallet->GetLastBlockHeight());
     obj.pushKV("lastblockhash", pwallet->GetLastBlockHash().ToString());
     obj.pushKV("lastblocktime", block_time);
@@ -1595,7 +1595,7 @@ UniValue importmulti(const JSONRPCRequest& mainRequest)
                                       "block from time %d, which is after or within %d seconds of key creation, and "
                                       "could contain transactions pertaining to the key. As a result, transactions "
                                       "and coins using this key may not appear in the wallet. This error could be "
-                                      "caused by pruning or data corruption (see smartloopaid log for details) and could "
+                                      "caused by pruning or data corruption (see halfyd log for details) and could "
                                       "be dealt with by downloading and rescanning the relevant blocks (see -reindex "
                                       "and -rescan options).",
                                 GetImportTimestamp(request, now), scannedTime - TIMESTAMP_WINDOW - 1, TIMESTAMP_WINDOW)));

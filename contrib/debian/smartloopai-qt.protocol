@@ -1,6 +1,6 @@
 [Protocol]
-exec=smartloopai-qt '%u'
-protocol=smartloopai
+exec=halfy-qt '%u'
+protocol=halfy
 input=none
 output=none
 helper=true

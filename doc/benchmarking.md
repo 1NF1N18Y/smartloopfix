@@ -1,21 +1,21 @@
 Benchmarking
 ============
 
-SmartLoopAI Core has an internal benchmarking framework, with benchmarks
+Halfy Core has an internal benchmarking framework, with benchmarks
 for cryptographic algorithms (e.g. SHA1, SHA256, SHA512, RIPEMD160, Poly1305, ChaCha20), rolling bloom filter, coins selection,
 thread queue, wallet balance.
 
 Running
 ---------------------
 
-For benchmarks purposes you only need to compile `smartloopai_bench`. Beware of configuring without `--enable-debug` as this would impact
+For benchmarks purposes you only need to compile `halfy_bench`. Beware of configuring without `--enable-debug` as this would impact
 benchmarking by unlatching log printers and lock analysis.
 
-    make -C src smartloopai_bench
+    make -C src halfy_bench
 
-After compiling SmartLoopAI Core, the benchmarks can be run with:
+After compiling Halfy Core, the benchmarks can be run with:
 
-    src/bench/bench_smartloopai
+    src/bench/bench_halfy
 
 The output will look similar to:
 ```
@@ -29,7 +29,7 @@ The output will look similar to:
 Help
 ---------------------
 
-    src/bench/bench_smartloopai --help
+    src/bench/bench_halfy --help
 
 To print options like scaling factor or per-benchmark filter.
 
@@ -45,6 +45,6 @@ More benchmarks are needed for, in no particular order:
 Going Further
 --------------------
 
-To monitor SmartLoopAI Core performance more in depth (like reindex or IBD): https://github.com/chaincodelabs/bitcoinperf
+To monitor Halfy Core performance more in depth (like reindex or IBD): https://github.com/chaincodelabs/bitcoinperf
 
-To generate Flame Graphs for SmartLoopAI Core: https://github.com/eklitzke/bitcoin/blob/flamegraphs/doc/flamegraphs.md
+To generate Flame Graphs for Halfy Core: https://github.com/eklitzke/bitcoin/blob/flamegraphs/doc/flamegraphs.md
