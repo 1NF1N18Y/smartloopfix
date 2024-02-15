@@ -153,12 +153,12 @@ config file): *Needed for Tor version 0.2.7.0 and older versions of Tor only. Fo
 versions of Tor see [Section 4](#4-automatically-listen-on-tor).*
 
 	HiddenServiceDir /var/lib/tor/halfy-service/
-	HiddenServicePort 8548 127.0.0.1:9996
-	HiddenServicePort 25694 127.0.0.1:19996
+	HiddenServicePort 8548 127.0.0.1:6669
+	HiddenServicePort 25694 127.0.0.1:6669
 
 The directory can be different of course, but virtual port numbers should be equal to
 your halfyd's P2P listen port (8548 by default), and target addresses and ports
-should be equal to binding address and port for inbound Tor connections (127.0.0.1:9996 by default).
+should be equal to binding address and port for inbound Tor connections (127.0.0.1:6669 by default).
 
 	-externalip=X   You can tell Halfy Core about its publicly reachable address using
 	                this option, and this can be a .onion address. Given the above
